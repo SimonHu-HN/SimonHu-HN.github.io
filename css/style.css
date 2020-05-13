@@ -405,7 +405,9 @@ em{
 
 .page .entry .row {
     padding-left: 20px;
-    padding-right: 5px
+    padding-right: 5px;
+    border: dashed;
+    border-color: #444;
 }
 
 .page .entry .col-md-8 {
@@ -419,8 +421,8 @@ em{
 .page h3.title {
     position: relative;
     padding: 5px 0px 0px 0px;
-    font-size: 1.5em;
-    line-height: 1.3em;
+    font-size: 3em;
+    line-height: 1.0em;
     font-weight: bold;
     font-family: DOS, SimHei, Monaco, Menlo, Consolas, 'Courier New', monospace
 }
@@ -615,13 +617,13 @@ code {
 /*valine 评论系统样式*/
 
 
-  
+
 
 .v .vwrap{
 border: 2px solid rgb(255, 255, 255) !important;
 
 }
-  
+
 .v * {
     color: #e4e4e4!important;
 }
@@ -634,7 +636,7 @@ border: 2px solid rgb(255, 255, 255) !important;
 
 .v .vbtn{
     background: #000 !important;
-    
+
 }
 
 .post-meta-item-text::before, em::after {

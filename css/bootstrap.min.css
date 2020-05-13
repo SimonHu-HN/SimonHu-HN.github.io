@@ -5182,7 +5182,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse .navbar-brand {
-    color: #bbb
+    color: #2bbc8a
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -5196,7 +5196,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #bbb
+    color: #2bbc8a
 }
 
 .navbar-inverse .navbar-nav>li>a:hover,
