@@ -420,7 +420,7 @@ em{
 
 .page h3.title {
     position: relative;
-    padding: 5px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
     font-size: 3em;
     line-height: 1.0em;
     font-weight: bold;
@@ -583,7 +583,7 @@ figure {
 
 .date {
     color: #fff;
-    line-height: 3em;
+    line-height: 5em;
     text-align: right
 }
 

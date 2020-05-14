@@ -3741,12 +3741,17 @@ select[multiple].form-group-lg .form-control {
     }
 }
 
+.footer_end {
+    background-image:-webkit-linear-gradient(135deg,#5b4ed4, #7303c0, #ec38bc, #fdeff9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 .btn:before {
-    content: "< "
+    content: ""
 }
 
 .btn:after {
-    content: " >"
+    content: ""
 }
 
 .btn {
@@ -3807,6 +3812,11 @@ fieldset[disabled] .btn {
 .btn-default {
     color: #000;
     background-color: #bbb
+}
+
+.btn-more {
+    color: #000;
+    background: linear-gradient(to right,#74ebd5, #acb6e5);
 }
 
 .btn-default:active,
