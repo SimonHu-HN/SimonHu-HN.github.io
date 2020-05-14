@@ -6,7 +6,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Test | SimonHu</title>
+  <title>Test | SimonHu's Blog</title>
   <meta name="author" content="SimonHu">
   
   <meta name="description" content="InfluxDB (Version 1.8)
@@ -16,7 +16,7 @@
 二级展开模块结构如下：
 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455.├── client│   └── v2├── cmd│   ├── influx│   ├── influxd│   ├── influx_inspect│   ├── influx_stress│   └── influx_tsm├── coordinator├── etc│   └── burn-in├── importer│   └── v8├── influxql│   ├── internal│   └── neldermead├── internal├── man├── models├── monitor│   └── diagnostics├── pkg│   ├── deep│   ├── escape│   ├── limiter│   ├── pool│   └── slices├── scripts├── services│   ├── admin│   ├── collectd│   ├── continuous_querier│   ├── graphite│   ├── httpd│   ├── meta│   ├── opentsdb│   ├── precreator│   ├── retention│   ├── snapshotter│   ├── subscriber│   └── udp├── stress│   ├── stress_test_server│   └── v2├── tcp├── tests│   ├── siege│   ├── tmux│   └── urlgen├── toml├── tsdb│   ├── engine│   └── internal└── uuid
 
-重点目录注释· client123This package provides convenience functions to read and write time series data. It uses the HTTP protocol to communicate with your InfluxDB cluster.client模块主要是在里面写了一些接口调用的语句样例，同时该模块还包含了V2子文件夹，V2包含了最新版本的client使用样例与已经写好的test文件，其不具有向前兼容性。"> 
+重点目录注释· client123This package provides convenience functions to read and write time series data. It uses the HTTP protocol to communicate with your InfluxDB cluster.client模块主要是在里面写了一些接口调用的语句样例，同时该模块还包含了V2子文件夹，V2包含了最新版本的client使用样例与已经写好的test文件，其不具有向前兼容性。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -32,7 +32,7 @@
   
     <link href="/favicon.png" rel="icon">
   
-  
+
   <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -67,11 +67,9 @@
     <div class="container">
       <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <span class="icon-bar">Menu</span>
       </button>
-	  <a class="navbar-brand" href="/">SimonHu</a>
+	  <a class="navbar-brand" href="/">Home</a>
       <div class="collapse navbar-collapse nav-menu">
 		<ul class="nav navbar-nav">
 		  
