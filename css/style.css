@@ -150,10 +150,11 @@ li i {
 }
 
 #local-search-input {
-    background-color: #000;
+    background: linear-gradient(135deg, #03001e, #7303c0, #ec38bc, #fdeff9);
     color: #fff;
     font-family: dos;
-    -webkit-text-fill-color: #bbb
+    -webkit-text-fill-color: #bbb;
+    border: solid 0.3px;
 }
 
 #local-search-result {
