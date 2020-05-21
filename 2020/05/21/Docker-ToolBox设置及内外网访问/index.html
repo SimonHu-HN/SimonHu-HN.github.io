@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Docker ToolBox设置及内外网访问 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="Docker ToolBox设置及内外网访问环境版本
+Docker-toolbox：v19.03.1
+Boot2docker：v19.03.5
+OS: Win 8.1
+前情提要在windows系列中如果想要运行docker，除了win10之后，所有的系统都需要下载docker-toolbox来实现docker的正确安装与运行。docker-toolbox的安装暂且不提，比较简单。
+有一点要注意，安装完成之后，点击Docker Quickstart Terminal来实现docker的启动，这时他会检查本地是否有正确的boot2docker.iso文件，这个文件在安装位置的DockerToolbox文件夹下是有一个默认的（但版本不是最新的），你也可以自己去这里下载最新的版本，随后将下载好的iso文件丢到C:\Users\yourusername\.docker\machine\cache下，切记位置要正确，因为.docker\machine\cache这个路径在电脑上不止有一个，还有一个是在C:\Users\yourusername\AppData下，不要放错了位置。成功放好之后，检查成功，docker就可以正确启动了。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Docker ToolBox设置及内外网访问"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> Docker ToolBox设置及内外网访问</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="Docker-ToolBox设置及内外网访问"><a href="#Docker-ToolBox设置及内外网访问" class="headerlink" title="Docker ToolBox设置及内外网访问"></a>Docker ToolBox设置及内外网访问</h1><h3 id="环境版本"><a href="#环境版本" class="headerlink" title="环境版本"></a>环境版本</h3><hr>
+<p>Docker-toolbox：<a href="https://github.com/docker/toolbox/releases/tag/v19.03.1" target="_blank" rel="noopener">v19.03.1</a></p>
+<p>Boot2docker：<a href="https://github.com/boot2docker/boot2docker/releases/tag/v19.03.5" target="_blank" rel="noopener">v19.03.5</a></p>
+<p>OS: Win 8.1</p>
+<h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><p>在windows系列中如果想要运行docker，除了win10之后，所有的系统都需要下载docker-toolbox来实现docker的正确安装与运行。docker-toolbox的安装暂且不提，比较简单。</p>
+<p>有一点要注意，安装完成之后，点击<strong>Docker Quickstart Terminal</strong>来实现docker的启动，这时他会检查本地是否有正确的boot2docker.iso文件，这个文件在安装位置的DockerToolbox文件夹下是有一个默认的（但版本不是最新的），你也可以自己去<a href="https://github.com/docker/toolbox/releases/tag/v19.03.1" target="_blank" rel="noopener">这里</a>下载最新的版本，随后将下载好的iso文件丢到<code>C:\Users\yourusername\.docker\machine\cache</code>下，切记位置要正确，因为<code>.docker\machine\cache</code>这个路径在电脑上不止有一个，还有一个是在<code>C:\Users\yourusername\AppData</code>下，不要放错了位置。成功放好之后，检查成功，docker就可以正确启动了。</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200521163240217.png" alt="大鲸鱼"></p>
+<h3 id="镜像修改问题"><a href="#镜像修改问题" class="headerlink" title="镜像修改问题"></a>镜像修改问题</h3><hr>
+<p>安装之后，需要修改docker镜像源以解决pull的速度太慢的问题，以<a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener">阿里云镜像加速服务</a>为例</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200521163507216.png" alt="image-20200521163507216"></p>
+<p>按照上图就可以解决源的问题，但一般在docker第一次启动时，default就已经被创建好了，所以你需要先↓</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker-machine stop default</span><br><span class="line">$ docker-machine rm default</span><br></pre></td></tr></table></figure>
+
+<p>把原先的机器删除之后，再按照阿里云的教程来做，不然会失败，提示default机器已存在。（当然你也可以不删除default，而是新建一个其他名字的机器也行）</p>
+<h3 id="内外网访问问题"><a href="#内外网访问问题" class="headerlink" title="内外网访问问题"></a>内外网访问问题</h3><hr>
+<p>docker-toolbox的原理是先生成一个由virtualbox模拟出的linux环境。在电脑中搜索点击virtualbox，打开之后就可以看到由toolbox生产的那个default机器</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200521164050280.png" alt="image-20200521164050280"></p>
+<p>如果以上都没问题，那么你离访问你想要的容器只差最后几步。</p>
+<p>首先你需要现在命令行里pull你想要的容器，这个过程应该很快，只要你正确配置了源</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200521164306797.png" alt="image-20200521164306797"></p>
+<p>这里我以pull prometheus（开源时序数据库，端口为9090）为例，即以下面的命令运行prometheus</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name prometheus -d -p 127.0.0.1:9090:9090 prom/prometheus</span><br></pre></td></tr></table></figure>
+
+<p>这个时候你在自己的电脑上（宿主机）输入localhost:9090是访问不到容器的，这是因为目前docker容器所运行的环境不过是virtualbox的linux虚拟环境，此时就有两种方法可以让你成功访问到你想要的容器。</p>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>先选中default机器（目标机器，这里我演示的时候用的是default），点击左上角设置，找到网络部分的端口转发规则，按照如下图方式填写，（192.168.99.100是默认的IP地址，如果你不确定你的IP地址是不是这个，你可以从<strong>Docker Quickstart Terminal</strong>启动后出现的大鲸鱼下面内找到你的默认IP地址)。按照如下规则填写之后，就可以直接在宿主机输入localhost:9090访问到想要的容器。</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200521164717285.png" alt="image-20200521164717285"></p>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>方法二过程没有那么麻烦，你不需要去配置网络，但是最后的访问可能比方法一要麻烦点。我们只需要将docker容器的启动命令修改为如下，（仍以prometheus启动为例）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### old : $ docker run --name prometheus -d -p 127.0.0.1:9090:9090 prom/prometheus</span></span><br><span class="line">$ docker run --name prometheus -d -p 9090:9090 prom/prometheus</span><br></pre></td></tr></table></figure>
+
+<p>这个时候你就可以直接在宿主机的浏览器输入192.168.99.100:9090访问到你想要的容器内容。</p>
+
+	  
+
+	</div>
+
+	
+	<span id="/2020/05/21/Docker-ToolBox%E8%AE%BE%E7%BD%AE%E5%8F%8A%E5%86%85%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE/" class="leancloud-visitors view" data-flag-title="Docker ToolBox设置及内外网访问">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/05/20/GitHub项目创建管理笔记/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-05-21 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Docker/">Docker<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/Docker/">Docker<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
