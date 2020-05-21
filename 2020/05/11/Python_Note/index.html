@@ -11,7 +11,7 @@
   
   <meta name="description" content="Python笔记与备忘录本页面记录本人在编写python项目时遇到的所有陷阱和技巧 （update forever）
 爬虫篇
-坑、陷阱
+坑、陷阱 / Pitfall
 headers构造空格从浏览器开发者工具复制下来的headers一定要注意把空格消除。不然会被视为invalid headers.
 
 
@@ -31,7 +31,8 @@ select规则书写规范123456&#34;&#34;&#34;The combinator &#39;x&#39; at posti
 
 
 
-中文字符显示不全原因在于网页大都采用UTF-8字符集，该字符集缺字严重，连国务院2013年8月19日公布的8105个通用规范汉字（均为简体汉字）都不能全部显示出来，共缺249个汉字，复其中4个二级字，245个三级字。">
+中文字符显示不全原因在于网页大都采用UTF-8字符集，该字符集缺字严重，连国务院2013年8月19日公布的8105个通用规范汉字（均为简体汉字）都不能全部显示出来，共缺249个汉字，复其中4个二级字，245个三级字。
+一种可行的解决方法是：以维基百科为例，如果你爬取的是简体页面，那么你可以尝试寻找该页面是否有繁体中文版本，繁体字被爬取下来的时候是可以正常显示的。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -147,7 +148,7 @@ select规则书写规范123456&#34;&#34;&#34;The combinator &#39;x&#39; at posti
 
 	  <h1 id="Python笔记与备忘录"><a href="#Python笔记与备忘录" class="headerlink" title="Python笔记与备忘录"></a>Python笔记与备忘录</h1><p>本页面记录本人在编写python项目时遇到的所有陷阱和技巧 （update forever）</p>
 <h2 id="爬虫篇"><a href="#爬虫篇" class="headerlink" title="爬虫篇"></a>爬虫篇</h2><hr>
-<h3 id="坑、陷阱"><a href="#坑、陷阱" class="headerlink" title="坑、陷阱"></a>坑、陷阱</h3><ol>
+<h3 id="坑、陷阱-Pitfall"><a href="#坑、陷阱-Pitfall" class="headerlink" title="坑、陷阱 / Pitfall"></a>坑、陷阱 / Pitfall</h3><ol>
 <li><h6 id="headers构造空格"><a href="#headers构造空格" class="headerlink" title="headers构造空格"></a>headers构造空格</h6><p>从浏览器开发者工具复制下来的<a href="#headers构造">headers</a>一定要注意把空格消除。不然会被视为invalid headers.</p>
 </li>
 </ol>
@@ -168,16 +169,15 @@ select规则书写规范123456&#34;&#34;&#34;The combinator &#39;x&#39; at posti
 </ol>
 <ol start="5">
 <li><h6 id="中文字符显示不全"><a href="#中文字符显示不全" class="headerlink" title="中文字符显示不全"></a>中文字符显示不全</h6><p>原因在于网页大都采用UTF-8字符集，该字符集缺字严重，连国务院2013年8月19日公布的8105个通用规范汉字（均为简体汉字）都不能全部显示出来，共缺249个汉字，复其中4个二级字，245个三级字。</p>
+<p>一种可行的解决方法是：以维基百科为例，如果你爬取的是简体页面，那么你可以尝试寻找该页面是否有繁体中文版本，繁体字被爬取下来的时候是可以正常显示的。</p>
 </li>
 </ol>
-<p>   一种可行的解决方法是：</p>
-<p>   以维基百科为例，如果你爬取的是简体页面，那么你可以尝试寻找该页面是否有繁体中文版本，繁体字被爬取下来的时候是可以正常显示的。</p>
 <ol start="6">
 <li><h6 id="Url中的"><a href="#Url中的" class="headerlink" title="Url中的#"></a>Url中的#</h6><p>在scrapy爬虫框架中会自动过滤掉#后面的内容，网络请求的时候“#”后面的参数会被忽略，解决方法<a href="#处理url中的sharp">T-4</a></p>
 </li>
 </ol>
 <hr>
-<h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><ol>
+<h3 id="技巧-Tech"><a href="#技巧-Tech" class="headerlink" title="技巧 / Tech"></a>技巧 / Tech</h3><ol>
 <li><h6 id="headers构造"><a href="#headers构造" class="headerlink" title="headers构造"></a>headers构造</h6><p>构造请求头（headers）时，可以直接从chrome的调试工具处复制真实的请求头</p>
 <p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520153948246.png" alt="image-20200520153948246"></p>
 <p>然后此时还需要一点小微操就可以正确使用，以Pycharm为例，按Ctrl+R调出Regex匹配模式</p>
