@@ -2030,6 +2030,7 @@ pre code {
 .col-xs-3,
 .col-sm-3,
 .col-md-3,
+.col-md-31,
 .col-lg-3,
 .col-xs-4,
 .col-sm-4,
@@ -2514,11 +2515,18 @@ pre code {
     }
 }
 
+ @media screen and (max-width:992px) {
+    #fixedtoc {
+        display: none;
+    }
+}
+
 @media(min-width:992px) {
 
     .col-md-1,
     .col-md-2,
     .col-md-3,
+.col-md-31,
     .col-md-4,
     .col-md-5,
     .col-md-6,
@@ -2568,6 +2576,10 @@ pre code {
     }
 
     .col-md-3 {
+        width: 25%
+    }
+
+    .col-md-31 {
         width: 25%
     }
 
