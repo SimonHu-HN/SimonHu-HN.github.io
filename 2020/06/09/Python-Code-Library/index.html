@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Python Code Library | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="convenient for code write
+爬虫代码初始化模板 
+
+作用：requests爬虫脚本初始化代码
+123456789101112131415import reimport urllibimport requestsfrom bs4 import BeautifulSoupurl=&#34;&#34;headers=&amp;#123;&amp;#125;proxies=&amp;#123;   # &#39;http&#39;: &#39;socks5://xxxx:5555&#39;,   #  &#39;https&#39;: &#39;socks5://xxxx:5555&#39;&amp;#125;result = requests.get(url_fix, proxies=proxies, headers=headers)soup = BeautifulSoup(result.content.decode(&#39;utf-8&#39;), &#39;lxml&#39;)target = soup.find(&#39;div&#39;)
+
+修正url中的# 
+
+作用：防止待爬取目标的url中具有的#等特殊字符对爬虫进行干扰
+1234567891011121314def sharp_fix(url):    &#34;&#34;&#34;    the sharp (#) will incur some troubles in url    param: url    &#34;&#34;&#34;    if url.find(&#39;#&#39;) &amp;gt;= 0:        strs = url.split(&#39;#&#39;)        if is_chinese(strs[1]):            fix = urllib.parse.quote(strs[1])            fix = strs[0] + &#39;%23&#39; + fix            return fix        return url    return url
+
+判断字符串否包含中文">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Python Code Library"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> Python Code Library</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>爬虫代码初始化模板</strong> </p>
+<hr>
+<p><em>作用：requests爬虫脚本初始化代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">""</span></span><br><span class="line">headers=&#123;&#125;</span><br><span class="line">proxies=&#123;</span><br><span class="line">   <span class="comment"># 'http': 'socks5://xxxx:5555',</span></span><br><span class="line">   <span class="comment">#  'https': 'socks5://xxxx:5555'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result = requests.get(url_fix, proxies=proxies, headers=headers)</span><br><span class="line">soup = BeautifulSoup(result.content.decode(<span class="string">'utf-8'</span>), <span class="string">'lxml'</span>)</span><br><span class="line">target = soup.find(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修正url中的#</strong> </p>
+<hr>
+<p><em>作用：防止待爬取目标的url中具有的#等特殊字符对爬虫进行干扰</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharp_fix</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    the sharp (#) will incur some troubles in url</span></span><br><span class="line"><span class="string">    param: url</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> url.find(<span class="string">'#'</span>) &gt;= <span class="number">0</span>:</span><br><span class="line">        strs = url.split(<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">if</span> is_chinese(strs[<span class="number">1</span>]):</span><br><span class="line">            fix = urllib.parse.quote(strs[<span class="number">1</span>])</span><br><span class="line">            fix = strs[<span class="number">0</span>] + <span class="string">'%23'</span> + fix</span><br><span class="line">            <span class="keyword">return</span> fix</span><br><span class="line">        <span class="keyword">return</span> url</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+
+<p><strong>判断字符串否包含中文</strong> </p>
+<hr>
+<p><em>作用：对字符串是否包含有中文字符进行判断</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_chinese</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    check whether the string includes the Chinese</span></span><br><span class="line"><span class="string">    param: string</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">u'\u4e00'</span> &lt;= ch &lt;= <span class="string">u'\u9fff'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+
+	  
+
+	</div>
+
+	
+	<span id="/2020/06/09/Python-Code-Library/" class="leancloud-visitors view" data-flag-title="Python Code Library">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/06/09/Java-Code-Library/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-06-09
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Python/">Python<span>2</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/Pyton-code-library/">Pyton code library<span>1</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
