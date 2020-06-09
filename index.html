@@ -191,6 +191,62 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2020/06/09/Java-Code-Library/" > Java Code Library </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-06-09  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>Java http post 代码(传递数据，使用Body传递)</strong> </p>
+<hr>
+<p><em>作用：使用java发起post请求,附带data于请求的Body中（非kv参数）</em></p>
+<p><em>实例：模拟curl功能，可以将某些依托curl完成的数据库数据插入指令转换为java实现</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">http_post</span><span class="params">(String url, String port, String path, String content)</span> </span>&#123;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Description</span>: ingest a address and send the content to it.</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Example</span> http://localhost:8428/write + content</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> url url address</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> port remote address port</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> path remote address path</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> content metric data</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       String result = <span class="string">""</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           url = url + <span class="string">":"</span> + port + <span class="string">"/"</span> + path;</span><br><span class="line">           System.out.println(url);</span><br><span class="line">           URL realUrl = <span class="keyword">new</span> URL(url);</span><br><span class="line">           URLConnection conn = realUrl.openConnection();</span><br><span class="line">           conn.setRequestProperty(<span class="string">"accept"</span>, <span class="string">"*/*"</span>);</span><br><span class="line">           conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">           conn.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">           conn.setDoInput(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">           <span class="comment">// fill and send content</span></span><br><span class="line">           DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(conn.getOutputStream());</span><br><span class="line">           dos.write(content.getBytes());</span><br><span class="line">           dos.flush();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// get response (Do not comment this line, or the data insertion will be failed)</span></span><br><span class="line">           BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(conn.getInputStream()));</span><br><span class="line">           String line;</span><br><span class="line">           <span class="keyword">while</span> ((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">             result += line;</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(result);<span class="comment">//</span></span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           System.out.println(<span class="string">"Exception,"</span> + e.getMessage());</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+	
+
+	</div>
+  <a type="button" href="/2020/06/09/Java-Code-Library/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>Java http post 代码(传递数据，使用Body传递)</strong> </p>
+<hr>
+<p><em>作用：使用java发起post请求,附带data于请求的Body中（非kv参数）</em></p>
+<p><em>实例：模拟curl功能，可以将某些依托curl完成的数据库数据插入指令转换为java实现</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">http_post</span><span class="params">(String url, String port, String path, String content)</span> </span>&#123;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Description</span>: ingest a address and send the content to it.</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Example</span> http://localhost:8428/write + content</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> url url address</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> port remote address port</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> path remote address path</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> content metric data</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       String result = <span class="string">""</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           url = url + <span class="string">":"</span> + port + <span class="string">"/"</span> + path;</span><br><span class="line">           System.out.println(url);</span><br><span class="line">           URL realUrl = <span class="keyword">new</span> URL(url);</span><br><span class="line">           URLConnection conn = realUrl.openConnection();</span><br><span class="line">           conn.setRequestProperty(<span class="string">"accept"</span>, <span class="string">"*/*"</span>);</span><br><span class="line">           conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">           conn.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">           conn.setDoInput(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">           <span class="comment">// fill and send content</span></span><br><span class="line">           DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(conn.getOutputStream());</span><br><span class="line">           dos.write(content.getBytes());</span><br><span class="line">           dos.flush();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// get response (Do not comment this line, or the data insertion will be failed)</span></span><br><span class="line">           BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(conn.getInputStream()));</span><br><span class="line">           String line;</span><br><span class="line">           <span class="keyword">while</span> ((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">             result += line;</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(result);<span class="comment">//</span></span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           System.out.println(<span class="string">"Exception,"</span> + e.getMessage());</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/06/09/Java-Code-Library/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2020/05/21/Docker-ToolBox设置及内外网访问/" > Docker ToolBox设置及内外网访问 </a>
 		</h3>
 		</div>
@@ -456,6 +512,8 @@
 		
 			<li><a href="/categories/GitHub/">GitHub<span>1</span></a></li>
 		
+			<li><a href="/categories/Java/">Java<span>1</span></a></li>
+		
 			<li><a href="/categories/Python/">Python<span>1</span></a></li>
 		
 		</ul>
@@ -467,15 +525,17 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>2</span></a></li>
-		
-			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
+			<li><a href="/tags/Java-code-library/">Java code library<span>1</span></a></li>
 		
 			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
 		
 			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
 		
 			<li><a href="/tags/Python/">Python<span>1</span></a></li>
+		
+			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
+		
+			<li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>2</span></a></li>
 		
 		 
 		</ul>
@@ -487,6 +547,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/06/09/Java-Code-Library/" ><i class="fa fa-file-o"></i>Java Code Library</a>
+      </li>
     
       <li>
         <a href="/2020/05/21/Docker-ToolBox设置及内外网访问/" ><i class="fa fa-file-o"></i>Docker ToolBox设置及内外网访问</a>

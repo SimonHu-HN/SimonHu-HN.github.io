@@ -1,0 +1,295 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Java Code Library | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="convenient for code write
+Java http post 代码(传递数据，使用Body传递) 
+
+作用：使用java发起post请求,附带data于请求的Body中（非kv参数）
+实例：模拟curl功能，可以将某些依托curl完成的数据库数据插入指令转换为java实现
+12345678910111213141516171819202122232425262728293031323334353637public static void http_post(String url, String port, String path, String content) &amp;#123;       /**        * @Description: ingest a address and send the content to it.        * @Example http://localhost:8428/write + content        * @param url url address        * @param port remote address port        * @param path remote address path        * @param content metric data        */       String result = &#34;&#34;;       try &amp;#123;           url = url + &#34;:&#34; + port + &#34;/&#34; + path;           System.out.println(url);           URL realUrl = new URL(url);           URLConnection conn = realUrl.openConnection();           conn.setRequestProperty(&#34;accept&#34;, &#34;*/*&#34;);           conn.setRequestProperty(&#34;Content-Type&#34;, &#34;application/x-www-form-urlencoded&#34;);           conn.setDoOutput(true);           conn.setDoInput(true);           // fill and send content           DataOutputStream dos = new DataOutputStream(conn.getOutputStream());           dos.write(content.getBytes());           dos.flush();           // get response (Do not comment this line, or the data insertion will be failed)           BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));           String line;           while ((line = in.readLine()) != null) &amp;#123;             result += line;           &amp;#125;           System.out.println(result);//       &amp;#125; catch (Exception e) &amp;#123;           System.out.println(&#34;Exception,&#34; + e.getMessage());           e.printStackTrace();       &amp;#125;   &amp;#125;">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Java Code Library"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> Java Code Library</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>Java http post 代码(传递数据，使用Body传递)</strong> </p>
+<hr>
+<p><em>作用：使用java发起post请求,附带data于请求的Body中（非kv参数）</em></p>
+<p><em>实例：模拟curl功能，可以将某些依托curl完成的数据库数据插入指令转换为java实现</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">http_post</span><span class="params">(String url, String port, String path, String content)</span> </span>&#123;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Description</span>: ingest a address and send the content to it.</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Example</span> http://localhost:8428/write + content</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> url url address</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> port remote address port</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> path remote address path</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> content metric data</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       String result = <span class="string">""</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           url = url + <span class="string">":"</span> + port + <span class="string">"/"</span> + path;</span><br><span class="line">           System.out.println(url);</span><br><span class="line">           URL realUrl = <span class="keyword">new</span> URL(url);</span><br><span class="line">           URLConnection conn = realUrl.openConnection();</span><br><span class="line">           conn.setRequestProperty(<span class="string">"accept"</span>, <span class="string">"*/*"</span>);</span><br><span class="line">           conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">           conn.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">           conn.setDoInput(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">           <span class="comment">// fill and send content</span></span><br><span class="line">           DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(conn.getOutputStream());</span><br><span class="line">           dos.write(content.getBytes());</span><br><span class="line">           dos.flush();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// get response (Do not comment this line, or the data insertion will be failed)</span></span><br><span class="line">           BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(conn.getInputStream()));</span><br><span class="line">           String line;</span><br><span class="line">           <span class="keyword">while</span> ((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">             result += line;</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(result);<span class="comment">//</span></span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           System.out.println(<span class="string">"Exception,"</span> + e.getMessage());</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/06/09/Java-Code-Library/" class="leancloud-visitors view" data-flag-title="Java Code Library">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/05/21/Docker-ToolBox设置及内外网访问/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-06-09
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Java/">Java<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/Java-code-library/">Java code library<span>1</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
