@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>SubLime 使用技巧|故障解决方案 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="date: 2020-07-07 17:07:00SubLime 使用技巧|故障解决方案技巧
+故障解决
+· 中文乱码情况一：Western 与 UTF-8冲突
+某些文本文件可能由notepad书写，notepad处理中文的方式一般是将其编码为Western (Windows 1252)。 如果这样的文件日后用sublime打开的话，中文可能在第一时间呈现乱码状态，（如下图）。但一段时间后sublime可以自动转换为正确的中文显示。但是，如果你在sublime仍处于中文乱码的情况下就匆忙输入一些中文并按下保存（sublime会提示编码冲突），或者直接保存，那么此时的中文乱码也被保存了，日后再次打开sublime，它就无法将这些乱码转换显示为正确的中文。
+解决方案：">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="SubLime 使用技巧|故障解决方案"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> SubLime 使用技巧|故障解决方案</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h2 id="date-2020-07-07-17-07-00"><a href="#date-2020-07-07-17-07-00" class="headerlink" title="date: 2020-07-07 17:07:00"></a>date: 2020-07-07 17:07:00</h2><h1 id="SubLime-使用技巧-故障解决方案"><a href="#SubLime-使用技巧-故障解决方案" class="headerlink" title="SubLime 使用技巧|故障解决方案"></a>SubLime 使用技巧|故障解决方案</h1><h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><hr>
+<h3 id="故障解决"><a href="#故障解决" class="headerlink" title="故障解决"></a>故障解决</h3><hr>
+<h4 id="·-中文乱码"><a href="#·-中文乱码" class="headerlink" title="· 中文乱码"></a>· 中文乱码</h4><p>情况一：Western 与 UTF-8冲突</p>
+<p>某些文本文件可能由notepad书写，notepad处理中文的方式一般是将其编码为<code>Western (Windows 1252)</code>。 如果这样的文件日后用sublime打开的话，中文可能在第一时间呈现乱码状态，（如下图）。但一段时间后sublime可以自动转换为正确的中文显示。但是，如果你在sublime仍处于中文乱码的情况下就匆忙输入一些中文并按下保存（sublime会提示<strong>编码冲突</strong>），或者直接保存，那么此时的中文乱码也被保存了，日后再次打开sublime，它就无法将这些乱码转换显示为正确的中文。</p>
+<p>解决方案：</p>
+<p>如图操作，先把文本文档重新保存为原编码，再重新打开就可以了。</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200707172620978.png" alt="image-20200707172620978"></p>
+<p>情况二：<a href="https://www.cnblogs.com/memset/archive/2013/05/29/3106999.html" target="_blank" rel="noopener">中文被编码成1个汉字4个字节</a></p>
+
+	  
+
+	</div>
+
+	
+	<span id="/2020/07/07/SubLime-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E6%95%85%E9%9A%9C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="leancloud-visitors view" data-flag-title="SubLime 使用技巧|故障解决方案">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/06/09/Python-Code-Library/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-07-07
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Sublime/">Sublime<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>3</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#date-2020-07-07-17-07-00"><span class="toc-article-text">date: 2020-07-07 17:07:00</span></a></li></ol></li><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#SubLime-使用技巧-故障解决方案"><span class="toc-article-text">SubLime 使用技巧|故障解决方案</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#技巧"><span class="toc-article-text">技巧</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#故障解决"><span class="toc-article-text">故障解决</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-4"><a class="toc-article-link" href="#·-中文乱码"><span class="toc-article-text">· 中文乱码</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

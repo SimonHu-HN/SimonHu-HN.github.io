@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>SubLime 使用技巧|故障解决方案</title>
+      <link href="/2020/07/07/SubLime-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E6%95%85%E9%9A%9C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>/2020/07/07/SubLime-%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E6%95%85%E9%9A%9C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      
+        <content type="html"><![CDATA[<h2 id="date-2020-07-07-17-07-00"><a href="#date-2020-07-07-17-07-00" class="headerlink" title="date: 2020-07-07 17:07:00"></a>date: 2020-07-07 17:07:00</h2><h1 id="SubLime-使用技巧-故障解决方案"><a href="#SubLime-使用技巧-故障解决方案" class="headerlink" title="SubLime 使用技巧|故障解决方案"></a>SubLime 使用技巧|故障解决方案</h1><h3 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h3><hr><h3 id="故障解决"><a href="#故障解决" class="headerlink" title="故障解决"></a>故障解决</h3><hr><h4 id="·-中文乱码"><a href="#·-中文乱码" class="headerlink" title="· 中文乱码"></a>· 中文乱码</h4><p>情况一：Western 与 UTF-8冲突</p><p>某些文本文件可能由notepad书写，notepad处理中文的方式一般是将其编码为<code>Western (Windows 1252)</code>。 如果这样的文件日后用sublime打开的话，中文可能在第一时间呈现乱码状态，（如下图）。但一段时间后sublime可以自动转换为正确的中文显示。但是，如果你在sublime仍处于中文乱码的情况下就匆忙输入一些中文并按下保存（sublime会提示<strong>编码冲突</strong>），或者直接保存，那么此时的中文乱码也被保存了，日后再次打开sublime，它就无法将这些乱码转换显示为正确的中文。</p><p>解决方案：</p><p>如图操作，先把文本文档重新保存为原编码，再重新打开就可以了。</p><p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200707172620978.png" alt="image-20200707172620978"></p><p>情况二：<a href="https://www.cnblogs.com/memset/archive/2013/05/29/3106999.html" target="_blank" rel="noopener">中文被编码成1个汉字4个字节</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Sublime </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 笔记|备忘录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python Code Library</title>
       <link href="/2020/06/09/Python-Code-Library/"/>
       <url>/2020/06/09/Python-Code-Library/</url>
