@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.8.3-8.9一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.8.3-8.9一周安全知识动态转自
+浏览器漏洞相关•Compromising the macOS Kernel through Safari by Chaining Six Vulnerabilities
+1https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;sslab-gatech&amp;#x2F;pwn2own2020Pwn2own2020 macOS利用链
+
+•0day Exploit Root Cause Analyses
+1https:&amp;#x2F;&amp;#x2F;googleprojectzero.blogspot.com&amp;#x2F;p&amp;#x2F;rca.html三个在野0day：CVE-2019-17026(Firefox)、CVE-2020-0674(InternetExplorer)、CVE-2020-6820(Firefox)分析
+
+•Understanding Web Security Checks in Firefox
+1https:&amp;#x2F;&amp;#x2F;blog.mozilla.org&amp;#x2F;attack-and-defense&amp;#x2F;2020&amp;#x2F;08&amp;#x2F;05&amp;#x2F;understanding-web-security-checks-in-firefox-part-2&amp;#x2F;firefox中的WebSecurityChecks机制分析
+
+操作系统漏洞相关">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.8.3-8.9一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.8.3-8.9一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-8-3-8-9一周安全知识动态"><a href="#2020-8-3-8-9一周安全知识动态" class="headerlink" title="2020.8.3-8.9一周安全知识动态"></a>2020.8.3-8.9一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Compromising the macOS Kernel through Safari by Chaining Six Vulnerabilities</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;sslab-gatech&#x2F;pwn2own2020Pwn2own2020 macOS利用链</span><br></pre></td></tr></table></figure>
+
+<p>•0day Exploit Root Cause Analyses</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;p&#x2F;rca.html三个在野0day：CVE-2019-17026(Firefox)、CVE-2020-0674(InternetExplorer)、CVE-2020-6820(Firefox)分析</span><br></pre></td></tr></table></figure>
+
+<p>•Understanding Web Security Checks in Firefox</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.mozilla.org&#x2F;attack-and-defense&#x2F;2020&#x2F;08&#x2F;05&#x2F;understanding-web-security-checks-in-firefox-part-2&#x2F;firefox中的WebSecurityChecks机制分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•Exploiting Android Messengers with WebRTC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;08&#x2F;exploiting-android-messengers-part-1.html</span><br><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;08&#x2F;exploiting-android-messengers-part-2.html</span><br><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;08&#x2F;exploiting-android-messengers-part-3.html</span><br><span class="line">通过WebRTC攻击AndroidMessengers</span><br></pre></td></tr></table></figure>
+
+<p>•Group Policies Going Rogue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.cyberark.com&#x2F;resources&#x2F;threat-research-blog&#x2F;group-policies-going-rogueWindowsgroup policy object(GPO) 机制分析以及漏洞挖掘</span><br></pre></td></tr></table></figure>
+
+<p>•TiYunZong-An-Exploit-Chain-to-Remotely-Root-Modern-Android-Devices</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;secmob&#x2F;TiYunZong-An-Exploit-Chain-to-Remotely-Root-Modern-Android-Devices梯云纵漏洞资料</span><br></pre></td></tr></table></figure>
+
+<p>•Breaking Samsung’s Root of Trust: Exploiting Samsung S10 Secure Boot</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;t.co&#x2F;An06bgtX76?amp&#x3D;1blackhat 2020议题《BreakingSamsung&#39;s Root of Trust: Exploiting Samsung S10 Secure Boot》slide</span><br></pre></td></tr></table></figure>
+
+<p>•iOS Kernel PAC, One Year Later</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;bazad.github.io&#x2F;presentations&#x2F;BlackHat-USA-2020-iOS_Kernel_PAC_One_Year_Later.pdfblackhat202议题《iOS Kernel PAC, OneYearLater》slide</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•MMS Exploit Part</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;07&#x2F;mms-exploit-part-1-introduction-to-qmage.html</span><br><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;07&#x2F;mms-exploit-part-2-effective-fuzzing-qmage.html</span><br><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;07&#x2F;mms-exploit-part-3-constructing-primitives.html</span><br><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;08&#x2F;mms-exploit-part-4-completing-aslr-oracle.htmlSamsung image codec</span><br><span class="line">漏洞攻击面分析到漏洞挖掘与利用的过程</span><br></pre></td></tr></table></figure>
+
+<p>•The danger of world writable NFS shares</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@securityshenaningans&#x2F;the-danger-of-world-writable-nfs-shares-39ecfe868468NFS共享的危害</span><br></pre></td></tr></table></figure>
+
+<p>•Ghostscript SAFER Sandbox Breakout (CVE-2020-15900)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;insomniasec.com&#x2F;blog&#x2F;ghostscript-cve-2020-15900CVE-2020-15900Ghostscript漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Path Traversal Vulnerability in SecurEnvoy impacts on remote command execution through file upload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sidechannel.tempestsi.com&#x2F;path-traversal-vulnerability-in-securenvoy-impacts-on-remote-command-execution-through-file-upload-ec2e731bd50aSecurMail上传文件漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•How i find Blind Remote Code Execution vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@viveik.chauhan&#x2F;blind-remote-code-execution-b9c4e119f7c3blind rce分析</span><br></pre></td></tr></table></figure>
+
+<p>•Hacking Cisco SD-WAN vManage 19.2.2 — From CSRF to Remote Code Execution</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;walmartglobaltech&#x2F;hacking-cisco-sd-wan-vmanage-19-2-2-from-csrf-to-remote-code-execution-5f73e2913e77Cisco SD-WAN vManage 19.2.2从csrf到rce漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Pwn2Own -&gt; Xxe2Rce</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;muffsec.com&#x2F;blog&#x2F;?p&#x3D;608Pwn2Own上的Xxe到Rce漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Vulnerabilities in the Openfire Admin Console</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;swarm.ptsecurity.com&#x2F;openfire-admin-console&#x2F;OpenfireAdminConsole漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•AST Injection, Prototype Pollution to RCE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.p6.is&#x2F;AST-Injection&#x2F;AST注入，原型链漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•Don’t be silly – it’s only a lightbulb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;research.checkpoint.com&#x2F;2020&#x2F;dont-be-silly-its-only-a-lightbulb&#x2F;ZigBee照明设备分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•Fuzzing afdko with AFL in 32bit Mode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hardik05.wordpress.com&#x2F;2020&#x2F;08&#x2F;08&#x2F;fuzzing-afdko-with-afl-in-32bit-mode&#x2F;通过afl fuzz afdko</span><br></pre></td></tr></table></figure>
+
+<p>•Capturing memory corruptions with symbolic execution - Introduction to KLEE (part 3)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;XLtoWNbnfK0通过执行进行漏洞挖掘</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•Bypassing internet connectivity and copy-paste restriction to Infiltrating malicious data</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.mannulinux.org&#x2F;2020&#x2F;08&#x2F;bypassing-internet-connectivity-and.html绕过恶意数据传输限制</span><br></pre></td></tr></table></figure>
+
+<p>•Intel, ARM, IBM, AMD Processors Vulnerable to New Side-Channel Attacks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;modernnetsec.io&#x2F;intel-arm-ibm-amd-processors-vulnerable-to-new-side-channel-attacks&#x2F;对于cpu处理器侧信道攻击的方法</span><br></pre></td></tr></table></figure>
+
+<p>•Over 400 vulnerabilities on Qualcomm’s Snapdragon chip threaten mobile phones’ usability worldwide</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.checkpoint.com&#x2F;2020&#x2F;08&#x2F;06&#x2F;achilles-small-chip-big-peril&#x2F;DigitalSignal处理器漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•DEFCON 2020 Live Notes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;nullsweep.com&#x2F;defcon-2020-live-notes&#x2F;defcon2020会议议题笔记</span><br></pre></td></tr></table></figure>
+
+	  
+
+	</div>
+
+	
+	<span id="/2020/09/29/%5B%E8%BD%AC%5D2020.8.3-8.9%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.8.3-8.9一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/09/29/[转]2020.7.27-8.2安全知识总结/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/09/29/[转]2020.8.17-8.23安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-09-29
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/转载-Security/">转载-Security<span>8</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>11</span></a></li> <li><a href="/tags/Security/">Security<span>8</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-8-3-8-9一周安全知识动态"><span class="toc-article-text">2020.8.3-8.9一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

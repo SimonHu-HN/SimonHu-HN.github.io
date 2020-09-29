@@ -1,0 +1,669 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Page 2 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <div class="page-header logo">
+  <h1><span class="blink-slow">[</span>SimonHu<span class="blink-slow">]</span></h1>
+</div>
+
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan">
+
+
+		<i class="fa fa-code blink-slow"></i>
+
+		ls -an | grep &lt;my life&gt;
+
+</div>
+
+		<div id="top_search"></div>
+		<div class="mypage">
+		
+		<!-- title and entry -->
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2020/06/09/Python-Code-Library/" > Python Code Library </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-06-09  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>爬虫代码初始化模板</strong> </p>
+<hr>
+<p><em>作用：requests爬虫脚本初始化代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">""</span></span><br><span class="line">headers=&#123;&#125;</span><br><span class="line">proxies=&#123;</span><br><span class="line">   <span class="comment"># 'http': 'socks5://xxxx:5555',</span></span><br><span class="line">   <span class="comment">#  'https': 'socks5://xxxx:5555'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result = requests.get(url_fix, proxies=proxies, headers=headers)</span><br><span class="line">soup = BeautifulSoup(result.content.decode(<span class="string">'utf-8'</span>), <span class="string">'lxml'</span>)</span><br><span class="line">target = soup.find(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修正url中的#</strong> </p>
+<hr>
+<p><em>作用：防止待爬取目标的url中具有的#等特殊字符对爬虫进行干扰</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharp_fix</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    the sharp (#) will incur some troubles in url</span></span><br><span class="line"><span class="string">    param: url</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> url.find(<span class="string">'#'</span>) &gt;= <span class="number">0</span>:</span><br><span class="line">        strs = url.split(<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">if</span> is_chinese(strs[<span class="number">1</span>]):</span><br><span class="line">            fix = urllib.parse.quote(strs[<span class="number">1</span>])</span><br><span class="line">            fix = strs[<span class="number">0</span>] + <span class="string">'%23'</span> + fix</span><br><span class="line">            <span class="keyword">return</span> fix</span><br><span class="line">        <span class="keyword">return</span> url</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+
+<p><strong>判断字符串否包含中文</strong> </p>
+	
+
+	</div>
+  <a type="button" href="/2020/06/09/Python-Code-Library/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>爬虫代码初始化模板</strong> </p>
+<hr>
+<p><em>作用：requests爬虫脚本初始化代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">""</span></span><br><span class="line">headers=&#123;&#125;</span><br><span class="line">proxies=&#123;</span><br><span class="line">   <span class="comment"># 'http': 'socks5://xxxx:5555',</span></span><br><span class="line">   <span class="comment">#  'https': 'socks5://xxxx:5555'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result = requests.get(url_fix, proxies=proxies, headers=headers)</span><br><span class="line">soup = BeautifulSoup(result.content.decode(<span class="string">'utf-8'</span>), <span class="string">'lxml'</span>)</span><br><span class="line">target = soup.find(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修正url中的#</strong> </p>
+<hr>
+<p><em>作用：防止待爬取目标的url中具有的#等特殊字符对爬虫进行干扰</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharp_fix</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    the sharp (#) will incur some troubles in url</span></span><br><span class="line"><span class="string">    param: url</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> url.find(<span class="string">'#'</span>) &gt;= <span class="number">0</span>:</span><br><span class="line">        strs = url.split(<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">if</span> is_chinese(strs[<span class="number">1</span>]):</span><br><span class="line">            fix = urllib.parse.quote(strs[<span class="number">1</span>])</span><br><span class="line">            fix = strs[<span class="number">0</span>] + <span class="string">'%23'</span> + fix</span><br><span class="line">            <span class="keyword">return</span> fix</span><br><span class="line">        <span class="keyword">return</span> url</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+
+<p><strong>判断字符串否包含中文</strong> </p>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/06/09/Python-Code-Library/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2020/06/09/Java-Code-Library/" > Java Code Library </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-06-09  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>Java http post 代码(传递数据，使用Body传递)</strong> </p>
+<hr>
+<p><em>作用：使用java发起post请求,附带data于请求的Body中（非kv参数）</em></p>
+<p><em>实例：模拟curl功能，可以将某些依托curl完成的数据库数据插入指令转换为java实现</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">http_post</span><span class="params">(String url, String port, String path, String content)</span> </span>&#123;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Description</span>: ingest a address and send the content to it.</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Example</span> http://localhost:8428/write + content</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> url url address</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> port remote address port</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> path remote address path</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> content metric data</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       String result = <span class="string">""</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           url = url + <span class="string">":"</span> + port + <span class="string">"/"</span> + path;</span><br><span class="line">           System.out.println(url);</span><br><span class="line">           URL realUrl = <span class="keyword">new</span> URL(url);</span><br><span class="line">           URLConnection conn = realUrl.openConnection();</span><br><span class="line">           conn.setRequestProperty(<span class="string">"accept"</span>, <span class="string">"*/*"</span>);</span><br><span class="line">           conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">           conn.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">           conn.setDoInput(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">           <span class="comment">// fill and send content</span></span><br><span class="line">           DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(conn.getOutputStream());</span><br><span class="line">           dos.write(content.getBytes());</span><br><span class="line">           dos.flush();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// get response (Do not comment this line, or the data insertion will be failed)</span></span><br><span class="line">           BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(conn.getInputStream()));</span><br><span class="line">           String line;</span><br><span class="line">           <span class="keyword">while</span> ((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">             result += line;</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(result);<span class="comment">//</span></span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           System.out.println(<span class="string">"Exception,"</span> + e.getMessage());</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+	
+
+	</div>
+  <a type="button" href="/2020/06/09/Java-Code-Library/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>Java http post 代码(传递数据，使用Body传递)</strong> </p>
+<hr>
+<p><em>作用：使用java发起post请求,附带data于请求的Body中（非kv参数）</em></p>
+<p><em>实例：模拟curl功能，可以将某些依托curl完成的数据库数据插入指令转换为java实现</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">http_post</span><span class="params">(String url, String port, String path, String content)</span> </span>&#123;</span><br><span class="line">       <span class="comment">/**</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Description</span>: ingest a address and send the content to it.</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@Example</span> http://localhost:8428/write + content</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> url url address</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> port remote address port</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> path remote address path</span></span><br><span class="line"><span class="comment">        * <span class="doctag">@param</span> content metric data</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       String result = <span class="string">""</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           url = url + <span class="string">":"</span> + port + <span class="string">"/"</span> + path;</span><br><span class="line">           System.out.println(url);</span><br><span class="line">           URL realUrl = <span class="keyword">new</span> URL(url);</span><br><span class="line">           URLConnection conn = realUrl.openConnection();</span><br><span class="line">           conn.setRequestProperty(<span class="string">"accept"</span>, <span class="string">"*/*"</span>);</span><br><span class="line">           conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line">           conn.setDoOutput(<span class="keyword">true</span>);</span><br><span class="line">           conn.setDoInput(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">           <span class="comment">// fill and send content</span></span><br><span class="line">           DataOutputStream dos = <span class="keyword">new</span> DataOutputStream(conn.getOutputStream());</span><br><span class="line">           dos.write(content.getBytes());</span><br><span class="line">           dos.flush();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// get response (Do not comment this line, or the data insertion will be failed)</span></span><br><span class="line">           BufferedReader in = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(conn.getInputStream()));</span><br><span class="line">           String line;</span><br><span class="line">           <span class="keyword">while</span> ((line = in.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">             result += line;</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(result);<span class="comment">//</span></span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           System.out.println(<span class="string">"Exception,"</span> + e.getMessage());</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/06/09/Java-Code-Library/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2020/05/21/Docker-ToolBox设置及内外网访问/" > Docker ToolBox设置及内外网访问 </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-05-21  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Docker-ToolBox设置及内外网访问"><a href="#Docker-ToolBox设置及内外网访问" class="headerlink" title="Docker ToolBox设置及内外网访问"></a>Docker ToolBox设置及内外网访问</h1><h3 id="环境版本"><a href="#环境版本" class="headerlink" title="环境版本"></a>环境版本</h3><hr>
+<p>Docker-toolbox：<a href="https://github.com/docker/toolbox/releases/tag/v19.03.1" target="_blank" rel="noopener">v19.03.1</a></p>
+<p>Boot2docker：<a href="https://github.com/boot2docker/boot2docker/releases/tag/v19.03.5" target="_blank" rel="noopener">v19.03.5</a></p>
+<p>OS: Win 8.1</p>
+<h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><hr>
+<p>在windows系列中如果想要运行docker，除了win10之后，所有的系统都需要下载docker-toolbox来实现docker的正确安装与运行。docker-toolbox的安装暂且不提，比较简单。</p>
+<p>有一点要注意，安装完成之后，点击<strong>Docker Quickstart Terminal</strong>来实现docker的启动，这时他会检查本地是否有正确的boot2docker.iso文件，这个文件在安装位置的DockerToolbox文件夹下是有一个默认的（但版本不是最新的），你也可以自己去<a href="https://github.com/docker/toolbox/releases/tag/v19.03.1" target="_blank" rel="noopener">这里</a>下载最新的版本，随后将下载好的iso文件丢到<code>C:\Users\yourusername\.docker\machine\cache</code>下，切记位置要正确，因为<code>.docker\machine\cache</code>这个路径在电脑上不止有一个，还有一个是在<code>C:\Users\yourusername\AppData</code>下，不要放错了位置。成功放好之后，检查成功，docker就可以正确启动了。</p>
+	
+
+	</div>
+  <a type="button" href="/2020/05/21/Docker-ToolBox设置及内外网访问/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Docker-ToolBox设置及内外网访问"><a href="#Docker-ToolBox设置及内外网访问" class="headerlink" title="Docker ToolBox设置及内外网访问"></a>Docker ToolBox设置及内外网访问</h1><h3 id="环境版本"><a href="#环境版本" class="headerlink" title="环境版本"></a>环境版本</h3><hr>
+<p>Docker-toolbox：<a href="https://github.com/docker/toolbox/releases/tag/v19.03.1" target="_blank" rel="noopener">v19.03.1</a></p>
+<p>Boot2docker：<a href="https://github.com/boot2docker/boot2docker/releases/tag/v19.03.5" target="_blank" rel="noopener">v19.03.5</a></p>
+<p>OS: Win 8.1</p>
+<h3 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h3><hr>
+<p>在windows系列中如果想要运行docker，除了win10之后，所有的系统都需要下载docker-toolbox来实现docker的正确安装与运行。docker-toolbox的安装暂且不提，比较简单。</p>
+<p>有一点要注意，安装完成之后，点击<strong>Docker Quickstart Terminal</strong>来实现docker的启动，这时他会检查本地是否有正确的boot2docker.iso文件，这个文件在安装位置的DockerToolbox文件夹下是有一个默认的（但版本不是最新的），你也可以自己去<a href="https://github.com/docker/toolbox/releases/tag/v19.03.1" target="_blank" rel="noopener">这里</a>下载最新的版本，随后将下载好的iso文件丢到<code>C:\Users\yourusername\.docker\machine\cache</code>下，切记位置要正确，因为<code>.docker\machine\cache</code>这个路径在电脑上不止有一个，还有一个是在<code>C:\Users\yourusername\AppData</code>下，不要放错了位置。成功放好之后，检查成功，docker就可以正确启动了。</p>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/05/21/Docker-ToolBox设置及内外网访问/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2020/05/20/GitHub项目创建管理笔记/" > GitHub项目创建管理笔记 </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-05-20  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="GitHub项目创建管理笔记"><a href="#GitHub项目创建管理笔记" class="headerlink" title="GitHub项目创建管理笔记"></a>GitHub项目创建管理笔记</h1><h3 id="pull-requests-与-merge"><a href="#pull-requests-与-merge" class="headerlink" title="pull requests 与 merge"></a>pull requests 与 merge</h3><hr>
+<p>如果你想对他人的仓库代码有所贡献，首先你需要fork别人的仓库，随后将内容git clone到本地进行修改。以上过程推荐在Github Desktop的辅助下进行，（即使你命令行能力很强，desktop都有着很好的便捷性）</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520171045263.png" alt="image-20200520171045263"></p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520171403086.png" alt="image-20200520171403086"></p>
+<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520171459828.png" alt="image-20200520171459828" style="zoom: 67%;">
+
+<p>通过上面三张图所展示的步骤，就完成了准备阶段。此时你就可以在本地直接对项目进行修改，你所对此项目做出的增删改都会被github desktop记录，位置如下图：</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520172605812.png" alt="image-20200520172605812"></p>
+<p>当你确认你所有的修改都是符合你的意图的之后就可以点击commit，输入summary，description （summary是你对这次代码修改内容的一个概括性标题，description是详细描述，这些都是为了方便代码原有者最快了解你的修改意图）</p>
+	
+
+	</div>
+  <a type="button" href="/2020/05/20/GitHub项目创建管理笔记/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="GitHub项目创建管理笔记"><a href="#GitHub项目创建管理笔记" class="headerlink" title="GitHub项目创建管理笔记"></a>GitHub项目创建管理笔记</h1><h3 id="pull-requests-与-merge"><a href="#pull-requests-与-merge" class="headerlink" title="pull requests 与 merge"></a>pull requests 与 merge</h3><hr>
+<p>如果你想对他人的仓库代码有所贡献，首先你需要fork别人的仓库，随后将内容git clone到本地进行修改。以上过程推荐在Github Desktop的辅助下进行，（即使你命令行能力很强，desktop都有着很好的便捷性）</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520171045263.png" alt="image-20200520171045263"></p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520171403086.png" alt="image-20200520171403086"></p>
+<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520171459828.png" alt="image-20200520171459828" style="zoom: 67%;">
+
+<p>通过上面三张图所展示的步骤，就完成了准备阶段。此时你就可以在本地直接对项目进行修改，你所对此项目做出的增删改都会被github desktop记录，位置如下图：</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520172605812.png" alt="image-20200520172605812"></p>
+<p>当你确认你所有的修改都是符合你的意图的之后就可以点击commit，输入summary，description （summary是你对这次代码修改内容的一个概括性标题，description是详细描述，这些都是为了方便代码原有者最快了解你的修改意图）</p>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/05/20/GitHub项目创建管理笔记/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2020/05/11/Python_Note/" > Python笔记与备忘录 </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-05-11  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Python笔记与备忘录"><a href="#Python笔记与备忘录" class="headerlink" title="Python笔记与备忘录"></a>Python笔记与备忘录</h1><p>本页面记录本人在编写python项目时遇到的所有陷阱和技巧 （update forever）</p>
+<h2 id="爬虫篇"><a href="#爬虫篇" class="headerlink" title="爬虫篇"></a>爬虫篇</h2><hr>
+<h3 id="坑、陷阱-Pitfall"><a href="#坑、陷阱-Pitfall" class="headerlink" title="坑、陷阱 / Pitfall"></a>坑、陷阱 / Pitfall</h3><ol>
+<li><h4 id="headers构造空格"><a href="#headers构造空格" class="headerlink" title="headers构造空格"></a>headers构造空格</h4><p>从浏览器开发者工具复制下来的<a href="#headers构造">headers</a>一定要注意把空格消除。不然会被视为invalid headers.</p>
+</li>
+<li><h4 id="selector规则构造"><a href="#selector规则构造" class="headerlink" title="selector规则构造"></a>selector规则构造</h4><p>如果以同样的select rule 应用于所有页面，最后的结果却是部分数据缺失，99%的情况都是这些页面上要么没有你的rule中构造好的id or class，要么就是rule中的id和class所应用在的元素和其他页面不一样。</p>
+</li>
+<li><h4 id="nth-of-type与-nth-child"><a href="#nth-of-type与-nth-child" class="headerlink" title="nth-of-type与:nth-child"></a>nth-of-type与:nth-child</h4><p>nth-of-type被Beautifulsoup支持，后者不被支持</p>
+</li>
+<li><h4 id="select规则书写规范"><a href="#select规则书写规范" class="headerlink" title="select规则书写规范"></a>select规则书写规范</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">The combinator &#39;x&#39; at postion xx, must have a selector before it</span><br><span class="line">此错误不是任何时候都会报错，但是要注意书写规范，在select rule不要多空格或者其他乱七八糟的字符在</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">&#39;.mw-parser-output &gt; ul:nth-of-type(&#123;&#125;) &gt; li a&#39; #正确写法</span><br><span class="line">&#39;.mw-parser-output  &gt; ul:nth-of-type(&#123;&#125;) &gt; li a&#39; #多了一个空格报错</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="中文字符显示不全"><a href="#中文字符显示不全" class="headerlink" title="中文字符显示不全"></a>中文字符显示不全</h4><p>原因在于网页大都采用UTF-8字符集，该字符集缺字严重，连国务院2013年8月19日公布的8105个通用规范汉字（均为简体汉字）都不能全部显示出来，共缺249个汉字，复其中4个二级字，245个三级字。</p>
+<p>一种可行的解决方法是：以维基百科为例，如果你爬取的是简体页面，那么你可以尝试寻找该页面是否有繁体中文版本，繁体字被爬取下来的时候是可以正常显示的</p>
+</li>
+<li><h4 id="Url中的"><a href="#Url中的" class="headerlink" title="Url中的#"></a>Url中的#</h4><p>在scrapy爬虫框架中会自动过滤掉#后面的内容，网络请求的时候“#”后面的参数会被忽略，解决方法<a href="#处理url中的sharp">T-4</a>。</p>
+</li>
+</ol>
+<h3 id="技巧-Tech"><a href="#技巧-Tech" class="headerlink" title="技巧 / Tech"></a>技巧 / Tech</h3><hr>
+<ol>
+<li><h6 id="headers构造"><a href="#headers构造" class="headerlink" title="headers构造"></a>headers构造</h6><p>构造请求头（headers）时，可以直接从chrome的调试工具处复制真实的请求头</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520153948246.png" alt="image-20200520153948246"></p>
+<p>然后此时还需要一点小微操就可以正确使用，以Pycharm为例，按Ctrl+R调出Regex匹配模式</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520162051277.png" alt="image-20200520162051277"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">分别输入</span><br><span class="line">(.*?):(.*)</span><br><span class="line">&#39;$1&#39;:&#39;$2&#39;</span><br></pre></td></tr></table></figure>
+
+<p>此时带有正确引号包裹的一个个headers键值对就构造好了。</p>
+</li>
+<li><h6 id="url中文处理"><a href="#url中文处理" class="headerlink" title="url中文处理"></a>url中文处理</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">urllib.parse.unquote</span><br><span class="line"><span class="comment"># 解码</span></span><br><span class="line">print(urllib.parse.unquote(<span class="string">'%B1%E0%C2%EB%BF%D3%B5%F9'</span>))</span><br><span class="line">坑爹</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编码</span></span><br><span class="line">urllib.parse.quote</span><br><span class="line">print(urllib.parse.quote(<span class="string">'坑爹'</span>))</span><br><span class="line"><span class="string">'%B1%E0%C2%EB%BF%D3%B5%F9'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h6 id="判断字符串中是否有中文字符"><a href="#判断字符串中是否有中文字符" class="headerlink" title="判断字符串中是否有中文字符"></a>判断字符串中是否有中文字符</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_chinese</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    check whether the string includes the Chinese</span></span><br><span class="line"><span class="string">    param: string</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">u'\u4e00'</span> &lt;= ch &lt;= <span class="string">u'\u9fff'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h6 id="处理url中的sharp"><a href="#处理url中的sharp" class="headerlink" title="处理url中的sharp"></a>处理url中的sharp</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 处理url中的#号</span><br><span class="line"># 把#(sharp)转为%23</span><br><span class="line">def sharp_fix(url):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    the sharp (#) will incur some troubles in url</span><br><span class="line">    param: url</span><br><span class="line"></span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if url.find(&#39;#&#39;) &gt;&#x3D; 0:</span><br><span class="line">        strs &#x3D; url.split(&#39;#&#39;)</span><br><span class="line">        if is_chinese(strs[1]):</span><br><span class="line">            fix &#x3D; urllib.parse.quote(strs[1])</span><br><span class="line">            fix &#x3D; strs[0] + &#39;%23&#39; + fix</span><br><span class="line">            return fix</span><br><span class="line">        return url</span><br><span class="line">    return url</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+	
+
+	</div>
+  <a type="button" href="/2020/05/11/Python_Note/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h1 id="Python笔记与备忘录"><a href="#Python笔记与备忘录" class="headerlink" title="Python笔记与备忘录"></a>Python笔记与备忘录</h1><p>本页面记录本人在编写python项目时遇到的所有陷阱和技巧 （update forever）</p>
+<h2 id="爬虫篇"><a href="#爬虫篇" class="headerlink" title="爬虫篇"></a>爬虫篇</h2><hr>
+<h3 id="坑、陷阱-Pitfall"><a href="#坑、陷阱-Pitfall" class="headerlink" title="坑、陷阱 / Pitfall"></a>坑、陷阱 / Pitfall</h3><ol>
+<li><h4 id="headers构造空格"><a href="#headers构造空格" class="headerlink" title="headers构造空格"></a>headers构造空格</h4><p>从浏览器开发者工具复制下来的<a href="#headers构造">headers</a>一定要注意把空格消除。不然会被视为invalid headers.</p>
+</li>
+<li><h4 id="selector规则构造"><a href="#selector规则构造" class="headerlink" title="selector规则构造"></a>selector规则构造</h4><p>如果以同样的select rule 应用于所有页面，最后的结果却是部分数据缺失，99%的情况都是这些页面上要么没有你的rule中构造好的id or class，要么就是rule中的id和class所应用在的元素和其他页面不一样。</p>
+</li>
+<li><h4 id="nth-of-type与-nth-child"><a href="#nth-of-type与-nth-child" class="headerlink" title="nth-of-type与:nth-child"></a>nth-of-type与:nth-child</h4><p>nth-of-type被Beautifulsoup支持，后者不被支持</p>
+</li>
+<li><h4 id="select规则书写规范"><a href="#select规则书写规范" class="headerlink" title="select规则书写规范"></a>select规则书写规范</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">The combinator &#39;x&#39; at postion xx, must have a selector before it</span><br><span class="line">此错误不是任何时候都会报错，但是要注意书写规范，在select rule不要多空格或者其他乱七八糟的字符在</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">&#39;.mw-parser-output &gt; ul:nth-of-type(&#123;&#125;) &gt; li a&#39; #正确写法</span><br><span class="line">&#39;.mw-parser-output  &gt; ul:nth-of-type(&#123;&#125;) &gt; li a&#39; #多了一个空格报错</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="中文字符显示不全"><a href="#中文字符显示不全" class="headerlink" title="中文字符显示不全"></a>中文字符显示不全</h4><p>原因在于网页大都采用UTF-8字符集，该字符集缺字严重，连国务院2013年8月19日公布的8105个通用规范汉字（均为简体汉字）都不能全部显示出来，共缺249个汉字，复其中4个二级字，245个三级字。</p>
+<p>一种可行的解决方法是：以维基百科为例，如果你爬取的是简体页面，那么你可以尝试寻找该页面是否有繁体中文版本，繁体字被爬取下来的时候是可以正常显示的</p>
+</li>
+<li><h4 id="Url中的"><a href="#Url中的" class="headerlink" title="Url中的#"></a>Url中的#</h4><p>在scrapy爬虫框架中会自动过滤掉#后面的内容，网络请求的时候“#”后面的参数会被忽略，解决方法<a href="#处理url中的sharp">T-4</a>。</p>
+</li>
+</ol>
+<h3 id="技巧-Tech"><a href="#技巧-Tech" class="headerlink" title="技巧 / Tech"></a>技巧 / Tech</h3><hr>
+<ol>
+<li><h6 id="headers构造"><a href="#headers构造" class="headerlink" title="headers构造"></a>headers构造</h6><p>构造请求头（headers）时，可以直接从chrome的调试工具处复制真实的请求头</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520153948246.png" alt="image-20200520153948246"></p>
+<p>然后此时还需要一点小微操就可以正确使用，以Pycharm为例，按Ctrl+R调出Regex匹配模式</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200520162051277.png" alt="image-20200520162051277"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">分别输入</span><br><span class="line">(.*?):(.*)</span><br><span class="line">&#39;$1&#39;:&#39;$2&#39;</span><br></pre></td></tr></table></figure>
+
+<p>此时带有正确引号包裹的一个个headers键值对就构造好了。</p>
+</li>
+<li><h6 id="url中文处理"><a href="#url中文处理" class="headerlink" title="url中文处理"></a>url中文处理</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">urllib.parse.unquote</span><br><span class="line"><span class="comment"># 解码</span></span><br><span class="line">print(urllib.parse.unquote(<span class="string">'%B1%E0%C2%EB%BF%D3%B5%F9'</span>))</span><br><span class="line">坑爹</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编码</span></span><br><span class="line">urllib.parse.quote</span><br><span class="line">print(urllib.parse.quote(<span class="string">'坑爹'</span>))</span><br><span class="line"><span class="string">'%B1%E0%C2%EB%BF%D3%B5%F9'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h6 id="判断字符串中是否有中文字符"><a href="#判断字符串中是否有中文字符" class="headerlink" title="判断字符串中是否有中文字符"></a>判断字符串中是否有中文字符</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_chinese</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    check whether the string includes the Chinese</span></span><br><span class="line"><span class="string">    param: string</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">u'\u4e00'</span> &lt;= ch &lt;= <span class="string">u'\u9fff'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h6 id="处理url中的sharp"><a href="#处理url中的sharp" class="headerlink" title="处理url中的sharp"></a>处理url中的sharp</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 处理url中的#号</span><br><span class="line"># 把#(sharp)转为%23</span><br><span class="line">def sharp_fix(url):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    the sharp (#) will incur some troubles in url</span><br><span class="line">    param: url</span><br><span class="line"></span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if url.find(&#39;#&#39;) &gt;&#x3D; 0:</span><br><span class="line">        strs &#x3D; url.split(&#39;#&#39;)</span><br><span class="line">        if is_chinese(strs[1]):</span><br><span class="line">            fix &#x3D; urllib.parse.quote(strs[1])</span><br><span class="line">            fix &#x3D; strs[0] + &#39;%23&#39; + fix</span><br><span class="line">            return fix</span><br><span class="line">        return url</span><br><span class="line">    return url</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/05/11/Python_Note/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+
+		</div>
+
+		<!-- pagination -->
+		<div>
+  		<center>
+		<div class="pagination">
+
+   
+    
+     <a href="/" type="button" class="btn btn-default"><i class="fa fa-arrow-circle-o-left"></i> Prev</a>
+      
+
+        <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+ 
+          <a type="button" class="btn btn-default disabled">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+        
+
+  
+</div>
+
+  		</center>
+		</div>
+
+		
+		
+	</div> <!-- col-md-9 -->
+
+	
+		<div class="col-md-3">
+	<div id="sidebar">
+	
+			
+  <div id="site_search">
+   <div class="form-group">
+    <input type="text" id="local-search-input" name="q" results="0" placeholder="→ Search Box" class="st-search-input st-default-search-input form-control"/>
+   </div>  
+  <div id="local-search-result"></div>
+  </div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Categories</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/categories/Docker/">Docker<span>1</span></a></li>
+		
+			<li><a href="/categories/GitHub/">GitHub<span>1</span></a></li>
+		
+			<li><a href="/categories/Java/">Java<span>1</span></a></li>
+		
+			<li><a href="/categories/Python/">Python<span>2</span></a></li>
+		
+			<li><a href="/categories/Sublime/">Sublime<span>1</span></a></li>
+		
+			<li><a href="/categories/转载-Security/">转载-Security<span>8</span></a></li>
+		
+		</ul>
+	</div>
+
+		
+			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/Python/">Python<span>1</span></a></li>
+		
+			<li><a href="/tags/Security/">Security<span>8</span></a></li>
+		
+			<li><a href="/tags/Pyton-code-library/">Pyton code library<span>1</span></a></li>
+		
+			<li><a href="/tags/Java-code-library/">Java code library<span>1</span></a></li>
+		
+			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
+		
+			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
+		
+			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
+		
+			<li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>11</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
+
+		
+			
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/09/29/[转]2020.7.27-8.2安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.7.27-8.2一周安全知识动态</a>
+      </li>
+    
+      <li>
+        <a href="/2020/09/29/[转]2020.8.3-8.9安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.8.3-8.9一周安全知识动态</a>
+      </li>
+    
+      <li>
+        <a href="/2020/09/29/[转]2020.8.17-8.23安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.8.17-8.23一周安全知识动态</a>
+      </li>
+    
+      <li>
+        <a href="/2020/09/29/[转]2020.8.24-8.30安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.8.24-8.30一周安全知识动态</a>
+      </li>
+    
+      <li>
+        <a href="/2020/09/29/[转]2020.8.31-9.6安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.8.31-9.6一周安全知识动态</a>
+      </li>
+    
+  </ul>
+</div>
+
+		
+			
+<div class="widget">
+	<h4>Links</h4>
+	<ul class="blogroll list-unstyled">
+	
+		<li><i class="fa fa-github"></i><a href="https://github.com/SimonHu-HN" title="" target="_blank"]);">My_Github</a></li>
+	
+	</ul>
+</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+	
+</div> <!-- row-fluid -->
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

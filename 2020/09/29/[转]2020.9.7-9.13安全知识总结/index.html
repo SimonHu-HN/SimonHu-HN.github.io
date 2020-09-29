@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.9.7-9.13一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.9.7-9.13一周安全知识动态转自
+浏览器漏洞相关•Google CTF 2020 teleport Chromium sandbox escape
+1https:&amp;#x2F;&amp;#x2F;trungnguyen1909.github.io&amp;#x2F;blog&amp;#x2F;post&amp;#x2F;GGCTF20&amp;#x2F;谷歌CTF2020 teleport Chromium沙箱逃逸writeup
+
+虚拟化逃逸漏洞相关•Microsoft Hyper-V Stack Overflow Denial of Service
+1https:&amp;#x2F;&amp;#x2F;labs.bluefrostsecurity.de&amp;#x2F;advisories&amp;#x2F;bfs-sa-2020-001&amp;#x2F;Hyper-V 栈溢出漏洞poc
+
+•Microsoft Hyper-V NULL Pointer Dereference Denial of Service
+1https:&amp;#x2F;&amp;#x2F;labs.bluefrostsecurity.de&amp;#x2F;advisories&amp;#x2F;bfs-sa-2020-002&amp;#x2F;Hyper-V空指针引用poc">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.9.7-9.13一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.9.7-9.13一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-9-7-9-13一周安全知识动态"><a href="#2020-9-7-9-13一周安全知识动态" class="headerlink" title="2020.9.7-9.13一周安全知识动态"></a>2020.9.7-9.13一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Google CTF 2020 teleport Chromium sandbox escape</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;trungnguyen1909.github.io&#x2F;blog&#x2F;post&#x2F;GGCTF20&#x2F;谷歌CTF2020 teleport Chromium沙箱逃逸writeup</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟化逃逸漏洞相关"><a href="#虚拟化逃逸漏洞相关" class="headerlink" title="虚拟化逃逸漏洞相关"></a>虚拟化逃逸漏洞相关</h3><p>•Microsoft Hyper-V Stack Overflow Denial of Service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.bluefrostsecurity.de&#x2F;advisories&#x2F;bfs-sa-2020-001&#x2F;Hyper-V 栈溢出漏洞poc</span><br></pre></td></tr></table></figure>
+
+<p>•Microsoft Hyper-V NULL Pointer Dereference Denial of Service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.bluefrostsecurity.de&#x2F;advisories&#x2F;bfs-sa-2020-002&#x2F;Hyper-V空指针引用poc</span><br></pre></td></tr></table></figure>
+
+<p>•Microsoft Hyper-V Type Confusion leading to Arbitrary Memory Dereference</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.bluefrostsecurity.de&#x2F;advisories&#x2F;bfs-sa-2020-003&#x2F;Hyper-V 类型混淆漏洞</span><br></pre></td></tr></table></figure>
+
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•F5 BIG-IP Remote Code Execution Exploit – CVE-2020-5902</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.criticalstart.com&#x2F;f5-big-ip-remote-code-execution-exploit&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;Critical-Start&#x2F;Team-Ares&#x2F;tree&#x2F;master&#x2F;CVE-2020-5902CVE-2020-5902 </span><br><span class="line">F5 BIG-IP远程代码执行漏洞分析以及exp</span><br></pre></td></tr></table></figure>
+
+<p>•HACKER NIGHTMARES GIVING HACKERS A HEADACHE WITH EXPLOIT MITIGATIONS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;azeria-labs.com&#x2F;downloads&#x2F;Keynote_ArmResearchSummit2020_Azeria.pdfARM安全机制研究slide</span><br></pre></td></tr></table></figure>
+
+<h3 id="CTF相关"><a href="#CTF相关" class="headerlink" title="CTF相关"></a>CTF相关</h3><p>•echo_googlequals2020</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;saaramar&#x2F;echo_googlequals2020Google ctf 2020 echo writeup</span><br></pre></td></tr></table></figure>
+
+<p>•google-ctf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;google-ctf&#x2F;tree&#x2F;master&#x2F;2020&#x2F;qualsgoogle-ctf 2020题目开源</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•Escalating PHP Deserialization</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;vkili.github.io&#x2F;blog&#x2F;insecure%20deserialization&#x2F;unserialize-exploits&#x2F;php反序列化利用</span><br></pre></td></tr></table></figure>
+
+<p>•Implementing Cloud Security Best Practices</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.tripwire.com&#x2F;solutions&#x2F;cloud-cybersecurity&#x2F;cloud-security-best-practices-report&#x2F;?utm_source&#x3D;twitter&amp;utm_medium&#x3D;ads&amp;utm_campaign&#x3D;cloud云安全分析</span><br></pre></td></tr></table></figure>
+
+<p>•Abusing dynamic groups in Azure AD for privilege escalation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.mnemonic.no&#x2F;blog&#x2F;abusing-dynamic-groups-in-azure&#x2F;Azure AD提权分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•Bruteforce Attacks and Bypassing Rate Limits with Fireprox</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;it_V3ig1_4oWeb漏洞挖掘系列视频</span><br></pre></td></tr></table></figure>
+
+<p>•[Fuzzing with WinAFL] Fuzzing a simple C program using WinAFL on windows</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hardik05.wordpress.com&#x2F;2020&#x2F;09&#x2F;06&#x2F;fuzzing-with-winafl-fuzzing-a-simple-c-program-using-winafl-on-windows&#x2F;winafl fuzz 简单c程序</span><br></pre></td></tr></table></figure>
+
+<p>•Stateful Fuzzing with Snapshots</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hexgolems.com&#x2F;talks&#x2F;fuzzcon2020.pdffuzzcon2020上关于《StatefulFuzzingwithSnapshots》的slide</span><br></pre></td></tr></table></figure>
+
+<p>•Fuzzing JavaScript Engines with Fuzzilli</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.doyensec.com&#x2F;2020&#x2F;09&#x2F;09&#x2F;fuzzilli-jerryscript.html修改fuzzilli fuzz js的文章</span><br></pre></td></tr></table></figure>
+
+<p>•TinyInst</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;googleprojectzero&#x2F;TinyInstP0 开源了macos fuzz插桩工具TinyInst</span><br></pre></td></tr></table></figure>
+
+<p>•Christian Holler: The Human Component in Bug Finding @FuzzCon Europe 2020</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;ifc2C5fLIWUFuzzCon2020《TheHumanComponentinBugFinding》议题视频</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞利用相关"><a href="#漏洞利用相关" class="headerlink" title="漏洞利用相关"></a>漏洞利用相关</h3><p>•ARM64 Reversing and Exploitation Part 1 - ARM Instruction Set + Simple Heap Overflow</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;highaltitudehacks.com&#x2F;2020&#x2F;09&#x2F;05&#x2F;arm64-reversing-and-exploitation-part-1-arm-instruction-set-heap-overflow&#x2F;ARM64逆向及漏洞利用系列第一篇</span><br></pre></td></tr></table></figure>
+
+<p>•ARM64 Reversing and Exploitation Part 2 - Use After Free</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;highaltitudehacks.com&#x2F;2020&#x2F;09&#x2F;06&#x2F;arm64-reversing-and-exploitation-part-2-use-after-free&#x2F;ARM64逆向及漏洞利用系列第二篇</span><br></pre></td></tr></table></figure>
+
+<p>•ARM64 Reversing and Exploitation Part 3 - A Simple ROP Chain</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;highaltitudehacks.com&#x2F;2020&#x2F;09&#x2F;06&#x2F;arm64-reversing-and-exploitation-part-3-a-simple-rop-chain&#x2F;ARM64逆向及漏洞利用系列第三篇</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•UBUNTU PPP’S CVE-2020-15704 WRAP-UP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.synacktiv.com&#x2F;publications&#x2F;ubuntu-ppps-cve-2020-15704-wrap-upCVE-2020-15704 upnp提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2018-8453 从BSOD到ExpLoit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.whsgwl.net&#x2F;blog&#x2F;CVE-2018-8453_0.htmlhttps:&#x2F;&#x2F;www.whsgwl.net&#x2F;blog&#x2F;CVE-2018-8453_1.html</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2019-1458: Going from ‘in the wild report’ to POC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;piotrflorczyk&#x2F;cve-2019-1458_POCCVE-2019-1458本地提权漏洞poc</span><br></pre></td></tr></table></figure>
+
+<p>•Attacking the Qualcomm Adreno GPU</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;09&#x2F;attacking-qualcomm-adreno-gpu.htmlp0关于攻击QualcommAdreno GPU的文章</span><br></pre></td></tr></table></figure>
+
+<p>•WSUS Attacks Part 2: CVE-2020-1013 a Windows 10 Local Privilege Escalation 1-Day</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.gosecure.net&#x2F;blog&#x2F;2020&#x2F;09&#x2F;08&#x2F;wsus-attacks-part-2-cve-2020-1013-a-windows-10-local-privilege-escalation-1-day&#x2F;CVE-2020-1013 win10提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Tencent Keen Security Lab 5G Security Research Demo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;Ca9lPMMToi0&amp;feature&#x3D;youtu.be科恩实验室关于5G漏洞研究成果视频</span><br></pre></td></tr></table></figure>
+
+<p>•The short story of 1 Linux Kernel Use-After-Free bug and 2 CVEs (CVE-2020-14356 and CVE-2020-25220)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;blog.pi3.com.pl&#x2F;?p&#x3D;720CVE-2020-14356以及CVE-2020-25220漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Introduction to Inside XNU.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;h3adsh0tzz.com&#x2F;2020&#x2F;09&#x2F;inside-xnu-introduction&#x2F;XNU介绍</span><br></pre></td></tr></table></figure>
+
+<p>•Introduction to iBoot</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;h3adsh0tzz.com&#x2F;inside-xnu&#x2F;iboot&#x2F;introiBoot介绍</span><br></pre></td></tr></table></figure>
+
+<p>•iBoot Tasks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;h3adsh0tzz.com&#x2F;inside-xnu&#x2F;iboot&#x2F;tasks</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h3><p>•TREVORspray</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;blacklanternsecurity&#x2F;TREVORspraywindows password spraying工具</span><br></pre></td></tr></table></figure>
+
+<p>•aes-finder</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;mmozeiko&#x2F;aes-finder在进程中查找aes密钥的工具</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•How to speed up the Rust compiler one last time</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.mozilla.org&#x2F;nnethercote&#x2F;2020&#x2F;09&#x2F;08&#x2F;how-to-speed-up-the-rust-compiler-one-last-time&#x2F;rust编译器性能提升分析</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/09/29/%5B%E8%BD%AC%5D2020.9.7-9.13%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.9.7-9.13一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/09/29/[转]2020.8.31-9.6安全知识总结/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/09/29/[转]2020.9.14-9.20安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-09-29
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/转载-Security/">转载-Security<span>8</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>11</span></a></li> <li><a href="/tags/Security/">Security<span>8</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-9-7-9-13一周安全知识动态"><span class="toc-article-text">2020.9.7-9.13一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#虚拟化逃逸漏洞相关"><span class="toc-article-text">虚拟化逃逸漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CTF相关"><span class="toc-article-text">CTF相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞利用相关"><span class="toc-article-text">漏洞利用相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#工具相关"><span class="toc-article-text">工具相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

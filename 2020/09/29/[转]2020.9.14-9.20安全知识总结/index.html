@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.9.14-9.20一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.9.14-9.20一周安全知识动态转自
+浏览器漏洞相关•[compiler] Fix bug in SimplifiedLowering’s overflow computation
+1https:&amp;#x2F;&amp;#x2F;chromium.googlesource.com&amp;#x2F;v8&amp;#x2F;v8&amp;#x2F;+&amp;#x2F;e371325bcb03f20a362ebfa48225159702c6fde7SimplifiedLowering-0处理不当
+
+•Firefox for Android LAN-Based Intent Triggering
+1https:&amp;#x2F;&amp;#x2F;gitlab.com&amp;#x2F;gitlab-com&amp;#x2F;gl-security&amp;#x2F;security-operations&amp;#x2F;gl-redteam&amp;#x2F;red-team-tech-notes&amp;#x2F;-&amp;#x2F;tree&amp;#x2F;master&amp;#x2F;firefox-android-2020针对firefox安卓端 Lan网段的攻击利用脚本
+
+漏洞挖掘相关•OneFuzz - A self-hosted Fuzzing-As-A-Service platform
+1https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;microsoft&amp;#x2F;onefuzz">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.9.14-9.20一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.9.14-9.20一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-9-14-9-20一周安全知识动态"><a href="#2020-9-14-9-20一周安全知识动态" class="headerlink" title="2020.9.14-9.20一周安全知识动态"></a>2020.9.14-9.20一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•[compiler] Fix bug in SimplifiedLowering’s overflow computation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;chromium.googlesource.com&#x2F;v8&#x2F;v8&#x2F;+&#x2F;e371325bcb03f20a362ebfa48225159702c6fde7SimplifiedLowering-0处理不当</span><br></pre></td></tr></table></figure>
+
+<p>•Firefox for Android LAN-Based Intent Triggering</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;gitlab.com&#x2F;gitlab-com&#x2F;gl-security&#x2F;security-operations&#x2F;gl-redteam&#x2F;red-team-tech-notes&#x2F;-&#x2F;tree&#x2F;master&#x2F;firefox-android-2020针对firefox安卓端 Lan网段的攻击利用脚本</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•OneFuzz - A self-hosted Fuzzing-As-A-Service platform</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;onefuzz</span><br></pre></td></tr></table></figure>
+
+<h3 id="CTF相关"><a href="#CTF相关" class="headerlink" title="CTF相关"></a>CTF相关</h3><p>•CSAW CTF Quals 2020 Writeups</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;ptr-yudai.hatenablog.com&#x2F;entry&#x2F;2020&#x2F;09&#x2F;14&#x2F;181939https:&#x2F;&#x2F;github.com&#x2F;perfectblue&#x2F;ctf-writeups&#x2F;tree&#x2F;master&#x2F;2020&#x2F;csaw-quals-2020csaw-quals-2020 writeup</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•SRC-2020-0019 : Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution Vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;srcincite.io&#x2F;advisories&#x2F;src-2020-0019&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;srcincite.io&#x2F;pocs&#x2F;cve-2020-16875.ps1.txthttps:&#x2F;&#x2F;srcincite.io&#x2F;pocs&#x2F;cve-2020-16875.py.txtcve-2020-16875ExchangeServerDlpUtilsAddTenantDlpPolicy RCE漏洞公告及poc</span><br></pre></td></tr></table></figure>
+
+<p>•Espressif ESP32: Bypassing Flash Encryption (CVE-2020-15048)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;raelize.com&#x2F;posts&#x2F;espressif-systems-esp32-bypassing-flash-encryption&#x2F;CVE-2020-15048绕过Flash加密漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•MemFuck: Bypassing User-Mode Hooks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;winternl.com&#x2F;memfuck&#x2F;绕过User-ModeHook</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-9964 - An iOS infoleak</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;muirey03.blogspot.com&#x2F;2020&#x2F;09&#x2F;cve-2020-9964-ios-infoleak.htmlIOS信息泄露漏洞CVE-2020-9964分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-1472 Zerologon exploit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;nccgroup&#x2F;nccfsas&#x2F;tree&#x2F;main&#x2F;Tools&#x2F;SharpZeroLogonhttps:&#x2F;&#x2F;github.com&#x2F;BC-SECURITY&#x2F;Invoke-ZeroLogonhttps:&#x2F;&#x2F;www.lares.com&#x2F;blog&#x2F;from-lares-labs-defensive-guidance-for-zerologon-cve-2020-1472&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;www.secura.com&#x2F;blog&#x2F;zero-logonCVE-2020-1472Zerologon利用脚本及漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•How I Hacked Facebook Again! Unauthenticated RCE on MobileIron MDM</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;iamnoooob&#x2F;CVE-Reverse&#x2F;tree&#x2F;master&#x2F;CVE-2020-15505https:&#x2F;&#x2F;blog.orange.tw&#x2F;2020&#x2F;09&#x2F;how-i-hacked-facebook-again-mobileiron-mdm-rce.htmlMobileiron MDM RCE CVE-2020-15505 poc及writeup</span><br></pre></td></tr></table></figure>
+
+<p>•Zerologon: instantly become domain admin by subverting Netlogon cryptography (CVE-2020-1472)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.secura.com&#x2F;blog&#x2F;zero-logonCVE-2020-1472Zerologon提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Clash of the (Spam)Titan</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sensepost.com&#x2F;blog&#x2F;2020&#x2F;clash-of-the-spamtitan&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;sensepost&#x2F;ClashofSpamTitanSpamTitanGateway漏洞挖掘</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-9496: RCE IN APACHE OFBIZ XMLRPC VIA DESERIALIZATION OF UNTRUSTED DATA</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.zerodayinitiative.com&#x2F;blog&#x2F;2020&#x2F;9&#x2F;14&#x2F;cve-2020-9496-rce-in-apache-ofbiz-xmlrpc-via-deserialization-of-untrusted-dataApacheOFBiz CVE-2020-9496 RCE 分析</span><br></pre></td></tr></table></figure>
+
+<p>•POSTGRESQL CODE EXECUTION: UDF REVISITED</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@afinepl&#x2F;postgresql-code-execution-udf-revisited-3b08412f47c1POSTGRESQL 代码执行分析</span><br></pre></td></tr></table></figure>
+
+<p>•Aruba Clearpass RCE (CVE-2020-7115)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;dozer.nz&#x2F;posts&#x2F;aruba-clearpass-rceArubaClearPassPolicyManager&lt;&#x3D; 6.9.0免认证CVE-2020-7115漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h3><p>•Symbolizer - A fast execution trace symbolizer for Windows</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;0vercl0k&#x2F;symbolizerwindows trace symbolizer 工具</span><br></pre></td></tr></table></figure>
+
+<p>•Reverse Shell Generator</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;weibell.github.io&#x2F;reverse-shell-generator&#x2F;在线反弹shell生成器</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/09/29/%5B%E8%BD%AC%5D2020.9.14-9.20%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.9.14-9.20一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/09/29/[转]2020.9.7-9.13安全知识总结/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/09/29/[转]2020.9.21-9.27安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-09-29
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/转载-Security/">转载-Security<span>8</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>11</span></a></li> <li><a href="/tags/Security/">Security<span>8</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-9-14-9-20一周安全知识动态"><span class="toc-article-text">2020.9.14-9.20一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CTF相关"><span class="toc-article-text">CTF相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#工具相关"><span class="toc-article-text">工具相关</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
