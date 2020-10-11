@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.10.5-10.11一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.10.5-10.11一周安全知识动态转自
+IOT漏洞相关•RIFT: F5 CVE-2020-5902 and Citrix CVE-2020-8193, CVE-2020-8195 and CVE-2020-8196 honeypot data release
+12https:&amp;#x2F;&amp;#x2F;research.nccgroup.com&amp;#x2F;2020&amp;#x2F;10&amp;#x2F;09&amp;#x2F;rift-f5-cve-2020-5902-and-citrix-cve-2020-8193-cve-2020-8195-and-cve-2020-8196-honeypot-data-release&amp;#x2F;对F5 CVE-2020-5902、Citrix CVE-2020-8193、CVE-2020-8195以及CVE-2020-8196等漏洞三个月蜜罐数据的分析
+
+•A journey into defeating regulated electronic cigarette protections
+12https:&amp;#x2F;&amp;#x2F;labs.ioactive.com&amp;#x2F;2020&amp;#x2F;10&amp;#x2F;a-journey-into-defeating-regulated.html攻击电子香烟系统
+
+•Reverse engineering my cable modem and turning it into an SDR
+12https:&amp;#x2F;&amp;#x2F;stdw.github.io&amp;#x2F;cm-sdr&amp;#x2F;逆向cable modem将它做成SDR
+
+漏洞挖掘相关">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.10.5-10.11一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.10.5-10.11一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-10-5-10-11一周安全知识动态"><a href="#2020-10-5-10-11一周安全知识动态" class="headerlink" title="2020.10.5-10.11一周安全知识动态"></a>2020.10.5-10.11一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•RIFT: F5 CVE-2020-5902 and Citrix CVE-2020-8193, CVE-2020-8195 and CVE-2020-8196 honeypot data release</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;research.nccgroup.com&#x2F;2020&#x2F;10&#x2F;09&#x2F;rift-f5-cve-2020-5902-and-citrix-cve-2020-8193-cve-2020-8195-and-cve-2020-8196-honeypot-data-release&#x2F;</span><br><span class="line">对F5 CVE-2020-5902、Citrix CVE-2020-8193、CVE-2020-8195以及CVE-2020-8196等漏洞三个月蜜罐数据的分析</span><br></pre></td></tr></table></figure>
+
+<p>•A journey into defeating regulated electronic cigarette protections</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.ioactive.com&#x2F;2020&#x2F;10&#x2F;a-journey-into-defeating-regulated.html</span><br><span class="line">攻击电子香烟系统</span><br></pre></td></tr></table></figure>
+
+<p>•Reverse engineering my cable modem and turning it into an SDR</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;stdw.github.io&#x2F;cm-sdr&#x2F;</span><br><span class="line">逆向cable modem将它做成SDR</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•From LNK to RCE Finding bugs in Windows Shell Link Parser</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hitcon.org&#x2F;2020&#x2F;slides&#x2F;From%20LNK%20to%20RCE%20Finding%20bugs%20in%20Windows%20Shell%20Link%20Parser.pdfwindows </span><br><span class="line">ShellLinkParser漏洞挖掘</span><br></pre></td></tr></table></figure>
+
+<p>•Fuzzing internships for open source software</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;opensource.googleblog.com&#x2F;2020&#x2F;10&#x2F;fuzzing-internships-for-open-source.html</span><br><span class="line">开源软件fuzz</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟化逃逸漏洞相关"><a href="#虚拟化逃逸漏洞相关" class="headerlink" title="虚拟化逃逸漏洞相关"></a>虚拟化逃逸漏洞相关</h3><p>•SpeedPwning VMware Workstation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.synacktiv.com&#x2F;sites&#x2F;default&#x2F;files&#x2F;2020-10&#x2F;Speedpwning_VMware_Workstation.pdf</span><br></pre></td></tr></table></figure>
+
+<h3 id="CTF相关"><a href="#CTF相关" class="headerlink" title="CTF相关"></a>CTF相关</h3><p>•Morty’s New Tool : Android Application Based CTF Challenge Walkthrough</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@saurabh_jain_&#x2F;mortys-new-tool-android-application-based-ctf-challenge-walkthrough-6058e080598e</span><br><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@saurabh_jain_&#x2F;planet-x-android-application-based-ctf-challenge-walkthrough-778547aac015</span><br><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@saurabh_jain_&#x2F;morty-sherlocked-android-application-ctf-challenge-walkthrough-ab1ec2161cb4安卓系列CTF题目writeup</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•Compiler support for mitigations Updated on 12/Oct/2018 Addressing Spectre Variant 1 (CVE-2017-5753) in Software</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;developer.arm.com&#x2F;support&#x2F;arm-security-updates&#x2F;speculative-processor-vulnerability&#x2F;compiler-support-for-mitigationsarm公布了针对Spectre CPU漏洞的解决方案</span><br></pre></td></tr></table></figure>
+
+<p>•We Hacked Apple for 3 Months: Here’s What We Found</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;samcurry.net&#x2F;hacking-apple&#x2F;三个月挖掘苹果产品55个漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-14386: Privilege Escalation Vulnerability in the Linux kernel</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;unit42.paloaltonetworks.com&#x2F;cve-2020-14386</span><br><span class="line">https :&#x2F;&#x2F;www.openwall.com&#x2F;lists&#x2F;oss-security&#x2F;2020&#x2F;09&#x2F;03&#x2F;3CVE-2020-14386 linux 内核提权漏洞</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•CVE-2020-17365 – Hotspot Shield VPN New Privilege Escalation Vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cymptom.com&#x2F;cve-2020-17365-hotspot-shield-vpn-new-privilege-escalation-vulnerability&#x2F;2020&#x2F;10&#x2F;HotspotShield VPN 提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•A technical description of CVE-2020-15702</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;flattsecurity.hatenablog.com&#x2F;entry&#x2F;2020&#x2F;09&#x2F;30&#x2F;130844CVE-2020-15702 apport pid条件竞争漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2019-0230: APACHE STRUTS OGNL REMOTE CODE EXECUTION</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.zerodayinitiative.com&#x2F;blog&#x2F;2020&#x2F;10&#x2F;7&#x2F;cve-2019-0230-apache-struts-ognl-remote-code-executionCVE-2019-0230ApacheStruts rce漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•HP Device Manager – CVE-2020-6925, CVE-2020-6926, CVE-2020-6927</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;nickbloor.co.uk&#x2F;2020&#x2F;10&#x2F;05&#x2F;hp-device-manager-cve-2020-6925-cve-2020-6926-cve-2020-6927&#x2F;HP DeviceManager CVE-2020-6925, CVE-2020-6926, CVE-2020-6927漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Kud I Enter Your Server? New Vulnerabilities in Microsoft Azure</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.intezer.com&#x2F;blog&#x2F;cloud-security&#x2F;kud-i-enter-your-server-new-vulnerabilities-in-microsoft-azure&#x2F;MicrosoftAzure硬编码证书本地提权漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-25214.pdf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;immunityinc&#x2F;Advisories&#x2F;blob&#x2F;master&#x2F;2020&#x2F;CVE-2020-25214.pdfOverwolfUpdater免认证漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•JAVA DESERIALIZATION VULNERABILITY IN QRADAR REMOTEJAVASCRIPT SERVLET</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.securify.nl&#x2F;advisory&#x2F;java-deserialization-vulnerability-in-qradar-remotejavascript-servletCVE-2020-4280: Java反序列化漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-11518: how I bruteforced my way into your Active Directory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;honoki.net&#x2F;2020&#x2F;08&#x2F;10&#x2F;cve-2020-11518-how-i-bruteforced-my-way-into-your-active-directory&#x2F;CVE-2020-11518ActiveDirectory漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•POWERSHELL LOGGING: OBFUSCATION AND SOME NEW(ISH) BYPASSES</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.bc-security.org&#x2F;post&#x2F;powershell-logging-obfuscation-and-some-newish-bypasses-part-1</span><br><span class="line">https :&#x2F;&#x2F;www.bc-security.org&#x2F;post&#x2F;powershell-logging-obfuscation-and-some-newish-bypasses-part-2&#x2F;PowerShell日志混淆技巧</span><br></pre></td></tr></table></figure>
+
+<p>•Reverse Engineering Go Binaries with Ghidra</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cujo.com&#x2F;reverse-engineering-go-binaries-with-ghidra&#x2F;通过Ghidra逆向Go程序</span><br></pre></td></tr></table></figure>
+
+<p>•How To Host Your Own DNS-over-HTTPS And DNS-over-TLS Services</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.technitium.com&#x2F;2020&#x2F;07&#x2F;how-to-host-your-own-dns-over-https-and.html如何运维DNS-over-HTTPS (DoH)及DNS-over-TLS (DoT) 服务</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/10/11/%5B%E8%BD%AC%5D2020.10.5-10.11%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.10.5-10.11一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/10/06/Python-Lib/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-10-11
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Security/">Security<span>10</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>15</span></a></li> <li><a href="/tags/转载/">转载<span>11</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-10-5-10-11一周安全知识动态"><span class="toc-article-text">2020.10.5-10.11一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#虚拟化逃逸漏洞相关"><span class="toc-article-text">虚拟化逃逸漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CTF相关"><span class="toc-article-text">CTF相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
