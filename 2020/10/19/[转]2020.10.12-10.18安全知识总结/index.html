@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.10.12-10.18一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.10.12-10.18一周安全知识动态转自
+浏览器漏洞相关•DOS2RCE: A New Technique to Exploit V8 NULL Pointer Dereference Bug
+12https:&amp;#x2F;&amp;#x2F;blog.br0vvnn.io&amp;#x2F;pages&amp;#x2F;blogpost.aspx?id&amp;#x3D;1&amp;amp;ln&amp;#x3D;0V8 issue-1003286 NULL PointerDereference漏洞分析及利用
+
+漏洞挖掘相关•Fuzzing Python packages in 5 min using pythonfuzz
+12https:&amp;#x2F;&amp;#x2F;academy.fuzzinglabs.com&amp;#x2F;fuzzing-python-packages-5-min-pythonfuzz5分钟学会用pythonfuzz fuzz Python packages
+
+•Introduction to Go fuzzing: fuzz your first project in a few minutes
+12https:&amp;#x2F;&amp;#x2F;www.youtube.com&amp;#x2F;watch?v&amp;#x3D;pA4E8rvQGmYGo fuzzing 简短视频">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.10.12-10.18一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.10.12-10.18一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-10-12-10-18一周安全知识动态"><a href="#2020-10-12-10-18一周安全知识动态" class="headerlink" title="2020.10.12-10.18一周安全知识动态"></a>2020.10.12-10.18一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•DOS2RCE: A New Technique to Exploit V8 NULL Pointer Dereference Bug</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.br0vvnn.io&#x2F;pages&#x2F;blogpost.aspx?id&#x3D;1&amp;ln&#x3D;0</span><br><span class="line">V8 issue-1003286 NULL PointerDereference漏洞分析及利用</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•Fuzzing Python packages in 5 min using pythonfuzz</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;academy.fuzzinglabs.com&#x2F;fuzzing-python-packages-5-min-pythonfuzz</span><br><span class="line">5分钟学会用pythonfuzz fuzz Python packages</span><br></pre></td></tr></table></figure>
+
+<p>•Introduction to Go fuzzing: fuzz your first project in a few minutes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;pA4E8rvQGmY</span><br><span class="line">Go fuzzing 简短视频</span><br></pre></td></tr></table></figure>
+
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•From Zero to main(): Demystifying Firmware Linker Scripts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;interrupt.memfault.com&#x2F;blog&#x2F;how-to-write-linker-scripts-for-firmware</span><br><span class="line">固件程序link过程解析</span><br></pre></td></tr></table></figure>
+
+<p>•Analysis &amp; Exploitation of a Recent TP-Link Archer A7 Vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;starlabs.sg&#x2F;blog&#x2F;2020&#x2F;10&#x2F;analysis-exploitation-of-a-recent-tp-link-archer-a7-vulnerability&#x2F;</span><br><span class="line">TP-LinkArcher A7 rce漏洞 CVE-2020-10882分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟化逃逸漏洞相关"><a href="#虚拟化逃逸漏洞相关" class="headerlink" title="虚拟化逃逸漏洞相关"></a>虚拟化逃逸漏洞相关</h3><p>•Dockerfile Security Best Practices</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cloudberry.engineering&#x2F;article&#x2F;dockerfile-security-best-practices&#x2F;</span><br><span class="line">Dockerfile安全实践</span><br></pre></td></tr></table></figure>
+
+<h3 id="CTF相关"><a href="#CTF相关" class="headerlink" title="CTF相关"></a>CTF相关</h3><p>•File Stream Oriented Programming: SECCON CTF 2020 - lazynote</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;faraz.faith&#x2F;2020-10-13-FSOP-lazynote&#x2F;</span><br><span class="line">通过SECCON CTF 2020- lazynote来详细描述FSOP</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•Acronis backup software contains multiple privilege escalation vulnerabilities</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.kb.cert.org&#x2F;vuls&#x2F;id&#x2F;114757</span><br><span class="line">CVE-2020-10138 win10 通过Acronis backup 进行提权</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-16898: “Bad Neighbor”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.mcafee.com&#x2F;blogs&#x2F;other-blogs&#x2F;mcafee-labs&#x2F;cve-2020-16898-bad-neighbor&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;portal.msrc.microsoft.com&#x2F;en-US&#x2F;security-guidance&#x2F;advisory&#x2F;CVE-2020-16898</span><br><span class="line">https:&#x2F;&#x2F;github.com&#x2F;advanced-threat-research&#x2F;CVE-2020-16898</span><br><span class="line">CVE-2020-16898 Windows TCP&#x2F;IP远程命令执行漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-16952</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;attackerkb.com&#x2F;topics&#x2F;4yGC4tLK2x&#x2F;cve-2020-16952https:&#x2F;&#x2F;srcincite.io&#x2F;pocs&#x2F;cve-2020-16952.py.txt</span><br><span class="line">CVE-2020-16952MicrosoftSharePointServer RCE漏洞exp</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-12928 Exploit Proof-of-Concept, Privilege Escalation in AMD Ryzen Master AMDRyzenMasterDriver.sys</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;h0mbre.github.io&#x2F;RyzenMaster_CVE&#x2F;#</span><br><span class="line">CVE-2020-12928 AMD RyzenMasterAMDRyzenMasterDriver.sys驱动漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Exploiting Uses of Uninitialized Stack Variables in Linux Kernels to Leak Kernel Pointers</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;uI377m9S0qs</span><br><span class="line">https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;woot20-paper1-slides-cho.pdf</span><br><span class="line">https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;woot20-paper-cho.pdf</span><br><span class="line">linux内核利用栈未初始化变量变量来泄露内核指针</span><br></pre></td></tr></table></figure>
+
+<p>•Beware the Bad Neighbor: Analysis and PoC of the Windows IPv6 Router Advertisement Vulnerability (CVE-2020-16898)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.quarkslab.com&#x2F;beware-the-bad-neighbor-analysis-and-poc-of-the-windows-ipv6-router-advertisement-vulnerability-cve-2020-16898.html</span><br><span class="line">CVE-2020-16898 windows BadNeighbor poc分析</span><br></pre></td></tr></table></figure>
+
+<p>•Introducing Edge Vulnerability Research</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;microsoftedge.github.io&#x2F;edgevr&#x2F;posts&#x2F;Introducing-Edge-Vulnerability-Research&#x2F;</span><br><span class="line">windows edge浏览器安全性分析系列文章第一篇</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•Exploiting CVE-2020–25213: wp-file-manager wordpress plugin (&lt;6.9) for unauthenticated arbitrary file upload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@mansoorr&#x2F;exploiting-cve-2020-25213-wp-file-manager-wordpress-plugin-6-9-3f79241f0cd8</span><br><span class="line">CVE-2020–25213 wp-file-manager wordpress plugin (&lt;6.9) 免认证任意文件上传漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Bypassing Trend Micro Web Threat Protection via Punycode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.inputzero.io&#x2F;2020&#x2F;08&#x2F;bypass-trend-micro-web-threat-protection.html</span><br><span class="line">过TrendMicroWebThreatProtection杀软</span><br></pre></td></tr></table></figure>
+
+<p>•Attackers Abuse MobileIron’s RCE to deliver Kaiten</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.blackarrow.net&#x2F;attackers-abuse-mobileirons-rce-to-deliver-kaiten&#x2F;</span><br><span class="line">MobileIron’s mobile DeviceManagement(MDM) 漏洞利用分析</span><br></pre></td></tr></table></figure>
+
+<p>•403 to RCE in XAMPP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.securifera.com&#x2F;blog&#x2F;2020&#x2F;10&#x2F;13&#x2F;403-to-rce-in-xampp&#x2F;</span><br><span class="line">XAMPP 从403到RCE</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-16947</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;0neb1n&#x2F;CVE-2020-16947</span><br><span class="line">Outlook2019(16.0.13231.20262) 漏洞CVE-2020-16947 poc</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h3><p>•Getting started with Datalog &amp; Rust for program analysis</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hexgolems.com&#x2F;2020&#x2F;10&#x2F;getting-started-with-ddlog&#x2F;</span><br><span class="line">Datalog程序静态分析工具</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•In Process Execute Assembly and Mail Slots</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;teamhydra.blog&#x2F;2020&#x2F;10&#x2F;12&#x2F;in-process-execute-assembly-and-mail-slots&#x2F;</span><br><span class="line">进程加载执行汇编代码</span><br></pre></td></tr></table></figure>
+
+<p>•XBALTI Phishing Scam</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.medarkus.net&#x2F;2020&#x2F;10&#x2F;11&#x2F;XBALTI-Kit.html</span><br><span class="line">钓鱼方式调研总结</span><br></pre></td></tr></table></figure>
+
+<p>•HTML to PDF converters, can I hack them?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sidechannel.tempestsi.com&#x2F;html-to-pdf-converters-can-i-hack-them-a681cfee0903</span><br></pre></td></tr></table></figure>
+
+<p>•The State of Exploit Development: 80% of Exploits Publish Faster than CVEs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;unit42.paloaltonetworks.com&#x2F;state-of-exploit-development&#x2F;</span><br><span class="line">paloalto团队发布的漏洞利用及cve公布之间的分析</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/10/19/%5B%E8%BD%AC%5D2020.10.12-10.18%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.10.12-10.18一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/10/11/[转]2020.10.5-10.11安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-10-19
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Security/">Security<span>11</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>16</span></a></li> <li><a href="/tags/转载/">转载<span>12</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-10-12-10-18一周安全知识动态"><span class="toc-article-text">2020.10.12-10.18一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#虚拟化逃逸漏洞相关"><span class="toc-article-text">虚拟化逃逸漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CTF相关"><span class="toc-article-text">CTF相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#工具相关"><span class="toc-article-text">工具相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
