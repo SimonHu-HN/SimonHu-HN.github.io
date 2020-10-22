@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Telegram提取Stickers到Wechat | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="Telegram提取Stickers到Wechat步骤1（使用telegram Bot转换出Stickers)在Telegram上用global寻找一些可用的stickers转换机器人，将其批量转换为jpg等图片格式，压缩整合打包后下载到本地
+
+步骤2（批量转换各种非gif格式）由于wechat的奇怪特性，只有格式为GIF的图片才可以激活右键某图片出现的&amp;lt;添加到表情&amp;gt;按钮，所以所有的图片都要变为GIF
+转换过程省略。条条大路通罗马
+同时修改微信的设置
+
+步骤3 （批量导入表情）">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Telegram提取Stickers到Wechat"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> Telegram提取Stickers到Wechat</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="Telegram提取Stickers到Wechat"><a href="#Telegram提取Stickers到Wechat" class="headerlink" title="Telegram提取Stickers到Wechat"></a>Telegram提取Stickers到Wechat</h1><h2 id="步骤1（使用telegram-Bot转换出Stickers"><a href="#步骤1（使用telegram-Bot转换出Stickers" class="headerlink" title="步骤1（使用telegram Bot转换出Stickers)"></a>步骤1（使用telegram Bot转换出Stickers)</h2><p>在Telegram上用global寻找一些可用的stickers转换机器人，将其批量转换为jpg等图片格式，压缩整合打包后下载到本地</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022193440141.png" alt="image-20201022193440141"></p>
+<h2 id="步骤2（批量转换各种非gif格式）"><a href="#步骤2（批量转换各种非gif格式）" class="headerlink" title="步骤2（批量转换各种非gif格式）"></a>步骤2（批量转换各种非gif格式）</h2><p>由于wechat的奇怪特性，只有格式为<code>GIF</code>的图片才可以激活右键某图片出现的&lt;添加到表情&gt;按钮，所以所有的图片都要变为<code>GIF</code></p>
+<p><em>转换过程省略。条条大路通罗马</em></p>
+<p>同时修改微信的设置</p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022203130853.png" alt="image-20201022203130853"></p>
+<h2 id="步骤3-（批量导入表情）"><a href="#步骤3-（批量导入表情）" class="headerlink" title="步骤3 （批量导入表情）"></a>步骤3 （批量导入表情）</h2><p>由于微信自身不带有任何批量导入的功能，所以用户可以通过某些助手来帮助表情包的批量导入，或者，通过<code>Python</code>:sunglasses:</p>
+<p>代码如下，(<a href="https://www.zhihu.com/question/36939285/answer/105995868" target="_blank" rel="noopener">参考</a>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pyautogui <span class="comment"># 自动按键</span></span><br><span class="line"><span class="keyword">import</span> pyperclip <span class="comment"># 操作剪贴板</span></span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="comment"># 进度条</span></span><br><span class="line"></span><br><span class="line">pyautogui.PAUSE = <span class="number">1</span> <span class="comment"># 暂停时长，1s差不多了</span></span><br><span class="line"></span><br><span class="line">file_path = <span class="string">"X:\\xxx\\"</span></span><br><span class="line"></span><br><span class="line">position_send_file = pyautogui.position() <span class="comment"># 取坐标 发送文件按钮</span></span><br><span class="line"></span><br><span class="line">position_new_photo = pyautogui.position() <span class="comment"># 取坐标 新发的图片</span></span><br><span class="line"></span><br><span class="line">position_add_emoji = pyautogui.position() <span class="comment"># 取坐标 添加到表情</span></span><br><span class="line"></span><br><span class="line">file_name_list = os.listdir(file_path) <span class="comment"># 所有的文件名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file_name <span class="keyword">in</span> tqdm_notebook(file_name_list):</span><br><span class="line">    pyperclip.copy(file_path + file_name) <span class="comment"># 文件名拷到剪贴板</span></span><br><span class="line">    pyautogui.click(position_send_file) <span class="comment"># 发送文件</span></span><br><span class="line">    pyautogui.hotkey(<span class="string">'ctrl'</span>, <span class="string">'v'</span>) <span class="comment"># 粘贴到文件框</span></span><br><span class="line">    pyautogui.hotkey(<span class="string">'enter'</span>) <span class="comment"># 打开</span></span><br><span class="line">    pyautogui.hotkey(<span class="string">'enter'</span>) <span class="comment"># 发送        </span></span><br><span class="line">    pyautogui.click(position_new_photo, button=<span class="string">'right'</span>) <span class="comment"># 右键新发的图片</span></span><br><span class="line">    pyautogui.click(position_add_emoji) <span class="comment"># 添加到表情</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/file/insert_Stickers.ipynb" target="_blank" rel="noopener">Jupyter源文件</a></p>
+<p>分析：</p>
+<p>由于微信的种种限制，直接用实现类似按键精灵一样的代码语言去直接操作，重复简单的手动过程，是实现微信各种批处理的最有效直接的方法。</p>
+<p>以上代码采用<code>pyautogui</code>与<code>pyperclip</code>来模拟用户操作，由于需要读取尺寸坐标，所以该代码最好的方法是在jupyter上运行，运用<code>juypter</code>上的<code>cell</code>运行特质，逐步给各个操作正确的尺寸定位，以完成后续批处理时的正确点击。</p>
+<h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022205125871.png" alt="image-20201022205125871"></p>
+<p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022205159088.png" alt="image-20201022205159088"></p>
+
+	  
+
+	</div>
+
+	
+	<span id="/2020/10/22/%E5%A6%82%E4%BD%95%E6%8A%8ATelegram%E7%9A%84sticker%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%88%B0Wechat%E9%87%8C/" class="leancloud-visitors view" data-flag-title="Telegram提取Stickers到Wechat">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/10/19/[转]2020.10.12-10.18安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-10-22
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/个人趣记/">个人趣记<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/Python/">Python<span>2</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#Telegram提取Stickers到Wechat"><span class="toc-article-text">Telegram提取Stickers到Wechat</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#步骤1（使用telegram-Bot转换出Stickers"><span class="toc-article-text">步骤1（使用telegram Bot转换出Stickers)</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#步骤2（批量转换各种非gif格式）"><span class="toc-article-text">步骤2（批量转换各种非gif格式）</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#步骤3-（批量导入表情）"><span class="toc-article-text">步骤3 （批量导入表情）</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#成果"><span class="toc-article-text">成果</span></a></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

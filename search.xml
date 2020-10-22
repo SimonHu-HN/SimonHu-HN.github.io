@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Telegram提取Stickers到Wechat</title>
+      <link href="/2020/10/22/%E5%A6%82%E4%BD%95%E6%8A%8ATelegram%E7%9A%84sticker%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%88%B0Wechat%E9%87%8C/"/>
+      <url>/2020/10/22/%E5%A6%82%E4%BD%95%E6%8A%8ATelegram%E7%9A%84sticker%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E5%88%B0Wechat%E9%87%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Telegram提取Stickers到Wechat"><a href="#Telegram提取Stickers到Wechat" class="headerlink" title="Telegram提取Stickers到Wechat"></a>Telegram提取Stickers到Wechat</h1><h2 id="步骤1（使用telegram-Bot转换出Stickers"><a href="#步骤1（使用telegram-Bot转换出Stickers" class="headerlink" title="步骤1（使用telegram Bot转换出Stickers)"></a>步骤1（使用telegram Bot转换出Stickers)</h2><p>在Telegram上用global寻找一些可用的stickers转换机器人，将其批量转换为jpg等图片格式，压缩整合打包后下载到本地</p><p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022193440141.png" alt="image-20201022193440141"></p><h2 id="步骤2（批量转换各种非gif格式）"><a href="#步骤2（批量转换各种非gif格式）" class="headerlink" title="步骤2（批量转换各种非gif格式）"></a>步骤2（批量转换各种非gif格式）</h2><p>由于wechat的奇怪特性，只有格式为<code>GIF</code>的图片才可以激活右键某图片出现的&lt;添加到表情&gt;按钮，所以所有的图片都要变为<code>GIF</code></p><p><em>转换过程省略。条条大路通罗马</em></p><p>同时修改微信的设置</p><p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022203130853.png" alt="image-20201022203130853"></p><h2 id="步骤3-（批量导入表情）"><a href="#步骤3-（批量导入表情）" class="headerlink" title="步骤3 （批量导入表情）"></a>步骤3 （批量导入表情）</h2><p>由于微信自身不带有任何批量导入的功能，所以用户可以通过某些助手来帮助表情包的批量导入，或者，通过<code>Python</code>:sunglasses:</p><p>代码如下，(<a href="https://www.zhihu.com/question/36939285/answer/105995868" target="_blank" rel="noopener">参考</a>)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pyautogui <span class="comment"># 自动按键</span></span><br><span class="line"><span class="keyword">import</span> pyperclip <span class="comment"># 操作剪贴板</span></span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm_notebook <span class="comment"># 进度条</span></span><br><span class="line"></span><br><span class="line">pyautogui.PAUSE = <span class="number">1</span> <span class="comment"># 暂停时长，1s差不多了</span></span><br><span class="line"></span><br><span class="line">file_path = <span class="string">"X:\\xxx\\"</span></span><br><span class="line"></span><br><span class="line">position_send_file = pyautogui.position() <span class="comment"># 取坐标 发送文件按钮</span></span><br><span class="line"></span><br><span class="line">position_new_photo = pyautogui.position() <span class="comment"># 取坐标 新发的图片</span></span><br><span class="line"></span><br><span class="line">position_add_emoji = pyautogui.position() <span class="comment"># 取坐标 添加到表情</span></span><br><span class="line"></span><br><span class="line">file_name_list = os.listdir(file_path) <span class="comment"># 所有的文件名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file_name <span class="keyword">in</span> tqdm_notebook(file_name_list):</span><br><span class="line">    pyperclip.copy(file_path + file_name) <span class="comment"># 文件名拷到剪贴板</span></span><br><span class="line">    pyautogui.click(position_send_file) <span class="comment"># 发送文件</span></span><br><span class="line">    pyautogui.hotkey(<span class="string">'ctrl'</span>, <span class="string">'v'</span>) <span class="comment"># 粘贴到文件框</span></span><br><span class="line">    pyautogui.hotkey(<span class="string">'enter'</span>) <span class="comment"># 打开</span></span><br><span class="line">    pyautogui.hotkey(<span class="string">'enter'</span>) <span class="comment"># 发送        </span></span><br><span class="line">    pyautogui.click(position_new_photo, button=<span class="string">'right'</span>) <span class="comment"># 右键新发的图片</span></span><br><span class="line">    pyautogui.click(position_add_emoji) <span class="comment"># 添加到表情</span></span><br></pre></td></tr></table></figure><p><a href="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/file/insert_Stickers.ipynb" target="_blank" rel="noopener">Jupyter源文件</a></p><p>分析：</p><p>由于微信的种种限制，直接用实现类似按键精灵一样的代码语言去直接操作，重复简单的手动过程，是实现微信各种批处理的最有效直接的方法。</p><p>以上代码采用<code>pyautogui</code>与<code>pyperclip</code>来模拟用户操作，由于需要读取尺寸坐标，所以该代码最好的方法是在jupyter上运行，运用<code>juypter</code>上的<code>cell</code>运行特质，逐步给各个操作正确的尺寸定位，以完成后续批处理时的正确点击。</p><h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022205125871.png" alt="image-20201022205125871"></p><p><img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20201022205159088.png" alt="image-20201022205159088"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 个人趣记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>(转载)2020.10.12-10.18一周安全知识动态</title>
       <link href="/2020/10/19/%5B%E8%BD%AC%5D2020.10.12-10.18%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/"/>
       <url>/2020/10/19/%5B%E8%BD%AC%5D2020.10.12-10.18%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</url>
