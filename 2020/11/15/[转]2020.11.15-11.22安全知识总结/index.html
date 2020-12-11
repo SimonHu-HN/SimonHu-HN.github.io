@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.11.15-11.22一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.11.15-11.22一周安全知识动态转自
+IOT漏洞相关•SD-PWN Part 2 — Citrix SD-WAN Center — Another Network Takeover
+12https:&amp;#x2F;&amp;#x2F;medium.com&amp;#x2F;realmodelabs&amp;#x2F;sd-pwn-part-2-citrix-sd-wan-center-another-network-takeover-a9c950a1a27cCitrix SD-WAN Center漏洞分析
+
+浏览器漏洞相关•Modern attacks on the Chrome browser : optimizations and deoptimizations
+12https:&amp;#x2F;&amp;#x2F;doar-e.github.io&amp;#x2F;blog&amp;#x2F;2020&amp;#x2F;11&amp;#x2F;17&amp;#x2F;modern-attacks-on-the-chrome-browser-optimizations-and-deoptimizations&amp;#x2F;doar-e 上新的关于v8工作机制以及漏洞Issue1016450分析的文章
+
+•CVE-2020-17053: Use-After-Free IE Vulnerability
+12https:&amp;#x2F;&amp;#x2F;www.trendmicro.com&amp;#x2F;en_us&amp;#x2F;research&amp;#x2F;20&amp;#x2F;k&amp;#x2F;cve-2020-17053-use-after-free-ie-vulnerability.htmlCVE-2020-17053 IE UAF漏洞分析">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.11.15-11.22一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.11.15-11.22一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-11-15-11-22一周安全知识动态"><a href="#2020-11-15-11-22一周安全知识动态" class="headerlink" title="2020.11.15-11.22一周安全知识动态"></a>2020.11.15-11.22一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•SD-PWN Part 2 — Citrix SD-WAN Center — Another Network Takeover</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;realmodelabs&#x2F;sd-pwn-part-2-citrix-sd-wan-center-another-network-takeover-a9c950a1a27c</span><br><span class="line">Citrix SD-WAN Center漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Modern attacks on the Chrome browser : optimizations and deoptimizations</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;doar-e.github.io&#x2F;blog&#x2F;2020&#x2F;11&#x2F;17&#x2F;modern-attacks-on-the-chrome-browser-optimizations-and-deoptimizations&#x2F;</span><br><span class="line">doar-e 上新的关于v8工作机制以及漏洞Issue1016450分析的文章</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-17053: Use-After-Free IE Vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.trendmicro.com&#x2F;en_us&#x2F;research&#x2F;20&#x2F;k&#x2F;cve-2020-17053-use-after-free-ie-vulnerability.html</span><br><span class="line">CVE-2020-17053 IE UAF漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•restler-fuzzer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.microsoft.com&#x2F;en-us&#x2F;research&#x2F;blog&#x2F;restler-finds-security-and-reliability-bugs-through-automated-fuzzing&#x2F;?OCID&#x3D;msr_blog_restler_twhttps:&#x2F;&#x2F;github.com&#x2F;microsoft&#x2F;restler-fuzzer</span><br><span class="line">微软开源了 REST API fuzzing工具</span><br></pre></td></tr></table></figure>
+
+<p>•UAFuzz: Binary-level Directed Fuzzing for Use-After-Free Vulnerabilities</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;securityonline.info&#x2F;uafuzz&#x2F;</span><br><span class="line">目标是挖掘uaf漏洞的fuzz框架</span><br></pre></td></tr></table></figure>
+
+<p>•NYX: Greybox Hypervisor Fuzzing using Fast Snapshots and Affine Types</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.usenix.org&#x2F;system&#x2F;files&#x2F;sec21summer_schumilo.pdf</span><br><span class="line">usenix Hypervisor fuzz 论文</span><br></pre></td></tr></table></figure>
+
+<p>•PhD Thesis: Greybox Automatic Exploit Generation for Heap Overflows in Language Interpreters</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sean.heelan.io&#x2F;2020&#x2F;11&#x2F;18&#x2F;phd-thesis-greybox-automatic-exploit-generation-for-heap-overflows-in-language-interpreters&#x2F;</span><br><span class="line">博士论文：关于语言解释器的堆漏洞自动利用</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•CVE-2020-26217: XStream can be used for Remote Code Execution.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;x-stream.github.io&#x2F;CVE-2020-26217.html</span><br><span class="line">CVE-2020-26217: XStream远程代码执行漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•Attacking JSON Web Tokens (JWTs)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;bugbountywriteup&#x2F;attacking-json-web-tokens-jwts-d1d51a1e17cb</span><br><span class="line">攻击利用 JSON WebToken</span><br></pre></td></tr></table></figure>
+
+<p>•RCE via Server-Side Template Injection</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cyc10n3.medium.com&#x2F;rce-via-server-side-template-injection-ad46f8e0c2ae</span><br><span class="line">通过Server-Side模版注入实现RCE</span><br></pre></td></tr></table></figure>
+
+<p>•Consul by HashiCorp: from Infoleak to RCE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;lab.wallarm.com&#x2F;consul-by-hashicorp-from-infoleak-to-rce</span><br><span class="line">Consul服务从信息泄露到rce</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•Issue 2073: Samsung NPU (Neural Processing Unit) memory corruption in shared memory parsing</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;bugs.chromium.org&#x2F;p&#x2F;project-zero&#x2F;issues&#x2F;detail?id&#x3D;2073</span><br><span class="line">Samsung NPU内存破坏漏洞，可导致提权</span><br></pre></td></tr></table></figure>
+
+<p>•Jailbreaks Never Die: Exploiting iOS 13.7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cyberweek.ae&#x2F;materials&#x2F;2020&#x2F;D2T1%20-%20Jailbreaks%20Never%20Die%20-%20Exploiting%20iOS%2013.7.pdf</span><br><span class="line">iOS13.7越狱技术介绍slide</span><br></pre></td></tr></table></figure>
+
+<p>•Running code in the context of iOS Kernel: Part I + LPE POC on iOS 13.7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.zecops.com&#x2F;vulnerabilities&#x2F;running-code-in-the-context-of-ios-kernel-part-i-lpe-poc-on-ios-13-7&#x2F;</span><br><span class="line">iOS内核代码执行</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h3><p>•MiraclePtr and *Scan - preventing exploitation of UaF bugs (BlinkOn 13)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;ohlxw5kDn-k&amp;list&#x3D;PL9ioqAuyl6UJ_1hPrSWD1LpaIAeF9aaJi&amp;index&#x3D;18</span><br><span class="line">MiraclePtr缓解uaf漏洞的机制</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•Customizing C2-Frameworks for AV-Evasion</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;s3cur3th1ssh1t.github.io&#x2F;Customizing_C2_Frameworks&#x2F;</span><br><span class="line">设计实现过杀软的C2框架</span><br></pre></td></tr></table></figure>
+
+<p>•Does Apple really log every app you run? A technical look</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.jacopo.io&#x2F;en&#x2F;post&#x2F;apple-ocsp&#x2F;</span><br><span class="line">苹果日志记录分析</span><br></pre></td></tr></table></figure>
+
+<p>•0day “In the Wild”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;docs.google.com&#x2F;spreadsheets&#x2F;d&#x2F;1lkNJ0uQwbeC1ZTRrxdtuPLCIl7mlUreoKfSIgajnSyY&#x2F;edit#gid&#x3D;1869060786</span><br><span class="line">谷歌收集的2020年在野0day信息文档</span><br></pre></td></tr></table></figure>
+
+<p>•Dynamic Invocation in .NET to bypass hooks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.nviso.eu&#x2F;2020&#x2F;11&#x2F;20&#x2F;dynamic-invocation-in-net-to-bypass-hooks&#x2F;</span><br><span class="line">.NET动态调用方法研究</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/11/15/%5B%E8%BD%AC%5D2020.11.15-11.22%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.11.15-11.22一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/11/23/LeetCode刷题记录(Array)/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/11/02/[转]2020.11.2-11.15安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-11-15
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Security/">Security<span>17</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>23</span></a></li> <li><a href="/tags/转载/">转载<span>17</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-11-15-11-22一周安全知识动态"><span class="toc-article-text">2020.11.15-11.22一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#工具相关"><span class="toc-article-text">工具相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

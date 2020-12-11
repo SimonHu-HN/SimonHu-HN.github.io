@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.11.2-11.15一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.11.2-11.15一周安全知识动态转自
+漏洞挖掘相关•Moving From Dynamic Emulation of UEFI Modules To Coverage-Guided Fuzzing of UEFI Firmware
+12https:&amp;#x2F;&amp;#x2F;labs.sentinelone.com&amp;#x2F;moving-from-dynamic-emulation-of-uefi-modules-to-coverage-guided-fuzzing-of-uefi-firmware&amp;#x2F;https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;Sentinel-One&amp;#x2F;efi_fuzz基于反馈的对UEFI固件的fuzz
+
+•Fuzzing Go package using go-fuzz &amp;amp; libfuzzer
+12https:&amp;#x2F;&amp;#x2F;academy.fuzzinglabs.com&amp;#x2F;fuzzing-go-package-go-fuzz-libfuzzer使用go-fuzz &amp;amp; libfuzzer 对go package进行fuzz
+
+•2020 LLVM Developers’ Meeting: E. Stepanov “Memory tagging in LLVM and Android”
+12https:&amp;#x2F;&amp;#x2F;www.youtube.com&amp;#x2F;watch?v&amp;#x3D;tqG9pr1K5G8llvm以及安卓中的内存标记技术
+
+•Instrumenting Adobe Reader with Frida">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.11.2-11.15一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.11.2-11.15一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-11-2-11-15一周安全知识动态"><a href="#2020-11-2-11-15一周安全知识动态" class="headerlink" title="2020.11.2-11.15一周安全知识动态"></a>2020.11.2-11.15一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•Moving From Dynamic Emulation of UEFI Modules To Coverage-Guided Fuzzing of UEFI Firmware</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.sentinelone.com&#x2F;moving-from-dynamic-emulation-of-uefi-modules-to-coverage-guided-fuzzing-of-uefi-firmware&#x2F;https:&#x2F;&#x2F;github.com&#x2F;Sentinel-One&#x2F;efi_fuzz</span><br><span class="line">基于反馈的对UEFI固件的fuzz</span><br></pre></td></tr></table></figure>
+
+<p>•Fuzzing Go package using go-fuzz &amp; libfuzzer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;academy.fuzzinglabs.com&#x2F;fuzzing-go-package-go-fuzz-libfuzzer</span><br><span class="line">使用go-fuzz &amp; libfuzzer 对go package进行fuzz</span><br></pre></td></tr></table></figure>
+
+<p>•2020 LLVM Developers’ Meeting: E. Stepanov “Memory tagging in LLVM and Android”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;tqG9pr1K5G8</span><br><span class="line">llvm以及安卓中的内存标记技术</span><br></pre></td></tr></table></figure>
+
+<p>•Instrumenting Adobe Reader with Frida</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;starlabs.sg&#x2F;blog&#x2F;2020&#x2F;11&#x2F;instrumenting-adobe-reader-with-frida&#x2F;</span><br><span class="line">Adobe Reader通过Frida插桩</span><br></pre></td></tr></table></figure>
+
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•Vulnerabilities and tools for the PAX Payment Devices, including D200, S80, S300, S800, S900, S920</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;git.lsd.cat&#x2F;g&#x2F;pax-pwn</span><br><span class="line">PAX支付设备漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Silver Peak Unity Orchestrator RCE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;realmodelabs&#x2F;silver-peak-unity-orchestrator-rce-2928d65ef749</span><br><span class="line">Silver Peak Unity Orchestrator 代码执行漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•TP-Link Takeover with a Flash Drive</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;tenable-techblog&#x2F;tp-link-takeover-with-a-flash-drive-d493666f6b39</span><br><span class="line">通过usb驱动攻击TP-Link</span><br></pre></td></tr></table></figure>
+
+<p>•Extraordinary Vulnerabilities Discovered in TCL Android TVs, Now World’s 3rd Largest TV Manufacturer</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sick.codes&#x2F;extraordinary-vulnerabilities-discovered-in-tcl-android-tvs-now-worlds-3rd-largest-tv-manufacturer&#x2F;</span><br><span class="line">TCL 安卓TV漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•Fuzzing for eBPF JIT bugs in the Linux kernel</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;scannell.me&#x2F;fuzzing-for-ebpf-jit-bugs-in-the-linux-kernel&#x2F;</span><br><span class="line">eBPF JIT fuzz漏洞挖掘及CVE-2020-27194漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Using the Linux Audit API to Track Processes</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;natanyellin.com&#x2F;posts&#x2F;using-linux-audit-to-track-processes&#x2F;</span><br><span class="line">用Linux Audit API来跟踪进程</span><br></pre></td></tr></table></figure>
+
+<p>•Detecting Dynamic Loading in Android Applications With /proc/maps</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;sayfer.io&#x2F;blog&#x2F;dynamic-loading-in-android-applications-with-proc-maps&#x2F;</span><br><span class="line">通过&#x2F;proc&#x2F;maps来检测Android应用动态加载</span><br></pre></td></tr></table></figure>
+
+<p>•Booting a macOS Apple Silicon kernel in QEMU</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;worthdoingbadly.com&#x2F;xnuqemu3&#x2F;</span><br><span class="line">用qemu来启动MacOS</span><br></pre></td></tr></table></figure>
+
+<p>•[Linux Kernel Exploitation 0x0] Debugging the Kernel with QEMU</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.k3170makan.com&#x2F;2020&#x2F;11&#x2F;linux-kernel-exploitation-0x0-debugging.html</span><br><span class="line">linux内核利用系列文章第一篇QEMU调试内核</span><br></pre></td></tr></table></figure>
+
+<p>•Sleep Attack: Intel Bootguard vulnerability waking from S3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;trmm.net&#x2F;Sleep_attack&#x2F;</span><br><span class="line">利用intel cpu s3特性进行利用</span><br></pre></td></tr></table></figure>
+
+<p>•How to get root on Ubuntu 20.04 by pretending nobody’s /home</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;securitylab.github.com&#x2F;research&#x2F;Ubuntu-gdm3-accountsservice-LPE</span><br><span class="line">ubuntu20.04 提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Exploring the Exploitability of “Bad Neighbor”: The Recent ICMPv6 Vulnerability (CVE-2020-16898)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.zecops.com&#x2F;vulnerabilities&#x2F;exploring-the-exploitability-of-bad-neighbor-the-recent-icmpv6-vulnerability-cve-2020-16898&#x2F;</span><br><span class="line">ICMPv6 (CVE-2020-16898)漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Intel Coverage Security and Management Engine</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.intel.com&#x2F;content&#x2F;dam&#x2F;www&#x2F;public&#x2F;us&#x2F;en&#x2F;security-advisory&#x2F;documents&#x2F;intel-csme-security-white-paper.pdf</span><br><span class="line">Intel Coverage Security and Management Engine白皮书</span><br></pre></td></tr></table></figure>
+
+<p>•Windows RpcEptMapper Service Insecure Registry Permissions EoP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;itm4n.github.io&#x2F;windows-registry-rpceptmapper-eop&#x2F;</span><br><span class="line">Windows RpcEptMapper 服务本地提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Try to in-place transition during map update</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;chromium.googlesource.com&#x2F;v8&#x2F;v8.git&#x2F;+&#x2F;3ba21a17ce2f26b015cc29adc473812247472776%5E%21&#x2F;#F3</span><br><span class="line">CVE-2020-16009: v8 新 0day</span><br></pre></td></tr></table></figure>
+
+<p>•Actions Speak Browser Than Words (Exploiting n-days for fun and profit)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;L7aiFKDg0Jk</span><br><span class="line">maxpl0it关于IE以及Firefox n day的利用过程分析</span><br></pre></td></tr></table></figure>
+
+<p>•[JSC] Assert Operation and HostFunction are in JITOperationsList</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;WebKit&#x2F;webkit&#x2F;commit&#x2F;2ffeeff4dfb86a74ae695dea8671fccc423559adhttps:&#x2F;&#x2F;trac.webkit.org&#x2F;search?q&#x3D;JIT-caging</span><br><span class="line">webkit中引入了更强的JIT-Caging机制</span><br></pre></td></tr></table></figure>
+
+<p>•JavaScriptCore Internals Part I: Tracing JavaScript Source to Bytecode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;zon8.re&#x2F;posts&#x2F;jsc-internals-part1-tracing-js-source-to-bytecode&#x2F;</span><br><span class="line">JSC 从源码到字节码分析的文章</span><br></pre></td></tr></table></figure>
+
+<p>•V8: Turbofan fails to deoptimize code after map deprecation, leading to type confusion</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;bugs.chromium.org&#x2F;p&#x2F;project-zero&#x2F;issues&#x2F;detail?id&#x3D;2106</span><br><span class="line">v8 issue2106  map deprecation相关漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•WebAssembly compilation pipeline</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;v8.dev&#x2F;docs&#x2F;wasm-compilation-pipeline</span><br><span class="line">v8中WebAssembly编译过程分析</span><br></pre></td></tr></table></figure>
+
+<p>•Deep Dive into Site Isolation (Part 1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;microsoftedge.github.io&#x2F;edgevr&#x2F;posts&#x2F;deep-dive-into-site-isolation-part-1&#x2F;</span><br><span class="line">对chrome中Site Isolation实现的分析</span><br></pre></td></tr></table></figure>
+
+<p>•[compiler] Fix use of HeapObjectMatcher</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;v8&#x2F;v8&#x2F;commit&#x2F;27900f17b845b8881d8328ef70b1bccba8984bbcv8 cve-2020-16013 commit</span><br></pre></td></tr></table></figure>
+
+<p>•Firefox Vulnerability Research Part 2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.exodusintel.com&#x2F;2020&#x2F;11&#x2F;10&#x2F;firefox-vulnerability-research-part-2&#x2F;</span><br><span class="line">firfox漏洞研究文章系列第二篇</span><br></pre></td></tr></table></figure>
+
+<p>•Warp: Improved JS performance in Firefox 83</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;hacks.mozilla.org&#x2F;2020&#x2F;11&#x2F;warp-improved-js-performance-in-firefox-83&#x2F;</span><br><span class="line">Firefox 83 Warp特性大幅提升js的性格</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•CVE-2020-16877: Exploiting Microsoft Store Games</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.ioactive.com&#x2F;2020&#x2F;11&#x2F;cve-2020-16877-exploiting-microsoft.html</span><br><span class="line">漏洞利用Microsoft Store Games</span><br></pre></td></tr></table></figure>
+
+<p>•DIVING INTO A WEBSOCKET VULNERABILITY IN APACHE TOMCAT</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.redteam-pentesting.de&#x2F;2020&#x2F;websocket-vulnerability-tomcat&#x2F;</span><br><span class="line">TOMCAT CVE-2020-13935 websocket漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Breaking The Facebook For Android Application</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.ash-king.co.uk&#x2F;blog&#x2F;facebook-bug-bounty-09-18</span><br><span class="line">Facebook app漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Attack of the clones: Git clients remote code execution</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.blazeinfosec.com&#x2F;attack-of-the-clones-github-desktop-remote-code-execution&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;legalhackers.com&#x2F;advisories&#x2F;Git-LFS-RCE-Exploit-CVE-2020-27955.html</span><br><span class="line">git 客户端代码执行漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•Active SaltStack CVEs Announced</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.saltstack.com&#x2F;blog&#x2F;on-november-3-2020-saltstack-publicly-disclosed-three-new-cves&#x2F;</span><br><span class="line">SaltStack代码执行漏洞CVE-2020-16846分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-16995: Microsoft Azure Network Watcher Linux Extension EoP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.intezer.com&#x2F;blog&#x2F;cloud-security&#x2F;cve-2020-16995-microsoft-azure-network-watcher-linux-extension&#x2F;Microsoft Azure Network Watcher 提权漏洞CVE-2020-16995分析</span><br></pre></td></tr></table></figure>
+
+<p>•SAD DNS — New Flaws Re-Enable DNS Cache Poisoning Attacks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;thehackernews.com&#x2F;2020&#x2F;11&#x2F;sad-dns-new-flaws-re-enable-dns-cache.htmlCVE-2020-25705 DNS投毒分析</span><br></pre></td></tr></table></figure>
+
+<p>•apache-openoffice-rce-via-uno-links</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;irsl&#x2F;apache-openoffice-rce-via-uno-links</span><br><span class="line">Apache OpenOffice RCE (CVE-2020-13958) poc</span><br></pre></td></tr></table></figure>
+
+<p>•Interesting case of SQLi</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@mrnikhilsri&#x2F;interesting-case-of-sqli-84cc3f4a5255</span><br><span class="line">SQLi 案例分析</span><br></pre></td></tr></table></figure>
+
+<p>•Decrypting OpenSSH sessions for fun and profit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;research.nccgroup.com&#x2F;2020&#x2F;11&#x2F;11&#x2F;decrypting-openssh-sessions-for-fun-and-profit&#x2F;</span><br><span class="line">OpenSSH session 解密分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h3><p>•CobaltStrike</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;Freakboy&#x2F;CobaltStrike</span><br><span class="line">CobaltStrike 源码泄露</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•Hacking in an epistolary way: implementing kerberoast in pure VBA</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;adepts.of0x.cc&#x2F;kerberoast-vba-macro&#x2F;</span><br><span class="line">通过VBA来实现kerberoast</span><br></pre></td></tr></table></figure>
+
+<p>•Let’s Encrypt issues new Root and Intermediate Certificates</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;scotthelme.co.uk&#x2F;lets-encrypts-new-root-and-intermediate-certificates&#x2F;证书加密分析</span><br></pre></td></tr></table></figure>
+
+<p>•The Art of the Honeypot Account: Making the Unusual Look Normal</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.hub.trimarcsecurity.com&#x2F;post&#x2F;the-art-of-the-honeypot-account-making-the-unusual-look-normal</span><br><span class="line">搭建Honeypot Account的技巧</span><br></pre></td></tr></table></figure>
+
+<p>•China and Vulnerability Research</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@thegrugq&#x2F;china-and-vulnerability-research-dc617c993c4ehttps:&#x2F;&#x2F;medium.com&#x2F;@thegrugq&#x2F;cyber-security-motivations-guessing-game-cbb404728ec7</span><br><span class="line">中国漏洞研究现状研究</span><br></pre></td></tr></table></figure>
+
+<p>•The Chromium Projects Quarterly Updates</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.chromium.org&#x2F;Home&#x2F;chromium-security&#x2F;quarterly-updates</span><br><span class="line">谷歌安全团队每季度更新的动态</span><br></pre></td></tr></table></figure>
+
+<p>•Oops, I missed it again!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;2020&#x2F;11&#x2F;oops-i-missed-it-again.html</span><br><span class="line">p0发布的关于曾经研究过没发现漏洞，补丁公布后知道漏洞存在的过程</span><br></pre></td></tr></table></figure>
+
+<p>•Hunting for Malicious Packages on PyPI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;jordan-wright.com&#x2F;blog&#x2F;post&#x2F;2020-11-12-hunting-for-malicious-packages-on-pypi&#x2F;</span><br><span class="line">PyPI 恶意安装包分析</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/11/02/%5B%E8%BD%AC%5D2020.11.2-11.15%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.11.2-11.15一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/11/15/[转]2020.11.15-11.22安全知识总结/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/10/29/Bypass the WALL/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-11-02
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Security/">Security<span>17</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>23</span></a></li> <li><a href="/tags/转载/">转载<span>17</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-11-2-11-15一周安全知识动态"><span class="toc-article-text">2020.11.2-11.15一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#工具相关"><span class="toc-article-text">工具相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

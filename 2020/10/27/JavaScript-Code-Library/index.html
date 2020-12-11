@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>JavaScript Code Library | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="convenient for code write
+获得当前网页元素上的所有的链接 
+
+
+Method 1 (short) 
+参考
+123[...new Set(Array.from(document.querySelectorAll(&#39;[src],[href]&#39;)).map(i=&amp;gt;i.src||i.href))][...new Set(Array.from($$(&#39;[src],[href]&#39;)).map(i=&amp;gt;i.src||i.href))]// ...剥衣;new Set去重;$$=document.querySelectorAll
+
+human-readable
+123456789let urls = []$$(&#39;*&#39;).forEach(i =&amp;gt; &amp;#123;  urls.push(i.src)  urls.push(i.href)  urls.push(i.url)&amp;#125;); console.log(...new Set(urls))//(*) means all elements
+
+human-readable( with regex )
+1234567891011let urls = []$$(&#39;*&#39;).forEach(i =&amp;gt; &amp;#123;  urls.push(i.src)  urls.push(i.href)  urls.push(i.url)&amp;#125;); regexUrls= $.grep(urls, function (n) &amp;#123;  try &amp;#123;return n.match(/.*http://XXX.COM.*/i)&amp;#125; catch (e) &amp;#123;&amp;#125;&amp;#125;); console.log(...new Set(regexUrls))       // http://XXX.COM. change to your search target">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="JavaScript Code Library"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> JavaScript Code Library</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>获得当前网页元素上的所有的链接</strong> </p>
+<hr>
+<ul>
+<li><p>Method 1 (short) </p>
+<p><a href="https://en.wikipedia.org/wiki/Prototype_JavaScript_Framework#The_$()_function" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from($$(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line"><span class="comment">// ...剥衣;new Set去重;$$=document.querySelectorAll</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>human-readable</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(urls))</span><br><span class="line"></span><br><span class="line"><span class="comment">//(*) means all elements</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>human-readable( with regex )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line">regexUrls= $.grep(urls, <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;<span class="keyword">return</span> n.match(<span class="regexp">/.*http:/</span><span class="regexp">/XXX.COM.*/i</span>)&#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line">&#125;); <span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(regexUrls))</span><br><span class="line">       </span><br><span class="line"><span class="comment">// http://XXX.COM. change to your search target</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+	  
+
+	</div>
+
+	
+	<span id="/2020/10/27/JavaScript-Code-Library/" class="leancloud-visitors view" data-flag-title="JavaScript Code Library">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/10/27/算法题cheat sheet/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/10/22/如何把Telegram的sticker批量添加到Wechat里/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-10-27
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/JavaScript/">JavaScript<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/code-library/">code library<span>4</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

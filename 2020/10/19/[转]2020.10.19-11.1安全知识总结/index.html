@@ -1,0 +1,431 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>(转载)2020.10.19-11.1一周安全知识动态 | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="2020.10.19-11.1一周安全知识动态转自
+IOT漏洞相关•Remote Command Execution in Ruckus IoT Controller (CVE-2020-26878 &amp;amp; CVE-2020-26879)
+12https:&amp;#x2F;&amp;#x2F;adepts.of0x.cc&amp;#x2F;ruckus-vriot-rce&amp;#x2F;Ruckus IoT Controller命令执行漏洞CVE-2020-26878 以及 CVE-2020-26879分析
+
+•Interacting with a Serial Port
+12https:&amp;#x2F;&amp;#x2F;cybergibbons.com&amp;#x2F;hardware-hacking&amp;#x2F;interacting-with-a-serial-port&amp;#x2F;硬件串口通信
+
+CTF相关•Using a PIE binary as a Shared Library — HCSC-2020 CTF Writeup
+1HCSC-2020 CTF 逆向题Baseline test writeup">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="(转载)2020.10.19-11.1一周安全知识动态"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> (转载)2020.10.19-11.1一周安全知识动态</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="2020-10-19-11-1一周安全知识动态"><a href="#2020-10-19-11-1一周安全知识动态" class="headerlink" title="2020.10.19-11.1一周安全知识动态"></a>2020.10.19-11.1一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
+<h3 id="IOT漏洞相关"><a href="#IOT漏洞相关" class="headerlink" title="IOT漏洞相关"></a>IOT漏洞相关</h3><p>•Remote Command Execution in Ruckus IoT Controller (CVE-2020-26878 &amp; CVE-2020-26879)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;adepts.of0x.cc&#x2F;ruckus-vriot-rce&#x2F;</span><br><span class="line">Ruckus IoT Controller命令执行漏洞CVE-2020-26878 以及 CVE-2020-26879分析</span><br></pre></td></tr></table></figure>
+
+<p>•Interacting with a Serial Port</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cybergibbons.com&#x2F;hardware-hacking&#x2F;interacting-with-a-serial-port&#x2F;</span><br><span class="line">硬件串口通信</span><br></pre></td></tr></table></figure>
+
+<h3 id="CTF相关"><a href="#CTF相关" class="headerlink" title="CTF相关"></a>CTF相关</h3><p>•Using a PIE binary as a Shared Library — HCSC-2020 CTF Writeup</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HCSC-2020 CTF 逆向题Baseline test writeup</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3><p>•Explicit Is Always Good? Read the Story of CVE-2020-1034</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.br0vvnn.io&#x2F;pages&#x2F;blogpost.aspx?id&#x3D;2</span><br><span class="line">CVE-2020-1034 widows内核提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Let’s talk macOS Authorization</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;theevilbit.github.io&#x2F;posts&#x2F;macos_authorization&#x2F;</span><br><span class="line">macOS认证分析</span><br></pre></td></tr></table></figure>
+
+<p>•Samsung S20 - RCE via Samsung Galaxy Store App</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.f-secure.com&#x2F;blog&#x2F;samsung-s20-rce-via-samsung-galaxy-store-app&#x2F;</span><br><span class="line">Samsung S20  RCE漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Getting started in macOS security</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;theevilbit.github.io&#x2F;posts&#x2F;getting_started_in_macos_security&#x2F;macOS 安全研究资源</span><br></pre></td></tr></table></figure>
+
+<p>•A story of three CVE’s in Ubuntu Desktop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.eyecontrol.nl&#x2F;blog&#x2F;the-story-of-3-cves-in-ubuntu-desktop.html</span><br><span class="line">ubuntu CVE-2020-15703、CVE-2020-16121以及CVE-2020-15238漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-16939: WINDOWS GROUP POLICY DACL OVERWRITE PRIVILEGE ESCALATION</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.zerodayinitiative.com&#x2F;blog&#x2F;2020&#x2F;10&#x2F;27&#x2F;cve-2020-16939-windows-group-policy-dacl-overwrite-privilege-escalation</span><br><span class="line">CVE-2020-16939 windows组策略提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•UACMe 3.5, WD and the ways of mitigation</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;swapcontext.blogspot.com&#x2F;2020&#x2F;10&#x2F;uacme-35-wd-and-ways-of-mitigation.html</span><br><span class="line">UAC bypasses 技术分析</span><br></pre></td></tr></table></figure>
+
+<p>•Secure loading of libraries to prevent DLL preloading attacks</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;support.microsoft.com&#x2F;en-in&#x2F;help&#x2F;2389418&#x2F;secure-loading-of-libraries-to-prevent-dll-preloading-attacks</span><br><span class="line">dll 注入机制防御机制</span><br></pre></td></tr></table></figure>
+
+<p>•Issue 2104: Windows Kernel cng.sys pool-based buffer overflow in IOCTL 0x390400</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;bugs.chromium.org&#x2F;p&#x2F;project-zero&#x2F;issues&#x2F;detail?id&#x3D;2104</span><br><span class="line">windows内核cng.sys池溢出漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="漏洞挖掘相关"><a href="#漏洞挖掘相关" class="headerlink" title="漏洞挖掘相关"></a>漏洞挖掘相关</h3><p>•AFLNet: A Greybox Fuzzer for Network Protocols</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;aflnet&#x2F;aflnethttps:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;Au3eO7mEI7E&amp;feature&#x3D;youtu.be</span><br><span class="line">AFLNet 网络协议fuzz开源工具及视频</span><br></pre></td></tr></table></figure>
+
+<p>•Fuzzing (fuzz testing) tutorial: What it is and how can it improve application security?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.techrepublic.com&#x2F;article&#x2F;fuzzing-fuzz-testing-tutorial-what-it-is-and-how-can-it-improve-application-security&#x2F;</span><br><span class="line">对Dr. David Brumley（a professor at Carnegie Mellon University and CEO）关于fuzz的采访</span><br></pre></td></tr></table></figure>
+
+<p>•Let’s build a high-performance fuzzer with GPUs!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.trailofbits.com&#x2F;2020&#x2F;10&#x2F;22&#x2F;lets-build-a-high-performance-fuzzer-with-gpus&#x2F;</span><br><span class="line">通过GPU来构建高性能fuzzer</span><br></pre></td></tr></table></figure>
+
+<p>•Basic Buffer Overflow Guide</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;catharsis.net.au&#x2F;blog&#x2F;basic-buffer-overflow-guide&#x2F;</span><br><span class="line">demo服务器栈溢出fuzz漏洞挖掘以及漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•The Fuzzing Book</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.fuzzingbook.org&#x2F;beta&#x2F;</span><br><span class="line">fuzz理论与实践比较好的公开电子书</span><br></pre></td></tr></table></figure>
+
+<p>•How to check code coverage on Linux with gcov, lcov and gcovr</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;rOXsKuW5xXw&amp;feature&#x3D;youtu.be</span><br><span class="line">linux系统中如何检查代码覆盖率</span><br></pre></td></tr></table></figure>
+
+<p>•Getting started with go-fuzz</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;adalogics.com&#x2F;blog&#x2F;getting-started-with-go-fuzz</span><br><span class="line">go-fuzz分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Firefox Vulnerability Research</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.exodusintel.com&#x2F;2020&#x2F;10&#x2F;20&#x2F;firefox-vulnerability-research&#x2F;</span><br><span class="line">firfox漏洞研究</span><br></pre></td></tr></table></figure>
+
+<p>•Introducing Microsoft Edge preview builds for Linux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blogs.windows.com&#x2F;msedgedev&#x2F;2020&#x2F;10&#x2F;20&#x2F;microsoft-edge-dev-linux&#x2F;</span><br><span class="line">在linux上安装windows edge</span><br></pre></td></tr></table></figure>
+
+<p>•Exploiting a textbook use-after-free in Chrome</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;securitylab.github.com&#x2F;research&#x2F;CVE-2020-6449-exploit-chrome-uafhttps:&#x2F;&#x2F;github.com&#x2F;github&#x2F;securitylab&#x2F;tree&#x2F;main&#x2F;SecurityExploits&#x2F;Chrome&#x2F;blink&#x2F;CVE-2020-6449</span><br><span class="line">Chrome textbook use-after-free 漏洞分析及利用</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟化逃逸漏洞相关"><a href="#虚拟化逃逸漏洞相关" class="headerlink" title="虚拟化逃逸漏洞相关"></a>虚拟化逃逸漏洞相关</h3><p>•VMware ESXi SLP Use-After-Free Remote Code Execution Vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.zerodayinitiative.com&#x2F;advisories&#x2F;ZDI-20-1269&#x2F;</span><br><span class="line">CVE-2020-3992VMware ESXi SLP uaf漏洞公告</span><br></pre></td></tr></table></figure>
+
+<p>•DETAILING TWO VMWARE WORKSTATION TOCTOU VULNERABILITIES</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.zerodayinitiative.com&#x2F;blog&#x2F;2020&#x2F;10&#x2F;22&#x2F;detailing-two-vmware-workstation-toctou-vulnerabilities</span><br><span class="line">VMWARE WORKSTATION TOCTOU漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•First Steps in Hyper-V Research</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;msrc-blog.microsoft.com&#x2F;2018&#x2F;12&#x2F;10&#x2F;first-steps-in-hyper-v-research</span><br><span class="line">Hyper-V 虚拟化漏洞研究</span><br></pre></td></tr></table></figure>
+
+<p>•VM Forking and Hypervisor-based Fuzzing with Xen</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.slideshare.net&#x2F;tklengyel&#x2F;vm-forking-and-hypervisorbased-fuzzing-with-xen</span><br><span class="line">ossummit上关于VM Forking以及Hypervisor-based fuzz的ppt</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用程序漏洞相关"><a href="#应用程序漏洞相关" class="headerlink" title="应用程序漏洞相关"></a>应用程序漏洞相关</h3><p>•FRITZ!Box DNS Rebinding Protection Bypass</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.redteam-pentesting.de&#x2F;en&#x2F;advisories&#x2F;rt-sa-2020-003&#x2F;-fritz-box-dns-rebinding-protection-bypass</span><br><span class="line">DNS Rebinding保护机制绕过</span><br></pre></td></tr></table></figure>
+
+<p>•AssaultCube RCE: Technical Analysis</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;medium.com&#x2F;@elongl&#x2F;assaultcube-rce-technical-analysis-e12dedf680e5</span><br><span class="line">AssaultCube RCE 漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Discord Desktop app RCE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;mksben.l0.cm&#x2F;2020&#x2F;10&#x2F;discord-desktop-rce.html</span><br><span class="line">CVE-2020-15174 Discord Desktop app rce漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•GitHub - RCE via git option injection (almost) - $20,000 Bounty</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;devcraft.io&#x2F;2020&#x2F;10&#x2F;18&#x2F;github-rce-git-inject.html</span><br><span class="line">GitHub - RCE git option漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Insecure use of shell.openExternal</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;wireapp&#x2F;wire-desktop&#x2F;security&#x2F;advisories&#x2F;GHSA-5gpx-9976-ggpm</span><br><span class="line">wire app desktop 代码执行漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•SECRET FRAGMENTS: REMOTE CODE EXECUTION ON SYMFONY BASED WEBSITES</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.ambionics.io&#x2F;blog&#x2F;symfony-secret-fragment</span><br><span class="line">Symfony框架代码执行漏洞</span><br></pre></td></tr></table></figure>
+
+<p>•CVE-2020-17365 – Hotspot Shield VPN New Privilege Escalation Vulnerability</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cymptom.com&#x2F;cve-2020-17365-hotspot-shield-vpn-new-privilege-escalation-vulnerability&#x2F;2020&#x2F;10&#x2F;</span><br><span class="line">CVE-2020-17365 Hotspot Shield VPN提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Gateway2Hell – Multiple Privilege Escalation Vulnerabilities in Citrix Gateway Plug-In</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cymptom.com&#x2F;gateway2hell-multiple-privilege-escalation-vulnerabilities-in-citrix-gateway-plug-in&#x2F;2020&#x2F;10&#x2F;</span><br><span class="line">Citrix Gateway Plug-In 提权漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•GitHub Pages - Multiple RCEs via insecure Kramdown configuration - $25,000 Bounty</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;devcraft.io&#x2F;2020&#x2F;10&#x2F;20&#x2F;github-pages-multiple-rces-via-kramdown-config.html</span><br><span class="line">通过Kramdown configuration实现github代码执行</span><br></pre></td></tr></table></figure>
+
+<p>•Citrix ADC (Netscaler ADC) Multi-Factor Bypass</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;vdalabs.com&#x2F;2020&#x2F;10&#x2F;26&#x2F;citrix-adc-netscaler-adc-multi-factor-bypass&#x2F;</span><br><span class="line">Citrix ADC 多因子认证绕过</span><br></pre></td></tr></table></figure>
+
+<p>•Weblogic RCE by only one GET request — CVE-2020–14882 Analysis</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;testbnull.medium.com&#x2F;weblogic-rce-by-only-one-get-request-cve-2020-14882-analysis-6e4b09981dbf</span><br><span class="line">CVE-2020–14882 Weblogic RCE 漏洞分析</span><br></pre></td></tr></table></figure>
+
+<p>•Reversing Pulse Secure Client Credentials Store</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;quentinkaiser.be&#x2F;reversing&#x2F;2020&#x2F;10&#x2F;27&#x2F;pule-secure-credentials&#x2F;</span><br><span class="line">Pulse Secure客户端证书分析</span><br></pre></td></tr></table></figure>
+
+<p>•Code vulnerabilities put health records at risk</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.sonarsource.com&#x2F;openemr-5-0-2-1-command-injection-vulnerability</span><br><span class="line">OpenEMR 5.0.2.1 RCE漏洞分析</span><br></pre></td></tr></table></figure>
+
+<h3 id="工具相关"><a href="#工具相关" class="headerlink" title="工具相关"></a>工具相关</h3><p>•Cloud Security Tools</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;cloudberry.engineering&#x2F;tool&#x2F;</span><br><span class="line">云安全工具收集</span><br></pre></td></tr></table></figure>
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>•NSA Warns Chinese State-Sponsored Malicious Cyber Actors Exploiting 25 CVEs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;media.defense.gov&#x2F;2020&#x2F;Oct&#x2F;20&#x2F;2002519884&#x2F;-1&#x2F;-1&#x2F;0&#x2F;CSA_CHINESE_EXPLOIT_VULNERABILITIES_UOO179811.PDF</span><br><span class="line">我国网络攻击中常用的25个cve</span><br></pre></td></tr></table></figure>
+
+<p>•Cheating at Online Video Games and What It Can Teach Us About AppSec (Part 1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;labs.bishopfox.com&#x2F;industry-blog&#x2F;cheating-at-online-video-games-part-1</span><br><span class="line">电子游戏作弊机制分析</span><br></pre></td></tr></table></figure>
+
+<p>•How Debuggers Work: Getting and Setting x86 Registers, Part 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.moritz.systems&#x2F;blog&#x2F;how-debuggers-work-getting-and-setting-x86-registers-part-1&#x2F;</span><br><span class="line">调试器的工作机制分析系列文章1</span><br></pre></td></tr></table></figure>
+
+<p>•How Debuggers Work: Getting and Setting x86 Registers, Part 2: XSAVE</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.moritz.systems&#x2F;blog&#x2F;how-debuggers-work-getting-and-setting-x86-registers-part-2&#x2F;</span><br><span class="line">调试器的工作机制分析系列文章2</span><br></pre></td></tr></table></figure>
+	  
+
+	</div>
+
+	
+	<span id="/2020/10/19/%5B%E8%BD%AC%5D2020.10.19-11.1%E5%AE%89%E5%85%A8%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="leancloud-visitors view" data-flag-title="(转载)2020.10.19-11.1一周安全知识动态">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2020/10/19/[转]2020.10.12-10.18安全知识总结/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2020/10/11/[转]2020.10.5-10.11安全知识总结/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2020-10-19
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Security/">Security<span>17</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>23</span></a></li> <li><a href="/tags/转载/">转载<span>17</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#2020-10-19-11-1一周安全知识动态"><span class="toc-article-text">2020.10.19-11.1一周安全知识动态</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#IOT漏洞相关"><span class="toc-article-text">IOT漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#CTF相关"><span class="toc-article-text">CTF相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#操作系统漏洞相关"><span class="toc-article-text">操作系统漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#漏洞挖掘相关"><span class="toc-article-text">漏洞挖掘相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#浏览器漏洞相关"><span class="toc-article-text">浏览器漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#虚拟化逃逸漏洞相关"><span class="toc-article-text">虚拟化逃逸漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#应用程序漏洞相关"><span class="toc-article-text">应用程序漏洞相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#工具相关"><span class="toc-article-text">工具相关</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#其它"><span class="toc-article-text">其它</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2020 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
