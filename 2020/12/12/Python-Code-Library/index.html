@@ -9,7 +9,7 @@
   <title>Python Code Library | SimonHu's Blog</title>
   <meta name="author" content="SimonHu">
   
-  <meta name="description" content="convenient for code write
+  <meta name="description" content="Convenient for code write
 爬虫代码初始化模板 
 
 作用：requests爬虫脚本初始化代码
@@ -134,7 +134,7 @@
 	<div class="mypage">
 	  
 
-	  <p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+	  <p><i class="fa fa-code blink-slow"></i><em>Convenient for code write</em></p>
 <p><strong>爬虫代码初始化模板</strong> </p>
 <hr>
 <p><em>作用：requests爬虫脚本初始化代码</em></p>
@@ -150,13 +150,18 @@
 <p><em>作用：对字符串是否包含有中文字符进行判断</em></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_chinese</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    check whether the string includes the Chinese</span></span><br><span class="line"><span class="string">    param: string</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> <span class="string">u'\u4e00'</span> &lt;= ch &lt;= <span class="string">u'\u9fff'</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
+<p><strong>文件(txt)操作初始模板</strong></p>
+<hr>
+<p><em>作用：对文件（文本文件）进行读取写入，此处为先读取当前文件夹里的所有.txt结尾文件的内容，经过特定的函数处理后写入新文本文档</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_something</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    file_list = os.listdir()</span><br><span class="line">    target = <span class="string">'target.txt'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(target, <span class="string">'a+'</span>, encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> source: <span class="comment">#a+ w+ rb</span></span><br><span class="line">        <span class="keyword">for</span> file_name <span class="keyword">in</span> file_list:</span><br><span class="line">            <span class="keyword">if</span> file_name.endswith(<span class="string">'.txt'</span>) <span class="keyword">and</span> file_name != target:</span><br><span class="line">                <span class="keyword">with</span> open(file_name, <span class="string">'r'</span>, encoding=<span class="string">'UTF-8'</span>) <span class="keyword">as</span> file:</span><br><span class="line">                    print(file_name + <span class="string">'done'</span>)</span><br><span class="line">                    <span class="keyword">for</span> contents <span class="keyword">in</span> file.readlines():</span><br><span class="line">                        source.write(do_something(contents))</span><br></pre></td></tr></table></figure>
+
 
 	  
 
 	</div>
 
 	
-	<span id="/2020/06/09/Python-Code-Library/" class="leancloud-visitors view" data-flag-title="Python Code Library">
+	<span id="/2020/12/12/Python-Code-Library/" class="leancloud-visitors view" data-flag-title="Python Code Library">
 		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
 	</span>
 	
@@ -167,13 +172,12 @@
 
     
     
-    <a href="/2020/07/07/SubLime-使用技巧-故障解决方案/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2020/06/09/Java-Code-Library/" type="button" class="btn btn-default ">Next<i
+    <a href="/2020/12/12/LeetCode刷题记录(Array)/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -205,7 +209,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2020-06-09
+	2020-12-12
 	</div>
 	
 

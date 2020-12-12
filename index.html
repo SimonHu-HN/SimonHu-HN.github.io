@@ -191,6 +191,74 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2020/12/12/Python-Code-Library/" > Python Code Library </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-12-12  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>Convenient for code write</em></p>
+<p><strong>爬虫代码初始化模板</strong> </p>
+<hr>
+<p><em>作用：requests爬虫脚本初始化代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">""</span></span><br><span class="line">headers=&#123;&#125;</span><br><span class="line">proxies=&#123;</span><br><span class="line">   <span class="comment"># 'http': 'socks5://xxxx:5555',</span></span><br><span class="line">   <span class="comment">#  'https': 'socks5://xxxx:5555'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result = requests.get(url_fix, proxies=proxies, headers=headers)</span><br><span class="line">soup = BeautifulSoup(result.content.decode(<span class="string">'utf-8'</span>), <span class="string">'lxml'</span>)</span><br><span class="line">target = soup.find(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修正url中的#</strong> </p>
+<hr>
+<p><em>作用：防止待爬取目标的url中具有的#等特殊字符对爬虫进行干扰</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharp_fix</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    the sharp (#) will incur some troubles in url</span></span><br><span class="line"><span class="string">    param: url</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> url.find(<span class="string">'#'</span>) &gt;= <span class="number">0</span>:</span><br><span class="line">        strs = url.split(<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">if</span> is_chinese(strs[<span class="number">1</span>]):</span><br><span class="line">            fix = urllib.parse.quote(strs[<span class="number">1</span>])</span><br><span class="line">            fix = strs[<span class="number">0</span>] + <span class="string">'%23'</span> + fix</span><br><span class="line">            <span class="keyword">return</span> fix</span><br><span class="line">        <span class="keyword">return</span> url</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+
+<p><strong>判断字符串否包含中文</strong> </p>
+	
+
+	</div>
+  <a type="button" href="/2020/12/12/Python-Code-Library/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>Convenient for code write</em></p>
+<p><strong>爬虫代码初始化模板</strong> </p>
+<hr>
+<p><em>作用：requests爬虫脚本初始化代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">""</span></span><br><span class="line">headers=&#123;&#125;</span><br><span class="line">proxies=&#123;</span><br><span class="line">   <span class="comment"># 'http': 'socks5://xxxx:5555',</span></span><br><span class="line">   <span class="comment">#  'https': 'socks5://xxxx:5555'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result = requests.get(url_fix, proxies=proxies, headers=headers)</span><br><span class="line">soup = BeautifulSoup(result.content.decode(<span class="string">'utf-8'</span>), <span class="string">'lxml'</span>)</span><br><span class="line">target = soup.find(<span class="string">'div'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>修正url中的#</strong> </p>
+<hr>
+<p><em>作用：防止待爬取目标的url中具有的#等特殊字符对爬虫进行干扰</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sharp_fix</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    the sharp (#) will incur some troubles in url</span></span><br><span class="line"><span class="string">    param: url</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> url.find(<span class="string">'#'</span>) &gt;= <span class="number">0</span>:</span><br><span class="line">        strs = url.split(<span class="string">'#'</span>)</span><br><span class="line">        <span class="keyword">if</span> is_chinese(strs[<span class="number">1</span>]):</span><br><span class="line">            fix = urllib.parse.quote(strs[<span class="number">1</span>])</span><br><span class="line">            fix = strs[<span class="number">0</span>] + <span class="string">'%23'</span> + fix</span><br><span class="line">            <span class="keyword">return</span> fix</span><br><span class="line">        <span class="keyword">return</span> url</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+
+<p><strong>判断字符串否包含中文</strong> </p>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/12/12/Python-Code-Library/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2020/12/12/LeetCode刷题记录(Array)/" > LeetCode-Array </a>
 		</h3>
 		</div>
@@ -685,84 +753,6 @@
 </div>
 
 		
-			
-
-
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2020/10/27/JavaScript-Code-Library/" > JavaScript Code Library </a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2020-10-27  </div>
-		</div>
-	</div>
-	
-
-
-			<!--
-<div class="entry">
-  <div class="row">
-	
-	
-		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
-<p><strong>获得当前网页元素上的所有的链接</strong> </p>
-<hr>
-<ul>
-<li><p>Method 1 (short) </p>
-<p><a href="https://en.wikipedia.org/wiki/Prototype_JavaScript_Framework#The_$()_function" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from($$(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line"><span class="comment">// ...剥衣;new Set去重;$$=document.querySelectorAll</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>human-readable</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(urls))</span><br><span class="line"></span><br><span class="line"><span class="comment">//(*) means all elements</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>human-readable( with regex )</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line">regexUrls= $.grep(urls, <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;<span class="keyword">return</span> n.match(<span class="regexp">/.*http:/</span><span class="regexp">/XXX.COM.*/i</span>)&#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line">&#125;); <span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(regexUrls))</span><br><span class="line">       </span><br><span class="line"><span class="comment">// http://XXX.COM. change to your search target</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-	
-
-	</div>
-  <a type="button" href="/2020/10/27/JavaScript-Code-Library/#more" class="btn btn-default more">Read More →</a>
-</div>
-
--->
-<div class="entry">
-  <div class="row">
-	
-	
-		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
-<p><strong>获得当前网页元素上的所有的链接</strong> </p>
-<hr>
-<ul>
-<li><p>Method 1 (short) </p>
-<p><a href="https://en.wikipedia.org/wiki/Prototype_JavaScript_Framework#The_$()_function" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from($$(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line"><span class="comment">// ...剥衣;new Set去重;$$=document.querySelectorAll</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>human-readable</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(urls))</span><br><span class="line"></span><br><span class="line"><span class="comment">//(*) means all elements</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>human-readable( with regex )</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line">regexUrls= $.grep(urls, <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;<span class="keyword">return</span> n.match(<span class="regexp">/.*http:/</span><span class="regexp">/XXX.COM.*/i</span>)&#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line">&#125;); <span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(regexUrls))</span><br><span class="line">       </span><br><span class="line"><span class="comment">// http://XXX.COM. change to your search target</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-	
-	...
-	...
-	...
-	<center>
-	  <a type="button" href="/2020/10/27/JavaScript-Code-Library/#more" class="btn btn-more more">Read More →</a><center/>
-	</div>
-</div>
-
-		
 
 		</div>
 
@@ -837,21 +827,21 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/code-library/">code library<span>4</span></a></li>
+			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
 		
 			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
-		
-			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
 		
 			<li><a href="/tags/Instant-Message/">Instant Message<span>1</span></a></li>
 		
 			<li><a href="/tags/转载/">转载<span>17</span></a></li>
 		
-			<li><a href="/tags/Jupyter/">Jupyter<span>1</span></a></li>
+			<li><a href="/tags/code-library/">code library<span>4</span></a></li>
 		
 			<li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>25</span></a></li>
 		
-			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
+			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
+		
+			<li><a href="/tags/Jupyter/">Jupyter<span>1</span></a></li>
 		
 			<li><a href="/tags/LeetCode/">LeetCode<span>1</span></a></li>
 		
@@ -867,6 +857,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2020/12/12/Python-Code-Library/" ><i class="fa fa-file-o"></i>Python Code Library</a>
+      </li>
+    
+      <li>
         <a href="/2020/12/12/LeetCode刷题记录(Array)/" ><i class="fa fa-file-o"></i>LeetCode-Array</a>
       </li>
     
@@ -880,10 +874,6 @@
     
       <li>
         <a href="/2020/11/29/[转]2020.11.23-11.29安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.11.23-11.29一周安全知识动态</a>
-      </li>
-    
-      <li>
-        <a href="/2020/11/15/[转]2020.11.15-11.22安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.11.15-11.22一周安全知识动态</a>
       </li>
     
   </ul>

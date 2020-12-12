@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://simonhu-hn.github.io/2020/12/12/Python-Code-Library/</loc>
+    
+    <lastmod>2020-12-12T08:37:09.295Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://simonhu-hn.github.io/2020/12/12/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95(Array)/</loc>
     
     <lastmod>2020-12-12T08:29:12.901Z</lastmod>
@@ -89,13 +96,6 @@
     <loc>https://simonhu-hn.github.io/2020/10/29/Bypass%20the%20WALL/</loc>
     
     <lastmod>2020-10-27T15:57:03.107Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://simonhu-hn.github.io/2020/06/09/Python-Code-Library/</loc>
-    
-    <lastmod>2020-10-27T15:09:21.353Z</lastmod>
     
   </url>
   

@@ -128,6 +128,84 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2020/10/27/JavaScript-Code-Library/" > JavaScript Code Library </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2020-10-27  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>获得当前网页元素上的所有的链接</strong> </p>
+<hr>
+<ul>
+<li><p>Method 1 (short) </p>
+<p><a href="https://en.wikipedia.org/wiki/Prototype_JavaScript_Framework#The_$()_function" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from($$(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line"><span class="comment">// ...剥衣;new Set去重;$$=document.querySelectorAll</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>human-readable</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(urls))</span><br><span class="line"></span><br><span class="line"><span class="comment">//(*) means all elements</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>human-readable( with regex )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line">regexUrls= $.grep(urls, <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;<span class="keyword">return</span> n.match(<span class="regexp">/.*http:/</span><span class="regexp">/XXX.COM.*/i</span>)&#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line">&#125;); <span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(regexUrls))</span><br><span class="line">       </span><br><span class="line"><span class="comment">// http://XXX.COM. change to your search target</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+	
+
+	</div>
+  <a type="button" href="/2020/10/27/JavaScript-Code-Library/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>convenient for code write</em></p>
+<p><strong>获得当前网页元素上的所有的链接</strong> </p>
+<hr>
+<ul>
+<li><p>Method 1 (short) </p>
+<p><a href="https://en.wikipedia.org/wiki/Prototype_JavaScript_Framework#The_$()_function" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line">[...new <span class="built_in">Set</span>(<span class="built_in">Array</span>.from($$(<span class="string">'[src],[href]'</span>)).map(<span class="function"><span class="params">i</span>=&gt;</span>i.src||i.href))]</span><br><span class="line"><span class="comment">// ...剥衣;new Set去重;$$=document.querySelectorAll</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>human-readable</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line"><span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(urls))</span><br><span class="line"></span><br><span class="line"><span class="comment">//(*) means all elements</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>human-readable( with regex )</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> urls = []</span><br><span class="line">$$(<span class="string">'*'</span>).forEach(<span class="function"><span class="params">i</span> =&gt;</span> &#123;</span><br><span class="line">  urls.push(i.src)</span><br><span class="line">  urls.push(i.href)</span><br><span class="line">  urls.push(i.url)</span><br><span class="line">&#125;); </span><br><span class="line">regexUrls= $.grep(urls, <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;<span class="keyword">return</span> n.match(<span class="regexp">/.*http:/</span><span class="regexp">/XXX.COM.*/i</span>)&#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line">&#125;); <span class="built_in">console</span>.log(...new <span class="built_in">Set</span>(regexUrls))</span><br><span class="line">       </span><br><span class="line"><span class="comment">// http://XXX.COM. change to your search target</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2020/10/27/JavaScript-Code-Library/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2020/10/22/如何把Telegram的sticker批量添加到Wechat里/" > Telegram提取Stickers到Wechat </a>
 		</h3>
 		</div>
@@ -750,72 +828,6 @@
 </div>
 
 		
-			
-
-
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2020/09/29/[转]2020.8.3-8.9安全知识总结/" > (转载)2020.8.3-8.9一周安全知识动态 </a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2020-09-29  </div>
-		</div>
-	</div>
-	
-
-
-			<!--
-<div class="entry">
-  <div class="row">
-	
-	
-		<h1 id="2020-8-3-8-9一周安全知识动态"><a href="#2020-8-3-8-9一周安全知识动态" class="headerlink" title="2020.8.3-8.9一周安全知识动态"></a>2020.8.3-8.9一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
-<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Compromising the macOS Kernel through Safari by Chaining Six Vulnerabilities</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;sslab-gatech&#x2F;pwn2own2020Pwn2own2020 macOS利用链</span><br></pre></td></tr></table></figure>
-
-<p>•0day Exploit Root Cause Analyses</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;p&#x2F;rca.html三个在野0day：CVE-2019-17026(Firefox)、CVE-2020-0674(InternetExplorer)、CVE-2020-6820(Firefox)分析</span><br></pre></td></tr></table></figure>
-
-<p>•Understanding Web Security Checks in Firefox</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.mozilla.org&#x2F;attack-and-defense&#x2F;2020&#x2F;08&#x2F;05&#x2F;understanding-web-security-checks-in-firefox-part-2&#x2F;firefox中的WebSecurityChecks机制分析</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3>
-	
-
-	</div>
-  <a type="button" href="/2020/09/29/[转]2020.8.3-8.9安全知识总结/#more" class="btn btn-default more">Read More →</a>
-</div>
-
--->
-<div class="entry">
-  <div class="row">
-	
-	
-		<h1 id="2020-8-3-8-9一周安全知识动态"><a href="#2020-8-3-8-9一周安全知识动态" class="headerlink" title="2020.8.3-8.9一周安全知识动态"></a>2020.8.3-8.9一周安全知识动态</h1><p>转自<img src="https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/image-20200929114557052.png" alt="image-20200929114557052"></p>
-<h3 id="浏览器漏洞相关"><a href="#浏览器漏洞相关" class="headerlink" title="浏览器漏洞相关"></a>浏览器漏洞相关</h3><p>•Compromising the macOS Kernel through Safari by Chaining Six Vulnerabilities</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;sslab-gatech&#x2F;pwn2own2020Pwn2own2020 macOS利用链</span><br></pre></td></tr></table></figure>
-
-<p>•0day Exploit Root Cause Analyses</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;googleprojectzero.blogspot.com&#x2F;p&#x2F;rca.html三个在野0day：CVE-2019-17026(Firefox)、CVE-2020-0674(InternetExplorer)、CVE-2020-6820(Firefox)分析</span><br></pre></td></tr></table></figure>
-
-<p>•Understanding Web Security Checks in Firefox</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;blog.mozilla.org&#x2F;attack-and-defense&#x2F;2020&#x2F;08&#x2F;05&#x2F;understanding-web-security-checks-in-firefox-part-2&#x2F;firefox中的WebSecurityChecks机制分析</span><br></pre></td></tr></table></figure>
-
-<h3 id="操作系统漏洞相关"><a href="#操作系统漏洞相关" class="headerlink" title="操作系统漏洞相关"></a>操作系统漏洞相关</h3>
-	
-	...
-	...
-	...
-	<center>
-	  <a type="button" href="/2020/09/29/[转]2020.8.3-8.9安全知识总结/#more" class="btn btn-more more">Read More →</a><center/>
-	</div>
-</div>
-
-		
 
 		</div>
 
@@ -896,17 +908,17 @@
 		
 			<li><a href="/tags/转载/">转载<span>17</span></a></li>
 		
-			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
-		
-			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
+			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
 		
 			<li><a href="/tags/code-library/">code library<span>4</span></a></li>
 		
-			<li><a href="/tags/Instant-Message/">Instant Message<span>1</span></a></li>
+			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
 		
-			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
+			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
 		
 			<li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>25</span></a></li>
+		
+			<li><a href="/tags/Instant-Message/">Instant Message<span>1</span></a></li>
 		
 		 
 		</ul>
@@ -918,6 +930,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2020/12/12/Python-Code-Library/" ><i class="fa fa-file-o"></i>Python Code Library</a>
+      </li>
     
       <li>
         <a href="/2020/12/12/LeetCode刷题记录(Array)/" ><i class="fa fa-file-o"></i>LeetCode-Array</a>
@@ -933,10 +949,6 @@
     
       <li>
         <a href="/2020/11/29/[转]2020.11.23-11.29安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.11.23-11.29一周安全知识动态</a>
-      </li>
-    
-      <li>
-        <a href="/2020/11/15/[转]2020.11.15-11.22安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.11.15-11.22一周安全知识动态</a>
       </li>
     
   </ul>
