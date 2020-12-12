@@ -6,12 +6,14 @@ $(document).ready(function() {
             if ($(window).width() >= 992) {
                 $(".navbar").stop().fadeTo(400, 0.2);
             }
+            $("#tocstyle").addClass("meta-widget-toc-fixed");
         }
         else {
             $("#gotop").fadeOut(400);
             if ($(window).width() >= 1200) {
                 $(".navbar").stop().fadeTo(400, 1);
             }
+            $("#tocstyle").removeClass("meta-widget-toc-fixed");
 
         }
     });

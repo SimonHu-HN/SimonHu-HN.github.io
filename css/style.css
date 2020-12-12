@@ -96,6 +96,11 @@ li i {
     font-size: .9em;
 }
 
+.meta-widget-toc-fixed {
+    position: fixed;
+    top: 5px
+}
+
 .meta-widget a {
     color: #aaaaaa
 }
