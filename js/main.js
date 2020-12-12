@@ -5,8 +5,8 @@ $(document).ready(function() {
             $("#gotop").fadeIn(400);
             if ($(window).width() >= 992) {
                 $(".navbar").stop().fadeTo(400, 0.2);
+                $("#tocstyle").addClass("meta-widget-toc-fixed");
             }
-            $("#tocstyle").addClass("meta-widget-toc-fixed");
         }
         else {
             $("#gotop").fadeOut(400);
