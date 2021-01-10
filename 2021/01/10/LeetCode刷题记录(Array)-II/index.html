@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>LeetCode-Array-II | SimonHu's Blog</title>
+  <meta name="author" content="SimonHu">
+  
+  <meta name="description" content="LeetCode - topics: Array (Part II)54. Spiral MatrixGiven an m x n matrix, return all elements of the matrix in spiral order.
+Example 1:
+
+
+12Input: matrix &amp;#x3D; [[1,2,3],[4,5,6],[7,8,9]]Output: [1,2,3,6,9,8,7,4,5]
+
+Example 2:
+
+
+12Input: matrix &amp;#x3D; [[1,2,3,4],[5,6,7,8],[9,10,11,12]]Output: [1,2,3,4,8,12,11,10,9,5,6,7]
+
+
+
+Constraints:">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="LeetCode-Array-II"/>
+  <meta property="og:site_name" content="SimonHu"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166336296-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-166336296-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+ <body>
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Menu</span>
+      </button>
+	  <a class="navbar-brand" href="/">Home</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+
+
+
+	
+		<div class="page-header">
+			<h1> LeetCode-Array-II</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">
+	  
+
+	  <h1 id="LeetCode-topics-Array-Part-II"><a href="#LeetCode-topics-Array-Part-II" class="headerlink" title="LeetCode - topics: Array (Part II)"></a>LeetCode - topics: Array (Part II)</h1><h2 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a>54. Spiral Matrix</h2><p>Given an <code>m x n</code> <code>matrix</code>, return <em>all elements of the</em> <code>matrix</code> <em>in spiral order</em>.</p>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg" alt="img" style="zoom:50%;" />
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: matrix &#x3D; [[1,2,3],[4,5,6],[7,8,9]]</span><br><span class="line">Output: [1,2,3,6,9,8,7,4,5]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2020/11/13/spiral.jpg" alt="img" style="zoom:50%;" />
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: matrix &#x3D; [[1,2,3,4],[5,6,7,8],[9,10,11,12]]</span><br><span class="line">Output: [1,2,3,4,8,12,11,10,9,5,6,7]</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 10</code></li>
+<li><code>-100 &lt;= matrix[i][j] &lt;= 100</code></li>
+</ul>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">spiralOrder</span><span class="params">(matrix [][]<span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(matrix) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> []<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	result := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="number">0</span>)</span><br><span class="line">	endL, endC, startL, startC := <span class="built_in">len</span>(matrix)<span class="number">-1</span>, <span class="built_in">len</span>(matrix[<span class="number">0</span>])<span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	count, moveL, moveC := <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">	curL, curC := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> count &lt;= <span class="built_in">len</span>(matrix)*<span class="built_in">len</span>(matrix[<span class="number">0</span>]) &#123;</span><br><span class="line">		<span class="keyword">if</span> moveC != <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> moveC &gt; <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curC &lt;= endC; curC++ &#123;</span><br><span class="line">					result = <span class="built_in">append</span>(result, matrix[curL][curC])</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curC--</span><br><span class="line">				curL++</span><br><span class="line">				startL, moveL, moveC = curL, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curC &gt;= startC; curC-- &#123;</span><br><span class="line">					result = <span class="built_in">append</span>(result, matrix[curL][curC])</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curC++</span><br><span class="line">				curL--</span><br><span class="line">				endL, moveL, moveC = curL, <span class="number">-1</span>, <span class="number">0</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> moveL != <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> moveL &gt; <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curL &lt;= endL; curL++ &#123;</span><br><span class="line">					result = <span class="built_in">append</span>(result, matrix[curL][curC])</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curL--</span><br><span class="line">				curC--</span><br><span class="line">				endC, moveL, moveC = curC, <span class="number">0</span>, <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curL &gt;= startL; curL-- &#123;</span><br><span class="line">					result = <span class="built_in">append</span>(result, matrix[curL][curC])</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curC++</span><br><span class="line">				curL++</span><br><span class="line">				startC, moveL, moveC = curC, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;s the integer <span class="number">123.</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>用的笨方法，操作题，注意好上下左右的变化，把握好重复行列的处理</p>
+</blockquote>
+<h2 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h2><p>Given an array of non-negative integers <code>nums</code>, you are initially positioned at the <strong>first index</strong> of the array.</p>
+<p>Each element in the array represents your maximum jump length at that position.</p>
+<p>Determine if you are able to reach the last index.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [2,3,1,1,4]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure>
+
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 3 * 104</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 105</code></li>
+</ul>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">canJump</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	curFar, curEnd := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">		<span class="keyword">if</span> curEnd &gt;= <span class="built_in">len</span>(nums)<span class="number">-1</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">		curFar = max(curFar, i+v)</span><br><span class="line">		<span class="keyword">if</span> i == curEnd &#123;</span><br><span class="line">			curEnd = curFar</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a <span class="keyword">int</span>, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> a &gt; b &#123;</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-1"><a href="#Note-1" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>[45.Jump Game II](#45. Jump Game II)兄弟题，上一题求跳跃步数，这一条只要判断最远可以跳出(&gt;=)即可判断能够跳到终点</p>
+</blockquote>
+<h2 id="56-Merge-Intervals"><a href="#56-Merge-Intervals" class="headerlink" title="56. Merge Intervals"></a>56. Merge Intervals</h2><p>Given an array of <code>intervals</code> where <code>intervals[i] = [starti, endi]</code>, merge all overlapping intervals, and return <em>an array of the non-overlapping intervals that cover all the intervals in the input</em>.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals &#x3D; [[1,3],[2,6],[8,10],[15,18]]</span><br><span class="line">Output: [[1,6],[8,10],[15,18]]</span><br><span class="line">Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(intervals [][]<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	sort.Slice(intervals, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">		<span class="keyword">return</span> intervals[i][<span class="number">0</span>] &lt; intervals[j][<span class="number">0</span>]</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">var</span> res [][]<span class="keyword">int</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(intervals); i++ &#123;</span><br><span class="line">		start, end := intervals[i][<span class="number">0</span>], intervals[i][<span class="number">1</span>]</span><br><span class="line">		j := i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> ; j &lt; <span class="built_in">len</span>(intervals) &amp;&amp; intervals[j][<span class="number">0</span>] &lt;= end; j++ &#123;</span><br><span class="line">			end = max(end, intervals[j][<span class="number">1</span>])</span><br><span class="line">		&#125;</span><br><span class="line">		res = <span class="built_in">append</span>(res, []<span class="keyword">int</span>&#123;start, end&#125;)</span><br><span class="line">		i = j - <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a <span class="keyword">int</span>, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> a &gt; b &#123;</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-2"><a href="#Note-2" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>解决此类问题，首先将每个小分段的顺序按照起始点的大小来排序，随后判断相邻两个位置，后一个的起始点是否小于等于前一个的末尾点，一旦小于即有交叉，一有交叉就要先判断两个集合的end是什么(因为start已经按照顺序排好了，start必是前一个分段的起点)，通过max()函数进行比较收尾，这两个分段的merge就结束了，依次进行下去，即可完成所有merge</p>
+</blockquote>
+<h2 id="57-Insert-Interval"><a href="#57-Insert-Interval" class="headerlink" title="57. Insert Interval"></a>57. Insert Interval</h2><p>Given a set of <em>non-overlapping</em> intervals, insert a new interval into the intervals (merge if necessary).</p>
+<p>You may assume that the intervals were initially sorted according to their start times.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals &#x3D; [[1,3],[6,9]], newInterval &#x3D; [2,5]</span><br><span class="line">Output: [[1,5],[6,9]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: intervals &#x3D; [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval &#x3D; [4,8]</span><br><span class="line">Output: [[1,2],[3,10],[12,16]]</span><br><span class="line">Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">insert</span><span class="params">(intervals [][]<span class="keyword">int</span>, newInterval []<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(intervals) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> [][]<span class="keyword">int</span>&#123;newInterval&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> res [][]<span class="keyword">int</span></span><br><span class="line">	inserOK := <span class="literal">false</span></span><br><span class="line">	<span class="keyword">for</span> i, v := <span class="keyword">range</span> intervals &#123;</span><br><span class="line">		<span class="keyword">if</span> v[<span class="number">0</span>] &gt; newInterval[<span class="number">0</span>] &#123;</span><br><span class="line">			intervals = <span class="built_in">append</span>(intervals[:i], <span class="built_in">append</span>([][]<span class="keyword">int</span>&#123;newInterval&#125;, intervals[i:]...)...)</span><br><span class="line">			inserOK = <span class="literal">true</span></span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> !inserOK &#123;</span><br><span class="line">		intervals = <span class="built_in">append</span>(intervals, newInterval)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(intervals); i++ &#123;</span><br><span class="line">		start := intervals[i][<span class="number">0</span>]</span><br><span class="line">		end := intervals[i][<span class="number">1</span>]</span><br><span class="line">		j := i + <span class="number">1</span></span><br><span class="line">		<span class="keyword">for</span> ; j &lt; <span class="built_in">len</span>(intervals) &amp;&amp; intervals[j][<span class="number">0</span>] &lt;= end; j++ &#123;</span><br><span class="line">			end = max(end, intervals[j][<span class="number">1</span>])</span><br><span class="line">		&#125;</span><br><span class="line">		res = <span class="built_in">append</span>(res, []<span class="keyword">int</span>&#123;start, end&#125;)</span><br><span class="line">		i = j - <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a <span class="keyword">int</span>, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> a &gt; b &#123;</span><br><span class="line">		<span class="keyword">return</span> a</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-3"><a href="#Note-3" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>[56. Merge Intervals](#56. Merge Intervals)兄弟题，与上一题的区别在于，本次需要插入新的元素，而原本的元素集合是排序好的，所以新元素需要处理好位置，成功插入之后要做的事就如同上一题一样</p>
+</blockquote>
+<h2 id="59-Spiral-Matrix-II"><a href="#59-Spiral-Matrix-II" class="headerlink" title="59. Spiral Matrix II"></a>59. Spiral Matrix II</h2><p>Given a positive integer <code>n</code>, generate an <code>n x n</code> <code>matrix</code> filled with elements from <code>1</code> to <code>n2</code> in spiral order.</p>
+<p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: n &#x3D; 3</span><br><span class="line">Output: [[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">generateMatrix</span><span class="params">(n <span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> [][]<span class="keyword">int</span>&#123;&#123;<span class="number">1</span>&#125;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	result := <span class="built_in">make</span>([][]<span class="keyword">int</span>, n)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">		result[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, n)</span><br><span class="line">	&#125;</span><br><span class="line">	endL, endC, startL, startC := n<span class="number">-1</span>, n<span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	count, moveL, moveC := <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">	curL, curC := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> count &lt;= n*n &#123;</span><br><span class="line">		<span class="keyword">if</span> moveC != <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> moveC &gt; <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curC &lt;= endC; curC++ &#123;</span><br><span class="line">					result[curL][curC] = count</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curC--</span><br><span class="line">				curL++</span><br><span class="line">				startL, moveL, moveC = curL, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curC &gt;= startC; curC-- &#123;</span><br><span class="line">					result[curL][curC] = count</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curC++</span><br><span class="line">				curL--</span><br><span class="line">				endL, moveL, moveC = curL, <span class="number">-1</span>, <span class="number">0</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> moveL != <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> moveL &gt; <span class="number">0</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curL &lt;= endL; curL++ &#123;</span><br><span class="line">					result[curL][curC] = count</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curL--</span><br><span class="line">				curC--</span><br><span class="line">				endC, moveL, moveC = curC, <span class="number">0</span>, <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">for</span> ; curL &gt;= startL; curL-- &#123;</span><br><span class="line">					result[curL][curC] = count</span><br><span class="line">					count++</span><br><span class="line">				&#125;</span><br><span class="line">				curC++</span><br><span class="line">				curL++</span><br><span class="line">				startC, moveL, moveC = curC, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-4"><a href="#Note-4" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>[54. Spiral Matrix](#54. Spiral Matrix)兄弟题，上一题按照漩涡顺序输出值，这一题逆向而行，循环复现漩涡顺序的同时把当前走过的count赋值为当前位置的值即可</p>
+</blockquote>
+<h2 id="62-Unique-Paths"><a href="#62-Unique-Paths" class="headerlink" title="62. Unique Paths"></a>62. Unique Paths</h2><p>A robot is located at the top-left corner of a <code>m x n</code> grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>How many possible unique paths are there?</p>
+<p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: m &#x3D; 3, n &#x3D; 7</span><br><span class="line">Output: 28</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">uniquePaths</span><span class="params">(m <span class="keyword">int</span>, n <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">0</span> || m == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line">	mat := <span class="built_in">make</span>([]<span class="keyword">int</span>, n)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; n; i++ &#123;</span><br><span class="line">		mat[i] = <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; m; i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; n; j++ &#123;</span><br><span class="line">			mat[j] += mat[j<span class="number">-1</span>]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> mat[n<span class="number">-1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-5"><a href="#Note-5" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>本题解法有三种，常规解法如上，一开始采用深搜，结果超时。后考虑题目特性，只能向右和向下，因此每一格至多只能由他的左方和上方到达，因此，可以首先将第一行和第一列的每格赋值为1，因为到达他们只可能有一种路径（即一直向下和一直向左），之后每一格的值都由左和上两个格子的和来决定。如第二行第二列，他的值由一行二列和二行一列相加得2，即如果由起点（一行一列）到达此处的路径有两条。那么相应的二行三列的值就是1+2=3。</p>
+<p>另一思考方式则为数学方法，具体可见<a href="https://www.youtube.com/watch?v=M8BYckxI8_U" target="_blank" rel="noopener">Art of Problem Solving: Counting Paths on a Grid</a>。大体思想是，由于方向确定，范围确定，所以总步长确定，即每条到达终点的路径一共要走多少步，相应的，每条路径中向下的步数和向右的步数也是确定值，所以就变成了组合问题，即在M步里，一共以何种顺序出现确定的i步的向左右或j步的向右走，即C(M,i)或C(M,j)</p>
+</blockquote>
+<h2 id="63-Unique-Paths-II"><a href="#63-Unique-Paths-II" class="headerlink" title="63. Unique Paths II"></a>63. Unique Paths II</h2><p>A robot is located at the top-left corner of a <code>m x n</code> grid (marked ‘Start’ in the diagram below).</p>
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
+<p>Now consider if some obstacles are added to the grids. How many unique paths would there be?</p>
+<p>An obstacle and space is marked as <code>1</code> and <code>0</code> respectively in the grid.</p>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2020/11/04/robot1.jpg" alt="img" style="zoom:67%;" />
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: obstacleGrid &#x3D; [[0,0,0],[0,1,0],[0,0,0]]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: There is one obstacle in the middle of the 3x3 grid above.</span><br><span class="line">There are two ways to reach the bottom-right corner:</span><br><span class="line">1. Right -&gt; Right -&gt; Down -&gt; Down</span><br><span class="line">2. Down -&gt; Down -&gt; Right -&gt; Right</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-6"><a href="#Solution-6" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(obstacleGrid [][]<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">len</span>(obstacleGrid) != <span class="number">0</span> &amp;&amp; obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span>) || obstacleGrid[<span class="built_in">len</span>(obstacleGrid)<span class="number">-1</span>][<span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>])<span class="number">-1</span>] == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	mark := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(obstacleGrid); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> obstacleGrid[i][<span class="number">0</span>] == <span class="number">1</span> &#123;</span><br><span class="line">			obstacleGrid[i][<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">			mark = <span class="number">0</span></span><br><span class="line">		&#125;</span><br><span class="line">		obstacleGrid[i][<span class="number">0</span>] = mark</span><br><span class="line">	&#125;</span><br><span class="line">	mark = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; <span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>]); j++ &#123;</span><br><span class="line">		<span class="keyword">if</span> obstacleGrid[<span class="number">0</span>][j] == <span class="number">1</span> &#123;</span><br><span class="line">			obstacleGrid[<span class="number">0</span>][j] = <span class="number">0</span></span><br><span class="line">			mark = <span class="number">0</span></span><br><span class="line">		&#125;</span><br><span class="line">		obstacleGrid[<span class="number">0</span>][j] = mark</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(obstacleGrid); i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; <span class="built_in">len</span>(obstacleGrid[i]); j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> obstacleGrid[i][j] == <span class="number">1</span> &#123;</span><br><span class="line">				obstacleGrid[i][j] = <span class="number">0</span></span><br><span class="line">				<span class="keyword">continue</span></span><br><span class="line">			&#125;</span><br><span class="line">			obstacleGrid[i][j] = obstacleGrid[i<span class="number">-1</span>][j] + obstacleGrid[i][j<span class="number">-1</span>]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> obstacleGrid[<span class="built_in">len</span>(obstacleGrid)<span class="number">-1</span>][<span class="built_in">len</span>(obstacleGrid[<span class="number">0</span>])<span class="number">-1</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-6"><a href="#Note-6" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>[62. Unique Paths](#62. Unique Paths)兄弟题，本题有阻碍物，所以在初始化的时候需要考虑。第一行和第一列赋初值的时候要判断是否有阻碍物，如果有，则该行或者该列后续的格子值全部为0(因为无法向左走和向上走)。随后开始与上题一样的加和流程，注意障碍物也会出现在此时，所以也要加一个判断，即如果是障碍物，那么这个格子的值是0，并且跳过本次循环。</p>
+</blockquote>
+<h2 id="64-Minimum-Path-Sum"><a href="#64-Minimum-Path-Sum" class="headerlink" title="64. Minimum Path Sum"></a>64. Minimum Path Sum</h2><p>Given a <code>m x n</code> <code>grid</code> filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.</p>
+<p><strong>Note:</strong> You can only move either down or right at any point in time.</p>
+<p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/05/minpath.jpg" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: grid &#x3D; [[1,3,1],[1,5,1],[4,2,1]]</span><br><span class="line">Output: 7</span><br><span class="line">Explanation: Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-7"><a href="#Solution-7" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">minPathSum</span><span class="params">(grid [][]<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(grid); i++ &#123;</span><br><span class="line">		grid[i][<span class="number">0</span>] += grid[i<span class="number">-1</span>][<span class="number">0</span>]</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; <span class="built_in">len</span>(grid[<span class="number">0</span>]); j++ &#123;</span><br><span class="line">		grid[<span class="number">0</span>][j] += grid[<span class="number">0</span>][j<span class="number">-1</span>]</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(grid); i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; <span class="built_in">len</span>(grid[i]); j++ &#123;</span><br><span class="line">			grid[i][j] += min(grid[i<span class="number">-1</span>][j], grid[i][j<span class="number">-1</span>])</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> grid[<span class="built_in">len</span>(grid)<span class="number">-1</span>][<span class="built_in">len</span>(grid[<span class="number">0</span>])<span class="number">-1</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">min</span><span class="params">(a <span class="keyword">int</span>, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> a &gt; b &#123;</span><br><span class="line">		<span class="keyword">return</span> b</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-7"><a href="#Note-7" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>依旧是上两题同类型题目，本题每格都有初始值，在达到终点时判断路径上经过所有格子的值之和最小的路径。首先依旧是对第一行第一列的处理，进行累加，随后进行例行步骤，不过此时需要进行筛选，即遍历到某个新格子的时候，它需要判断上方和左方当前的累加值哪个小，得到<code>min</code>值，随后将自己的值赋值为原本值+<code>min</code>值。</p>
+</blockquote>
+<h2 id="66-Plus-One"><a href="#66-Plus-One" class="headerlink" title="66. Plus One"></a>66. Plus One</h2><p>Given a <strong>non-empty</strong> array of decimal digits representing a non-negative integer, increment one to the integer.</p>
+<p>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contains a single digit.</p>
+<p>You may assume the integer does not contain any leading zero, except the number 0 itself.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: digits &#x3D; [1,2,3]</span><br><span class="line">Output: [1,2,4]</span><br><span class="line">Explanation: The array represents the integer 123.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-8"><a href="#Solution-8" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">plusOne</span><span class="params">(digits []<span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	i := <span class="built_in">len</span>(digits) - <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> ; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">		digits[i] = (digits[i] + <span class="number">1</span>) % <span class="number">10</span></span><br><span class="line">		<span class="keyword">if</span> digits[i] != <span class="number">0</span> &#123;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> i &lt; <span class="number">0</span> &#123;</span><br><span class="line">		digits = <span class="built_in">append</span>([]<span class="keyword">int</span>&#123;<span class="number">1</span>&#125;, digits...)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> digits</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-8"><a href="#Note-8" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>简单题，注意进位和补1</p>
+</blockquote>
+<h2 id="73-Set-Matrix-Zeroes"><a href="#73-Set-Matrix-Zeroes" class="headerlink" title="73. Set Matrix Zeroes"></a>73. Set Matrix Zeroes</h2><p>Given an <code>*m* x *n*</code> matrix. If an element is <strong>0</strong>, set its entire row and column to <strong>0</strong>. Do it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener"><strong>in-place</strong></a>.</p>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>A straight forward solution using O(<em>m**n</em>) space is probably a bad idea.</li>
+<li>A simple improvement uses O(<em>m</em> + <em>n</em>) space, but still not the best solution.</li>
+<li>Could you devise a constant space solution?</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg" alt="img" style="zoom:50%;" />
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: matrix &#x3D; [[1,1,1],[1,0,1],[1,1,1]]</span><br><span class="line">Output: [[1,0,1],[0,0,0],[1,0,1]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-9"><a href="#Solution-9" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">setZeroes</span><span class="params">(matrix [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	visR := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">int</span>)</span><br><span class="line">	visC := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">int</span>)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(matrix); i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; <span class="built_in">len</span>(matrix[<span class="number">0</span>]); j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> (matrix[i][j]) == <span class="number">0</span> &#123;</span><br><span class="line">				visR[i] = <span class="number">1</span></span><br><span class="line">				visC[j] = <span class="number">1</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(matrix); i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">0</span>; j &lt; <span class="built_in">len</span>(matrix[<span class="number">0</span>]); j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> visR[i] == <span class="number">1</span> || visC[j] == <span class="number">1</span> &#123;</span><br><span class="line">				matrix[i][j] = <span class="number">0</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-9"><a href="#Note-9" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>笨方法，先用vis数组监视0元素出现的行列，然后在进行for循环进行0覆盖</p>
+</blockquote>
+<h2 id="74-Search-a-2D-Matrix"><a href="#74-Search-a-2D-Matrix" class="headerlink" title="74. Search a 2D Matrix"></a>74. Search a 2D Matrix</h2><p>Write an efficient algorithm that searches for a value in an <code>m x n</code> matrix. This matrix has the following properties:</p>
+<ul>
+<li>Integers in each row are sorted from left to right.</li>
+<li>The first integer of each row is greater than the last integer of the previous row.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2020/10/05/mat.jpg" alt="img" style="zoom:50%;" />
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: matrix &#x3D; [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target &#x3D; 3</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-10"><a href="#Solution-10" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">searchMatrix</span><span class="params">(matrix [][]<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(matrix); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> matrix[i][<span class="number">0</span>] &lt;= target &amp;&amp; matrix[i][<span class="built_in">len</span>(matrix[i])<span class="number">-1</span>] &gt;= target &#123;</span><br><span class="line">			l, r := <span class="number">0</span>, <span class="built_in">len</span>(matrix[i])<span class="number">-1</span></span><br><span class="line">			<span class="keyword">for</span> l &lt;= r &#123;</span><br><span class="line">				mid := (l + r) &gt;&gt; <span class="number">1</span></span><br><span class="line">				<span class="keyword">if</span> matrix[i][mid] == target &#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">				&#125; <span class="keyword">else</span> <span class="keyword">if</span> matrix[i][mid] &gt; target &#123;</span><br><span class="line">					r = mid - <span class="number">1</span></span><br><span class="line">				&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">					l = mid + <span class="number">1</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-10"><a href="#Note-10" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>简单题，直接方法判断target的范围，找到对应范围后对该范围二分查找</p>
+</blockquote>
+<h2 id="75-Sort-Colors"><a href="#75-Sort-Colors" class="headerlink" title="75. Sort Colors"></a>75. Sort Colors</h2><p>Given an array <code>nums</code> with <code>n</code> objects colored red, white, or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank" rel="noopener">in-place</a></strong> so that objects of the same color are adjacent, with the colors in the order red, white, and blue.</p>
+<p>Here, we will use the integers <code>0</code>, <code>1</code>, and <code>2</code> to represent the color red, white, and blue respectively.</p>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>Could you solve this problem without using the library’s sort function?</li>
+<li>Could you come up with a one-pass algorithm using only <code>O(1)</code> constant space?</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [2,0,2,1,1,0]</span><br><span class="line">Output: [0,0,1,1,2,2]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-11"><a href="#Solution-11" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sortColors</span><span class="params">(nums []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	countR, countW, countB := <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] == <span class="number">0</span> &#123;</span><br><span class="line">			countR++</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[i] == <span class="number">1</span> &#123;</span><br><span class="line">			countW++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			countB++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	fill(&amp;nums, <span class="number">0</span>, countR, <span class="number">0</span>)</span><br><span class="line">	fill(&amp;nums, countR, countR+countW, <span class="number">1</span>)</span><br><span class="line">	fill(&amp;nums, countR+countW, countR+countW+countB, <span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">fill</span><span class="params">(nums *[]<span class="keyword">int</span>, start, end <span class="keyword">int</span>, color <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := start; i &lt; end; i++ &#123;</span><br><span class="line">		(*nums)[i] = color</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-11"><a href="#Note-11" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>一共就三个元素，只要统计一下他们一共有多少个，再按照顺序重新赋值即可</p>
+</blockquote>
+<h2 id="78-Subsets"><a href="#78-Subsets" class="headerlink" title="78. Subsets"></a>78. Subsets</h2><p>Given an integer array <code>nums</code>, return <em>all possible subsets (the power set)</em>.</p>
+<p>The solution set must not contain duplicate subsets.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [1,2,3]</span><br><span class="line">Output: [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-12"><a href="#Solution-12" class="headerlink" title="Solution:"></a>Solution:</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">subsets</span><span class="params">(nums []<span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> result [][]<span class="keyword">int</span></span><br><span class="line">	<span class="keyword">var</span> current []<span class="keyword">int</span></span><br><span class="line">	result = <span class="built_in">append</span>(result, []<span class="keyword">int</span>&#123;&#125;)</span><br><span class="line">	backTrace(&amp;result, <span class="number">0</span>, nums, current)</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">backTrace</span><span class="params">(result *[][]<span class="keyword">int</span>, start <span class="keyword">int</span>, nums []<span class="keyword">int</span>, current []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> start &lt;= <span class="built_in">len</span>(nums) &amp;&amp; current != <span class="literal">nil</span> &#123;</span><br><span class="line">		temp := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="built_in">len</span>(current))</span><br><span class="line">		<span class="built_in">copy</span>(temp, current)</span><br><span class="line">		*result = <span class="built_in">append</span>(*result, temp)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i := start; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		current = <span class="built_in">append</span>(current, nums[i])</span><br><span class="line">		backTrace(result, i+<span class="number">1</span>, nums, current)</span><br><span class="line">		current = current[:<span class="built_in">len</span>(current)<span class="number">-1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bit manipulation</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        result = list()</span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(pow(<span class="number">2</span>, n)):</span><br><span class="line">            lst = list()</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">                bit = i &amp; <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> bit:</span><br><span class="line">                    lst.append(nums[j])</span><br><span class="line">                i &gt;&gt;= <span class="number">1</span></span><br><span class="line">            result.append(lst)</span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h3 id="Note-12"><a href="#Note-12" class="headerlink" title="Note:"></a>Note:</h3><blockquote>
+<p>直观想到backtrace直接搞定，看提示后发现还有位操作的方法<a href="https://leetcode.com/problems/subsets/discuss/27288/My-solution-using-bit-manipulation/26402" target="_blank" rel="noopener">leet_nik_Discuss</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n&#x3D;3 [1,2,3] 2**3</span><br><span class="line">0) 0 0 0  -&gt; Dont take 3 , Dont take 2 , Dont take 1 &#x3D; &#123; &#125; </span><br><span class="line">1) 0 0 1  -&gt; Dont take 3 , Dont take 2 ,   take 1       &#x3D;  &#123;1 &#125; </span><br><span class="line">2) 0 1 0  -&gt; Dont take 3 ,    take 2       , Dont take 1 &#x3D; &#123; 2 &#125; </span><br><span class="line">3) 0 1 1  -&gt; Dont take 3 ,    take 2       ,      take 1    &#x3D; &#123; 1 , 2 &#125; </span><br><span class="line">4) 1 0 0  -&gt;    take 3      , Dont take 2  , Dont take 1 &#x3D; &#123; 3 &#125; </span><br><span class="line">5) 1 0 1  -&gt;    take 3      , Dont take 2  ,     take 1     &#x3D; &#123; 1 , 3 &#125; </span><br><span class="line">6) 1 1 0  -&gt;    take 3      ,    take 2       , Dont take 1 &#x3D; &#123; 2 , 3 &#125; </span><br><span class="line">7) 1 1 1  -&gt;    take 3     ,      take 2     ,      take 1     &#x3D; &#123; 1 , 2 , 3 &#125; </span><br></pre></td></tr></table></figure>
+
+</blockquote>
+
+	  
+
+	</div>
+
+	
+	<span id="/2021/01/10/LeetCode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95(Array)-II/" class="leancloud-visitors view" data-flag-title="LeetCode-Array-II">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2021/01/10/LeetCode刷题记录(Array)-I/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta">
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2021-01-10
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Algorithm/">Algorithm<span>5</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    
+  <li><a href="/tags/LeetCode/">LeetCode<span>2</span></a></li> <li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>26</span></a></li>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget" id="tocstyle">
+	
+	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
+	   <div id="toc" class="toc collapse in">
+		   <span class="toc-title">Contents</span>
+			<ol class="toc-article"><li class="toc-article-item toc-article-level-1"><a class="toc-article-link" href="#LeetCode-topics-Array-Part-II"><span class="toc-article-text">LeetCode - topics: Array (Part II)</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#54-Spiral-Matrix"><span class="toc-article-text">54. Spiral Matrix</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#55-Jump-Game"><span class="toc-article-text">55. Jump Game</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-1"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-1"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#56-Merge-Intervals"><span class="toc-article-text">56. Merge Intervals</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-2"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-2"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#57-Insert-Interval"><span class="toc-article-text">57. Insert Interval</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-3"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-3"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#59-Spiral-Matrix-II"><span class="toc-article-text">59. Spiral Matrix II</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-4"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-4"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#62-Unique-Paths"><span class="toc-article-text">62. Unique Paths</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-5"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-5"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#63-Unique-Paths-II"><span class="toc-article-text">63. Unique Paths II</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-6"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-6"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#64-Minimum-Path-Sum"><span class="toc-article-text">64. Minimum Path Sum</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-7"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-7"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#66-Plus-One"><span class="toc-article-text">66. Plus One</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-8"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-8"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#73-Set-Matrix-Zeroes"><span class="toc-article-text">73. Set Matrix Zeroes</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-9"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-9"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#74-Search-a-2D-Matrix"><span class="toc-article-text">74. Search a 2D Matrix</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-10"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-10"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#75-Sort-Colors"><span class="toc-article-text">75. Sort Colors</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-11"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-11"><span class="toc-article-text">Note:</span></a></li></ol></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#78-Subsets"><span class="toc-article-text">78. Subsets</span></a><ol class="toc-article-child"><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Solution-12"><span class="toc-article-text">Solution:</span></a></li><li class="toc-article-item toc-article-level-3"><a class="toc-article-link" href="#Note-12"><span class="toc-article-text">Note:</span></a></li></ol></li></ol></li></ol>
+		</div>
+	
+	</div>
+
+
+    <hr>
+</div><!-- col-md-3 -->
+
+
+
+
+	</div>
+
+	
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p class="footer_end">
+  
+  &copy; 2021 SimonHu's Blog
+  
+</p>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+<script>
+  $(function() {
+      $(".mypage img").lazyload(
+      {effect: "fadeIn",
+       placeholder:"https://raw.githubusercontent.com/SimonHu-HN/GoPic_Private/master/img/5-121204193Q9.gif",}
+      );
+  });
+  </script> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">
+  <span>⬆︎UP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
